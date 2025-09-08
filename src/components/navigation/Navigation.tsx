@@ -8,6 +8,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { ChevronDown, Menu, X } from 'lucide-react'
+import logoHorizontal from '@/assets/images/logoHorizontal.webp'
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
@@ -32,10 +33,14 @@ export const Navigation = () => {
   return (
     <nav className="border-b border-border bg-background/95 backdrop-blur supports-[backdrop-filter]:bg-background/60 sticky top-0 z-50">
       <div className="container mx-auto px-4">
-        <div className="h-16 flex items-center justify-between">
+        <div className="h-20 flex items-center justify-between">
           {/* Logo */}
-          <Link to="/" className="font-bold text-xl text-primary">
-            Andrew Rogers
+          <Link to="/" className="flex items-center py-2.5">
+            <img 
+              src={logoHorizontal} 
+              alt="Aulas de Inglês em Casa" 
+              className="w-[300px] h-[60px]"
+            />
           </Link>
 
           {/* Desktop Navigation */}

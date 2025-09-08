@@ -6,8 +6,12 @@
     @apply border-border;
   }
 
+  html {
+    font-size: 110%;
+  }
+
   body {
-    font-family: 'Inter', sans-serif;
+    font-family: 'Libre Bodoni', serif;
   }
 }
 

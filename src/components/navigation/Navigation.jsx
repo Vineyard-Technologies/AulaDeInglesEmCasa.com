@@ -2,6 +2,8 @@ import { useState } from 'react'
 import { Link, useLocation } from 'react-router-dom'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
+import { WhatsAppIcon } from '@/components/icons/WhatsAppIcon'
+import logoHorizontal from '@/assets/images/logoHorizontal.webp'
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -12,10 +14,14 @@ export function Navigation() {
   return (
     <nav className="bg-background border-b sticky top-0 z-50">
       <div className="container mx-auto px-4">
-        <div className="flex justify-between items-center h-16">
+        <div className="flex justify-between items-center h-20">
           {/* Logo */}
-          <Link to="/" className="text-xl font-bold text-primary">
-            Andrew Rogers
+          <Link to="/" className="flex items-center py-2.5">
+            <img 
+              src={logoHorizontal} 
+              alt="Aulas de Inglês em Casa" 
+              className="w-[300px] h-[60px]"
+            />
           </Link>
 
           {/* Desktop Navigation */}
@@ -85,6 +91,20 @@ export function Navigation() {
             >
               Contato
             </Link>
+            
+            <a
+              href="https://wa.me/5567996161199"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              <Button
+                size="sm"
+                className="bg-green-500 hover:bg-green-600 text-white ml-4 px-2"
+              >
+                <WhatsAppIcon className="w-4 h-4" />
+                WhatsApp
+              </Button>
+            </a>
           </div>
 
           {/* Mobile menu button */}
@@ -170,6 +190,21 @@ export function Navigation() {
               >
                 Contato
               </Link>
+              
+              <a
+                href="https://wa.me/5567996161199"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
+                <Button
+                  size="sm"
+                  className="bg-green-500 hover:bg-green-600 text-white mt-4 w-full px-2"
+                  onClick={() => setIsOpen(false)}
+                >
+                  <WhatsAppIcon className="w-4 h-4" />
+                  WhatsApp
+                </Button>
+              </a>
             </div>
           </div>
         )}

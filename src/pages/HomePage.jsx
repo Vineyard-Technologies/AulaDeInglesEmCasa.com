@@ -2,6 +2,17 @@ import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
+import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon"
+import { Footer } from "@/components/Footer"
+import { Link } from "react-router-dom"
+import homepageLogo from "@/assets/images/homepageLogo.webp"
+import logoHorizontal from "@/assets/images/logoHorizontal.webp"
+import seattleBackground from "@/assets/images/seattle.webp"
+import aulasOnlineImage from "@/assets/images/aulasOnlineHomepage.webp"
+import aulasIndividuaisImage from "@/assets/images/AulasIndividuaisHomepage.webp"
+import aulaEmGrupoImage from "@/assets/images/aulaEmGrupoHomepage.webp"
+import aulasConversacaoImage from "@/assets/images/aulasDeConversacaoHomepage.webp"
+import andrewRogersImage from "@/assets/images/Andrew Rogers.webp"
 import { 
   Phone, 
   MessageCircle, 
@@ -15,29 +26,38 @@ import {
   FileText,
   Headphones,
   Video,
-  Presentation
+  Presentation,
+  ArrowRight,
+  Flag
 } from "lucide-react"
 
 export function HomePage() {
-  const whatsappNumber = "5567999999999"
+  const whatsappNumber = "5567996161199"
   const whatsappMessage = "Olá! Gostaria de saber mais sobre as aulas de inglês em casa."
   
   return (
     <div className="min-h-screen bg-background">
       {/* Hero Section */}
-      <section className="relative bg-gradient-to-br from-primary to-primary/80 text-primary-foreground py-20">
-        <div className="container mx-auto px-4 text-center">
+      <section 
+        className="relative text-primary-foreground py-20 bg-cover bg-center bg-no-repeat"
+        style={{ backgroundImage: `url(${seattleBackground})` }}
+      >
+        <div className="absolute inset-0 bg-black/60"></div>
+        <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
-            <Avatar className="w-32 h-32 mx-auto mb-6 border-4 border-primary-foreground/20">
-              <AvatarImage src="/api/placeholder/300/300" alt="Andrew Rogers" />
-              <AvatarFallback className="text-2xl font-bold text-primary bg-primary-foreground">AR</AvatarFallback>
-            </Avatar>
+            <div className="w-32 h-20 mx-auto flex items-center justify-center">
+              <img 
+                src={homepageLogo} 
+                alt="Aulas de Inglês em Casa - Andrew Rogers" 
+                className="max-w-full max-h-full object-contain"
+              />
+            </div>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
               Aulas de Inglês em Casa
             </h1>
             <p className="text-xl md:text-2xl mb-6 text-primary-foreground/90">
-              Professor Andrew Rogers
+              Professor Andrew Christopher Rogers
             </p>
             <div className="flex items-center justify-center gap-2 mb-8">
               <MapPin className="w-5 h-5" />
@@ -45,88 +65,110 @@ export function HomePage() {
             </div>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-accent hover:bg-accent/90 text-accent-foreground"
-                onClick={() => window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`, '_blank')}
+              <a 
+                href={`https://wa.me/${whatsappNumber}`}
+                target="_blank"
+                rel="noopener noreferrer"
               >
-                <MessageCircle className="w-5 h-5 mr-2" />
-                WhatsApp
-              </Button>
-              <Button 
-                size="lg" 
-                variant="outline" 
-                className="border-primary-foreground/20 text-primary-foreground hover:bg-primary-foreground/10"
-                onClick={() => window.open(`tel:+${whatsappNumber}`, '_self')}
-              >
-                <Phone className="w-5 h-5 mr-2" />
-                Ligar Agora
-              </Button>
+                <Button 
+                  size="lg" 
+                  className="bg-green-500 hover:bg-green-600 text-white px-4 w-full"
+                >
+                  <WhatsAppIcon className="w-5 h-5" />
+                  WhatsApp
+                </Button>
+              </a>
+              <a href="mailto:Contato@auladeinglesemcasa.com">
+                <Button 
+                  size="lg" 
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary-foreground/20 w-full"
+                >
+                  <Mail className="w-5 h-5" />
+                  Enviar Email
+                </Button>
+              </a>
             </div>
           </div>
         </div>
       </section>
 
-      {/* About Classes Section */}
+      {/* Welcome Section */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
             <h2 className="text-3xl md:text-4xl font-bold text-center mb-12">
-              Sobre as Aulas e Materiais
+              Transforme Seu Futuro com Inglês
             </h2>
             
             <div className="grid md:grid-cols-2 gap-8 items-center">
               <div>
                 <p className="text-lg mb-6 text-muted-foreground leading-relaxed">
-                  Nossas aulas são cuidadosamente estruturadas para proporcionar uma experiência de 
-                  aprendizado dinâmica e eficaz. Utilizamos materiais modernos e diversificados, 
-                  combinando métodos tradicionais com recursos digitais interativos para acelerar 
-                  seu progresso no inglês.
+                  Imagine poder se comunicar com confiança em inglês, abrir novas oportunidades 
+                  profissionais e conectar-se com pessoas do mundo todo. Como professor americano 
+                  nativo em Campo Grande, estou aqui para tornar esse sonho realidade, 
+                  <strong className="text-foreground"> no conforto da sua casa</strong>.
+                </p>
+                
+                <p className="text-lg mb-8 text-muted-foreground leading-relaxed">
+                  Cada aula é uma jornada personalizada, adaptada ao seu ritmo e seus objetivos. 
+                  Juntos, vamos construir sua fluência de forma natural e divertida.
                 </p>
                 
                 <div className="space-y-4">
                   <div className="flex items-center gap-3">
+                    <Flag className="w-6 h-6 text-primary" />
+                    <span className="font-medium">Professor nativo americano</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <Users className="w-6 h-6 text-primary" />
+                    <span className="font-medium">Mais de 10 anos de experiência</span>
+                  </div>
+                  <div className="flex items-center gap-3">
+                    <MapPin className="w-6 h-6 text-primary" />
+                    <span className="font-medium">Aulas em domicílio em Campo Grande</span>
+                  </div>
+                  <div className="flex items-center gap-3">
                     <BookOpen className="w-6 h-6 text-primary" />
-                    <span>Livros didáticos atualizados</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <FileText className="w-6 h-6 text-primary" />
-                    <span>Apostilas personalizadas</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Headphones className="w-6 h-6 text-primary" />
-                    <span>Áudios para treino de listening</span>
-                  </div>
-                  <div className="flex items-center gap-3">
-                    <Video className="w-6 h-6 text-primary" />
-                    <span>Recursos audiovisuais interativos</span>
+                    <span className="font-medium">Metodologia personalizada para você</span>
                   </div>
                 </div>
               </div>
               
-              <Card className="p-6">
+              <Card className="p-6 bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20">
                 <CardHeader className="pb-4">
-                  <CardTitle className="flex items-center gap-2">
-                    <Presentation className="w-5 h-5" />
-                    Estrutura das Aulas
+                  <CardTitle className="flex items-center gap-2 text-xl">
+                    <CheckCircle className="w-6 h-6 text-primary" />
+                    Por Que Escolher Aulas de Inglês em Casa?
                   </CardTitle>
                 </CardHeader>
-                <CardContent className="space-y-3">
+                <CardContent className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-secondary mt-0.5" />
-                    <span className="text-sm">Aulas de 60 ou 90 minutos</span>
+                    <Clock className="w-5 h-5 text-secondary mt-0.5" />
+                    <div>
+                      <span className="font-medium text-sm block">Flexibilidade Total</span>
+                      <span className="text-xs text-muted-foreground">Horários que se adaptam à sua rotina</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Users className="w-5 h-5 text-secondary mt-0.5" />
+                    <div>
+                      <span className="font-medium text-sm block">Atenção Exclusiva</span>
+                      <span className="text-xs text-muted-foreground">100% do tempo focado em você</span>
+                    </div>
+                  </div>
+                  <div className="flex items-start gap-3">
+                    <Award className="w-5 h-5 text-secondary mt-0.5" />
+                    <div>
+                      <span className="font-medium text-sm block">Progresso Acelerado</span>
+                      <span className="text-xs text-muted-foreground">Resultados visíveis desde a primeira aula</span>
+                    </div>
                   </div>
                   <div className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-secondary mt-0.5" />
-                    <span className="text-sm">Material físico e digital incluído</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-secondary mt-0.5" />
-                    <span className="text-sm">Exercícios para casa personalizados</span>
-                  </div>
-                  <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-secondary mt-0.5" />
-                    <span className="text-sm">Avaliações periódicas de progresso</span>
+                    <div>
+                      <span className="font-medium text-sm block">Ambiente Confortável</span>
+                      <span className="text-xs text-muted-foreground">Aprenda sem pressão, no seu espaço</span>
+                    </div>
                   </div>
                 </CardContent>
               </Card>
@@ -143,94 +185,132 @@ export function HomePage() {
               Serviços Oferecidos
             </h2>
             
-            <div className="grid md:grid-cols-3 gap-6">
-              <Card className="hover:shadow-lg transition-shadow">
-                <CardHeader>
+            <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+              <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
+                <div className="aspect-video w-full overflow-hidden rounded-lg">
+                  <img 
+                    src={aulasOnlineImage} 
+                    alt="Aulas Online" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <CardHeader className="flex-shrink-0">
+                  <CardTitle className="flex items-center gap-2">
+                    <Video className="w-5 h-5 text-primary" />
+                    Aulas Online
+                  </CardTitle>
+                  <CardDescription>
+                    Flexibilidade no conforto de casa
+                  </CardDescription>
+                </CardHeader>
+                <CardContent className="flex-grow flex flex-col">
+                  <ul className="space-y-2 text-sm mb-4 flex-grow">
+                    <li>• Plataformas digitais interativas</li>
+                    <li>• Material em tempo real</li>
+                    <li>• Gravação das aulas disponível</li>
+                    <li>• Horários flexíveis</li>
+                  </ul>
+                  <Link to="/servicos/aulas-online">
+                    <Button className="w-full mt-auto">
+                      Saiba Mais
+                    </Button>
+                  </Link>
+                </CardContent>
+              </Card>
+
+              <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
+                <div className="aspect-video w-full overflow-hidden rounded-lg">
+                  <img 
+                    src={aulasIndividuaisImage} 
+                    alt="Aulas Individuais" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <CardHeader className="flex-shrink-0">
                   <CardTitle className="flex items-center gap-2">
                     <Users className="w-5 h-5 text-primary" />
-                    Iniciantes
+                    Aulas Individuais
                   </CardTitle>
                   <CardDescription>
-                    Perfeito para quem está começando
+                    Atenção personalizada e foco total
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm">
-                    <li>• Alfabeto e pronúncia básica</li>
-                    <li>• Vocabulário essencial</li>
-                    <li>• Frases do cotidiano</li>
-                    <li>• Gramática fundamental</li>
+                <CardContent className="flex-grow flex flex-col">
+                  <ul className="space-y-2 text-sm mb-4 flex-grow">
+                    <li>• Metodologia personalizada</li>
+                    <li>• Ritmo adaptado ao aluno</li>
+                    <li>• Atenção exclusiva do professor</li>
+                    <li>• Objetivos específicos</li>
                   </ul>
-                  <div className="mt-4">
-                    <Badge variant="secondary">A partir de R$ 80/hora</Badge>
-                  </div>
+                  <Link to="/servicos/aulas-individuais">
+                    <Button className="w-full mt-auto">
+                      Saiba Mais
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-lg transition-shadow">
-                <CardHeader>
+              <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
+                <div className="aspect-video w-full overflow-hidden rounded-lg">
+                  <img 
+                    src={aulaEmGrupoImage} 
+                    alt="Aulas em Grupo" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <CardHeader className="flex-shrink-0">
                   <CardTitle className="flex items-center gap-2">
                     <BookOpen className="w-5 h-5 text-primary" />
-                    Intermediário
+                    Aulas em Grupo
                   </CardTitle>
                   <CardDescription>
-                    Para quem já tem conhecimento básico
+                    Aprendizado colaborativo
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm">
-                    <li>• Conversação fluente</li>
-                    <li>• Gramática avançada</li>
-                    <li>• Compreensão auditiva</li>
-                    <li>• Escrita e redação</li>
+                <CardContent className="flex-grow flex flex-col">
+                  <ul className="space-y-2 text-sm mb-4 flex-grow">
+                    <li>• Interação entre alunos</li>
+                    <li>• Atividades em grupo</li>
+                    <li>• Ambiente motivador</li>
+                    <li>• Custo mais acessível</li>
                   </ul>
-                  <div className="mt-4">
-                    <Badge variant="secondary">A partir de R$ 90/hora</Badge>
-                  </div>
+                  <Link to="/servicos/aulas-em-grupo">
+                    <Button className="w-full mt-auto">
+                      Saiba Mais
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
 
-              <Card className="hover:shadow-lg transition-shadow">
-                <CardHeader>
+              <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
+                <div className="aspect-video w-full overflow-hidden rounded-lg">
+                  <img 
+                    src={aulasConversacaoImage} 
+                    alt="Aulas de Conversação" 
+                    className="w-full h-full object-cover"
+                  />
+                </div>
+                <CardHeader className="flex-shrink-0">
                   <CardTitle className="flex items-center gap-2">
-                    <Award className="w-5 h-5 text-primary" />
-                    Avançado
+                    <MessageCircle className="w-5 h-5 text-primary" />
+                    Aulas de Conversação
                   </CardTitle>
                   <CardDescription>
-                    Aperfeiçoamento e fluência total
+                    Desenvolva fluência e confiança
                   </CardDescription>
                 </CardHeader>
-                <CardContent>
-                  <ul className="space-y-2 text-sm">
-                    <li>• Inglês para negócios</li>
-                    <li>• Preparação para exames</li>
-                    <li>• Refinamento da pronúncia</li>
-                    <li>• Conversação nativa</li>
+                <CardContent className="flex-grow flex flex-col">
+                  <ul className="space-y-2 text-sm mb-4 flex-grow">
+                    <li>• Foco na comunicação oral</li>
+                    <li>• Temas do cotidiano</li>
+                    <li>• Correção de pronúncia</li>
+                    <li>• Ganho de confiança</li>
                   </ul>
-                  <div className="mt-4">
-                    <Badge variant="secondary">A partir de R$ 100/hora</Badge>
-                  </div>
-                </CardContent>
-              </Card>
-            </div>
-
-            <div className="mt-12 text-center">
-              <Card className="max-w-2xl mx-auto p-6">
-                <CardHeader>
-                  <CardTitle className="flex items-center justify-center gap-2">
-                    <Clock className="w-5 h-5 text-accent" />
-                    Horários Flexíveis
-                  </CardTitle>
-                </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground mb-4">
-                    Aulas de segunda a sábado, manhã, tarde ou noite. 
-                    Horários adaptados à sua rotina!
-                  </p>
-                  <div className="flex flex-wrap justify-center gap-2">
-                    <Badge>Segunda a Sexta: 7h às 22h</Badge>
-                    <Badge>Sábados: 8h às 18h</Badge>
-                  </div>
+                  <Link to="/servicos/aulas-conversacao">
+                    <Button className="w-full mt-auto">
+                      Saiba Mais
+                    </Button>
+                  </Link>
                 </CardContent>
               </Card>
             </div>
@@ -238,102 +318,106 @@ export function HomePage() {
         </div>
       </section>
 
-      {/* Contact Section */}
+      {/* About the Teacher Section */}
       <section className="py-16 bg-background">
         <div className="container mx-auto px-4">
-          <div className="max-w-4xl mx-auto text-center">
-            <h2 className="text-3xl md:text-4xl font-bold mb-8">
-              Agende Sua Aula Experimental
-            </h2>
-            <p className="text-lg text-muted-foreground mb-12">
-              Entre em contato para agendar sua primeira aula gratuita de 30 minutos. 
-              Vou até sua casa em Campo Grande para conhecer suas necessidades!
-            </p>
-            
-            <div className="grid md:grid-cols-3 gap-6">
-              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer"
-                    onClick={() => window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`, '_blank')}>
-                <div className="text-center">
-                  <MessageCircle className="w-12 h-12 text-accent mx-auto mb-4" />
-                  <h3 className="font-semibold mb-2">WhatsApp</h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Resposta rápida e agendamento fácil
-                  </p>
-                  <Button className="w-full bg-accent hover:bg-accent/90">
-                    Enviar Mensagem
+          <div className="max-w-4xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              <div className="text-center md:text-left">
+                <h2 className="text-3xl md:text-4xl font-bold mb-6">
+                  Sobre o Professor
+                </h2>
+                <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
+                Andrew Christopher Rogers é um professor americano de inglês com mais de 10 anos de experiência, incluindo 5 anos com somente alunos brasileiros. Ele aprendeu português sozinho e mora em Campo Grande há 2 anos.
+                </p>
+                <Link to="/sobre">
+                  <Button size="lg" className="inline-flex items-center gap-2">
+                    Saiba Mais
+                    <ArrowRight className="w-4 h-4" />
                   </Button>
-                </div>
-              </Card>
-
-              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer"
-                    onClick={() => window.open(`tel:+${whatsappNumber}`, '_self')}>
-                <div className="text-center">
-                  <Phone className="w-12 h-12 text-primary mx-auto mb-4" />
-                  <h3 className="font-semibold mb-2">Telefone</h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Conversação direta para esclarecer dúvidas
-                  </p>
-                  <Button variant="outline" className="w-full">
-                    Ligar Agora
-                  </Button>
-                </div>
-              </Card>
-
-              <Card className="p-6 hover:shadow-lg transition-shadow cursor-pointer"
-                    onClick={() => window.open('mailto:andrew.rogers@email.com', '_self')}>
-                <div className="text-center">
-                  <Mail className="w-12 h-12 text-secondary mx-auto mb-4" />
-                  <h3 className="font-semibold mb-2">E-mail</h3>
-                  <p className="text-sm text-muted-foreground mb-4">
-                    Para informações detalhadas
-                  </p>
-                  <Button variant="outline" className="w-full">
-                    Enviar E-mail
-                  </Button>
-                </div>
-              </Card>
-            </div>
-
-            <div className="mt-12 p-6 bg-muted/50 rounded-lg">
-              <div className="flex items-center justify-center gap-2 mb-4">
-                <MapPin className="w-5 h-5 text-primary" />
-                <span className="font-semibold">Área de Atendimento</span>
+                </Link>
               </div>
-              <p className="text-muted-foreground">
-                Atendo em toda Campo Grande, MS. Consulte disponibilidade para bairros mais distantes.
-              </p>
+              <div className="flex justify-center">
+                <Link to="/sobre" className="block">
+                  <div className="relative cursor-pointer">
+                    <img 
+                      src={andrewRogersImage} 
+                      alt="Andrew Rogers - Professor de Inglês" 
+                      className="w-80 h-80 object-cover rounded-full shadow-2xl"
+                    />
+                    <div className="absolute inset-0 rounded-full bg-gradient-to-tr from-primary/20 to-transparent"></div>
+                  </div>
+                </Link>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      {/* Footer */}
-      <footer className="bg-primary text-primary-foreground py-8">
-        <div className="container mx-auto px-4 text-center">
-          <h3 className="font-bold text-lg mb-2">Andrew Rogers - Aulas de Inglês em Casa</h3>
-          <p className="text-primary-foreground/80 mb-4">
-            Campo Grande, Mato Grosso do Sul
-          </p>
-          <div className="flex justify-center gap-4 text-sm">
-            <span>Professor Nativo</span>
-            <span>•</span>
-            <span>Certificação TEFL</span>
-            <span>•</span>
-            <span>10+ Anos de Experiência</span>
+      {/* Location & Contact Section */}
+      <section className="py-8 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-6 items-center">
+              <div className="text-center flex flex-col justify-center">
+                <div className="w-24 h-16 mx-auto flex items-center justify-center">
+                  <img 
+                    src={homepageLogo} 
+                    alt="Aulas de Inglês em Casa - Andrew Rogers" 
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+                
+                <h2 className="text-3xl md:text-4xl font-bold mb-8">
+                  Aulas de Inglês em Casa em Campo Grande, MS
+                </h2>
+                
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a 
+                    href={`https://wa.me/${whatsappNumber}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button 
+                      size="lg" 
+                      className="bg-green-500 hover:bg-green-600 text-white px-4 w-full"
+                    >
+                      <WhatsAppIcon className="w-5 h-5" />
+                      WhatsApp
+                    </Button>
+                  </a>
+                  <a href="mailto:Contato@auladeinglesemcasa.com">
+                    <Button 
+                      size="lg" 
+                      className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary-foreground/20 w-full"
+                    >
+                      <Mail className="w-5 h-5" />
+                      Enviar Email
+                    </Button>
+                  </a>
+                </div>
+              </div>
+              
+              <div>
+                <div className="bg-background rounded-lg p-4 shadow-lg">
+                  <iframe 
+                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119603.60236497635!2d-54.63553405!3d-20.481099800000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9486e6726b2b9f27%3A0xf5a8469ebc84d2c1!2sCampo%20Grande%2C%20State%20of%20Mato%20Grosso%20do%20Sul!5e0!3m2!1sen!2sbr!4v1757361385073!5m2!1sen!2sbr" 
+                    width="100%" 
+                    height="250" 
+                    style={{ border: 0 }} 
+                    allowFullScreen="" 
+                    loading="lazy" 
+                    referrerPolicy="no-referrer-when-downgrade"
+                    className="rounded-lg"
+                  ></iframe>
+                </div>
+              </div>
+            </div>
           </div>
         </div>
-      </footer>
+      </section>
 
-      {/* WhatsApp Fixed Button */}
-      <div className="fixed bottom-6 right-6 z-50">
-        <Button 
-          size="lg"
-          className="rounded-full w-14 h-14 bg-accent hover:bg-accent/90 shadow-lg"
-          onClick={() => window.open(`https://wa.me/${whatsappNumber}?text=${encodeURIComponent(whatsappMessage)}`, '_blank')}
-        >
-          <MessageCircle className="w-6 h-6" />
-        </Button>
-      </div>
+      <Footer />
     </div>
   )
 }
