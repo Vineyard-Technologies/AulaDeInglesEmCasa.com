@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { Navigation } from '@/components'
+import { Navigation, Footer } from '@/components'
 import { 
   HomePage, 
   AboutPage, 
@@ -26,6 +26,7 @@ export default function App() {
           <Route path="/servicos/aulas-em-grupo" element={<GroupClassesPage />} />
           <Route path="/servicos/aulas-conversacao" element={<ConversationClassesPage />} />
         </Routes>
+        <Footer />
       </div>
     </Router>
   )

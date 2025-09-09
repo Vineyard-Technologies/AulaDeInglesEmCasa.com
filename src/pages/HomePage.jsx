@@ -3,7 +3,6 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon"
-import { Footer } from "@/components/Footer"
 import { Link } from "react-router-dom"
 import homepageLogo from "@/assets/images/homepageLogo.webp"
 import logoHorizontal from "@/assets/images/logoHorizontal.webp"
@@ -106,12 +105,7 @@ export function HomePage() {
                   Imagine poder se comunicar com confiança em inglês, abrir novas oportunidades 
                   profissionais e conectar-se com pessoas do mundo todo. Como professor americano 
                   nativo em Campo Grande, estou aqui para tornar esse sonho realidade, 
-                  <strong className="text-foreground"> no conforto da sua casa</strong>.
-                </p>
-                
-                <p className="text-lg mb-8 text-muted-foreground leading-relaxed">
-                  Cada aula é uma jornada personalizada, adaptada ao seu ritmo e seus objetivos. 
-                  Juntos, vamos construir sua fluência de forma natural e divertida.
+                   no conforto da sua casa.
                 </p>
                 
                 <div className="space-y-4">
@@ -135,12 +129,6 @@ export function HomePage() {
               </div>
               
               <Card className="p-6 bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20">
-                <CardHeader className="pb-4">
-                  <CardTitle className="flex items-center gap-2 text-xl">
-                    <CheckCircle className="w-6 h-6 text-primary" />
-                    Por Que Escolher Aulas de Inglês em Casa?
-                  </CardTitle>
-                </CardHeader>
                 <CardContent className="space-y-4">
                   <div className="flex items-start gap-3">
                     <Clock className="w-5 h-5 text-secondary mt-0.5" />
@@ -416,8 +404,6 @@ export function HomePage() {
           </div>
         </div>
       </section>
-
-      <Footer />
     </div>
   )
 }
