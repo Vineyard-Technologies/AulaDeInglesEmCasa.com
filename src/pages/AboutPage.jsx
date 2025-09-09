@@ -1,7 +1,17 @@
+import { useEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { GraduationCap, Award } from "lucide-react"
+import { updateMetaTags, addStructuredData, createPersonSchema, pageMetaData } from "@/utils/seo"
 
 export function AboutPage() {
+  useEffect(() => {
+    // Update meta tags
+    updateMetaTags(pageMetaData.about);
+    
+    // Add structured data for the person/teacher
+    addStructuredData(createPersonSchema());
+  }, [])
+  
   return (
     <div className="min-h-screen bg-background">
       {/* About Content */}

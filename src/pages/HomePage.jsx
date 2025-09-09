@@ -1,9 +1,11 @@
+import { useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Badge } from "@/components/ui/badge"
 import { Avatar, AvatarFallback, AvatarImage } from "@/components/ui/avatar"
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon"
 import { Link } from "react-router-dom"
+import { updateMetaTags, addStructuredData, createEducationServiceSchema, createPersonSchema, pageMetaData } from "@/utils/seo"
 import homepageLogo from "@/assets/images/homepageLogo.webp"
 import logoHorizontal from "@/assets/images/logoHorizontal.webp"
 import seattleBackground from "@/assets/images/seattle.webp"
@@ -32,7 +34,18 @@ import {
 
 export function HomePage() {
   const whatsappNumber = "5567996161199"
-  const whatsappMessage = "Olá! Gostaria de saber mais sobre as aulas de inglês em casa."
+  
+  useEffect(() => {
+    // Update meta tags
+    updateMetaTags(pageMetaData.home);
+    
+    // Add structured data
+    const combinedSchema = [
+      createEducationServiceSchema(),
+      createPersonSchema()
+    ];
+    addStructuredData(combinedSchema);
+  }, [])
   
   return (
     <div className="min-h-screen bg-background">
@@ -198,11 +211,26 @@ export function HomePage() {
                     <li>• Gravação das aulas disponível</li>
                     <li>• Horários flexíveis</li>
                   </ul>
-                  <Link to="/servicos/aulas-online">
-                    <Button className="w-full mt-auto">
-                      Saiba Mais
-                    </Button>
-                  </Link>
+                  <div className="flex gap-2 mt-auto">
+                    <a
+                      href={`https://wa.me/${whatsappNumber}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1"
+                    >
+                      <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
+                        <WhatsAppIcon className="w-4 h-4" />
+                      </Button>
+                    </a>
+                    <a
+                      href="mailto:contato@auladeinglesemcasa.com"
+                      className="flex-1"
+                    >
+                      <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                        <Mail className="w-4 h-4" />
+                      </Button>
+                    </a>
+                  </div>
                 </CardContent>
               </Card>
 
@@ -230,11 +258,26 @@ export function HomePage() {
                     <li>• Atenção exclusiva do professor</li>
                     <li>• Objetivos específicos</li>
                   </ul>
-                  <Link to="/servicos/aulas-individuais">
-                    <Button className="w-full mt-auto">
-                      Saiba Mais
-                    </Button>
-                  </Link>
+                  <div className="flex gap-2 mt-auto">
+                    <a
+                      href={`https://wa.me/${whatsappNumber}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1"
+                    >
+                      <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
+                        <WhatsAppIcon className="w-4 h-4" />
+                      </Button>
+                    </a>
+                    <a
+                      href="mailto:contato@auladeinglesemcasa.com"
+                      className="flex-1"
+                    >
+                      <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                        <Mail className="w-4 h-4" />
+                      </Button>
+                    </a>
+                  </div>
                 </CardContent>
               </Card>
 
@@ -262,11 +305,26 @@ export function HomePage() {
                     <li>• Ambiente motivador</li>
                     <li>• Custo mais acessível</li>
                   </ul>
-                  <Link to="/servicos/aulas-em-grupo">
-                    <Button className="w-full mt-auto">
-                      Saiba Mais
-                    </Button>
-                  </Link>
+                  <div className="flex gap-2 mt-auto">
+                    <a
+                      href={`https://wa.me/${whatsappNumber}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1"
+                    >
+                      <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
+                        <WhatsAppIcon className="w-4 h-4" />
+                      </Button>
+                    </a>
+                    <a
+                      href="mailto:contato@auladeinglesemcasa.com"
+                      className="flex-1"
+                    >
+                      <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                        <Mail className="w-4 h-4" />
+                      </Button>
+                    </a>
+                  </div>
                 </CardContent>
               </Card>
 
@@ -294,11 +352,26 @@ export function HomePage() {
                     <li>• Correção de pronúncia</li>
                     <li>• Ganho de confiança</li>
                   </ul>
-                  <Link to="/servicos/aulas-conversacao">
-                    <Button className="w-full mt-auto">
-                      Saiba Mais
-                    </Button>
-                  </Link>
+                  <div className="flex gap-2 mt-auto">
+                    <a
+                      href={`https://wa.me/${whatsappNumber}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      className="flex-1"
+                    >
+                      <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
+                        <WhatsAppIcon className="w-4 h-4" />
+                      </Button>
+                    </a>
+                    <a
+                      href="mailto:contato@auladeinglesemcasa.com"
+                      className="flex-1"
+                    >
+                      <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
+                        <Mail className="w-4 h-4" />
+                      </Button>
+                    </a>
+                  </div>
                 </CardContent>
               </Card>
             </div>
