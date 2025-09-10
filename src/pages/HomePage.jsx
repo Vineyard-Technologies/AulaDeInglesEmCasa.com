@@ -7,14 +7,14 @@ import { Link } from "react-router-dom"
 import { updateMetaTags, addStructuredData, createEducationServiceSchema, createPersonSchema, pageMetaData } from "@/utils/seo"
 
 // Public asset URLs (no imports needed)
-const homepageLogo = "/homepageLogo.webp"
+const homepageLogo = "/AulasDeInglesEmCasaIcon.webp"
 const cityVideoH264 = "/city-h264.mp4"
 const cityVideoAV1 = "/city-av1.mp4"
 const aulasOnlineImage = "/aulasOnlineHomepage.webp"
 const aulasIndividuaisImage = "/AulasIndividuaisHomepage.webp"
 const aulaEmGrupoImage = "/aulaEmGrupoHomepage.webp"
 const aulasConversacaoImage = "/aulasDeConversacaoHomepage.webp"
-const andrewRogersImage = "/Andrew Rogers.webp"
+const andrewRogersImage = "/andrew-rogers.webp"
 import { 
   MessageCircle, 
   Mail, 

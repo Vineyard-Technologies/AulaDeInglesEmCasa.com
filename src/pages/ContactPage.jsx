@@ -9,7 +9,7 @@ import { LazyLoad } from "@/components"
 import { updateMetaTags, addStructuredData, createEducationServiceSchema, pageMetaData } from "@/utils/seo"
 
 // Public asset URLs (no imports needed)
-const homepageLogo = "/homepageLogo.webp"
+const homepageLogo = "/AulasDeInglesEmCasaIcon.webp"
 import { 
   MessageCircle, 
   Phone, 

@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-const logoHorizontal = "/logoHorizontal.webp"
+const logoHorizontal = "/AulasDeInglesEmCasaLogo.webp"
 
 export function Footer() {
   return (

@@ -5,7 +5,7 @@ import { LazyLoad, LazyImage } from "@/components"
 import { updateMetaTags, addStructuredData, createPersonSchema, pageMetaData } from "@/utils/seo"
 
 // Public asset URLs (no imports needed)
-const andrewRogersImage = "/Andrew Rogers.webp"
+const andrewRogersImage = "/andrew-rogers.webp"
 const aboutPhoto1 = "/AboutPhoto1.webp"
 const aboutPhoto2 = "/AboutPhoto2.webp"
 const aboutPhoto3 = "/AboutPhoto3.webp"
