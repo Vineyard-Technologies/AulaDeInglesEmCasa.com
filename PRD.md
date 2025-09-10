@@ -1,10 +1,10 @@
 # Planning Guide
 
-Website profissional para Andrew Rogers oferecendo aulas particulares de inglês em domicílio em Campo Grande, MS, conectando estudantes locais com ensino personalizado de qualidade.
+Website profissional para Andrew Rogers oferecendo aula particular de inglês em domicílio em Campo Grande, MS, conectando estudantes locais com ensino personalizado de qualidade.
 
 **Experience Qualities**: 
 1. Confiável - O site deve transmitir profissionalismo e credibilidade para pais e estudantes que contratam um professor particular
-2. Acolhedor - Criar uma atmosfera calorosa que reflita o ensino personalizado e a conveniência de aulas em casa
+2. Acolhedor - Criar uma atmosfera calorosa que reflita o ensino personalizado e a conveniência de aula em casa
 3. Acessível - Interface clara e direta que facilite o contato e agendamento de aulas
 
 **Complexity Level**: Content Showcase (information-focused)
@@ -23,7 +23,7 @@ Website profissional para Andrew Rogers oferecendo aulas particulares de inglês
 - Functionality: Seção detalhando qualificações, experiência e metodologia
 - Purpose: Construir confiança através de credenciais e abordagem pessoal
 - Trigger: Scroll ou navegação
-- Progression: Foto profissional → qualificações → experiência → metodologia → benefícios das aulas em casa
+- Progression: Foto profissional → qualificações → experiência → metodologia → benefícios das aula em casa
 - Success criteria: Pais/estudantes sentem confiança para contratar
 
 **Serviços Oferecidos**

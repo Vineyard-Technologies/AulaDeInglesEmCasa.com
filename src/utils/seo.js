@@ -72,7 +72,7 @@ export const createPersonSchema = () => ({
   "@type": "Person",
   "name": "Andrew Christopher Rogers",
   "jobTitle": "Professor de Inglês",
-  "description": "Professor americano de inglês com mais de 10 anos de experiência, especializado em aulas personalizadas para brasileiros.",
+  "description": "Professor americano de inglês com mais de 10 anos de experiência, especializado em aula personalizada para brasileiros.",
   "nationality": "American",
   "knowsLanguage": ["English", "Portuguese"],
   "address": {
@@ -92,7 +92,7 @@ export const createPersonSchema = () => ({
 export const createEducationServiceSchema = () => ({
   "@context": "https://schema.org",
   "@type": "EducationalOrganization",
-  "name": "Aulas de Inglês em Casa",
+  "name": "Aula de Inglês em Casa",
   "description": "Serviços de ensino de inglês personalizados em Campo Grande, MS, oferecidos por professor americano nativo.",
   "address": {
     "@type": "PostalAddress",
@@ -140,20 +140,20 @@ export const createServiceSchema = (serviceName, description) => ({
 // Page-specific SEO data
 export const pageMetaData = {
   home: {
-    title: "Início | Aulas de Inglês em Casa | Campo Grande, MS",
-    description: "Aulas de inglês personalizadas em Campo Grande, MS com Andrew Rogers. Professor americano nativo com mais de 10 anos de experiência. Aulas online, individuais e em grupo.",
+    title: "Início | Aula de Inglês em Casa | Campo Grande, MS",
+    description: "Aula de inglês personalizadas em Campo Grande, MS com Andrew Rogers. Professor americano nativo com mais de 10 anos de experiência. Aula online, individual e em grupo.",
     url: "https://auladeinglesemcasa.com",
     image: "https://auladeinglesemcasa.com/AulasDeInglesEmCasaLogo.webp"
   },
   about: {
-    title: "Sobre | Aulas de Inglês em Casa | Campo Grande, MS",
+    title: "Sobre | Aula de Inglês em Casa | Campo Grande, MS",
     description: "Conheça Andrew Rogers, professor americano de inglês em Campo Grande, MS. Mais de 10 anos de experiência e 5 anos focado em alunos brasileiros.",
     url: "https://auladeinglesemcasa.com/sobre",
     image: "https://auladeinglesemcasa.com/AulasDeInglesEmCasaLogo.webp"
   },
   contact: {
-    title: "Contato | Aulas de Inglês em Casa | Campo Grande, MS",
-    description: "Entre em contato para agendar suas aulas de inglês em Campo Grande, MS. WhatsApp: (67) 99616-1199 ou email: contato@auladeinglesemcasa.com",
+    title: "Contato | Aula de Inglês em Casa | Campo Grande, MS",
+    description: "Entre em contato para agendar sua aula de inglês em Campo Grande, MS. WhatsApp: (67) 99616-1199 ou email: contato@auladeinglesemcasa.com",
     url: "https://auladeinglesemcasa.com/contato",
     image: "https://auladeinglesemcasa.com/AulasDeInglesEmCasaLogo.webp"
   }

@@ -7,13 +7,13 @@ import { Link } from "react-router-dom"
 import { updateMetaTags, addStructuredData, createEducationServiceSchema, createPersonSchema, pageMetaData } from "@/utils/seo"
 
 // Public asset URLs (no imports needed)
-const homepageLogo = "/AulasDeInglesEmCasaIcon.webp"
-const cityImage = "/city.webp"
-const aulasOnlineImage = "/aulasOnlineHomepage.webp"
-const aulasIndividuaisImage = "/AulasIndividuaisHomepage.webp"
-const aulaEmGrupoImage = "/aulaEmGrupoHomepage.webp"
-const aulasConversacaoImage = "/aulasDeConversacaoHomepage.webp"
-const andrewRogersImage = "/andrew-rogers.webp"
+const homepageLogo = "/AulaDeInglesEmCasaIcon.webp"
+const cityImage = "/City.webp"
+const aulasOnlineImage = "/AulaOnline.webp"
+const aulasIndividuaisImage = "/AulaIndividual.webp"
+const aulaEmGrupoImage = "/AulaEmGrupo.webp"
+const aulasConversacaoImage = "/AulaDeConversacao.webp"
+const andrewRogersImage = "/AndrewRogers.webp"
 import { 
   MessageCircle, 
   Mail, 
@@ -63,13 +63,13 @@ export function HomePage() {
             <div className="w-32 h-20 mx-auto flex items-center justify-center">
               <img 
                 src={homepageLogo} 
-                alt="Aulas de Inglês em Casa - Andrew Rogers" 
+                alt="Aula de Inglês em Casa - Andrew Rogers" 
                 className="max-w-full max-h-full object-contain"
               />
             </div>
             
             <h1 className="text-4xl md:text-6xl font-bold mb-4">
-              Aulas de Inglês em Casa
+              Aula de Inglês em Casa
             </h1>
             <p className="text-xl md:text-2xl mb-6 text-primary-foreground/90">
               Professor Andrew Christopher Rogers
@@ -138,7 +138,7 @@ export function HomePage() {
                     </div>
                     <div className="flex items-center gap-3">
                       <MapPin className="w-6 h-6 text-primary" />
-                      <span className="font-medium">Aulas em domicílio em Campo Grande</span>
+                      <span className="font-medium">Aula em domicílio em Campo Grande</span>
                     </div>
                     <div className="flex items-center gap-3">
                       <BookOpen className="w-6 h-6 text-primary" />
@@ -203,14 +203,14 @@ export function HomePage() {
                 <div className="aspect-video w-full overflow-hidden rounded-lg">
                   <LazyImage 
                     src={aulasOnlineImage} 
-                    alt="Aulas Online" 
+                    alt="Aula Online" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <CardHeader className="flex-shrink-0">
                   <CardTitle className="flex items-center gap-2">
                     <Video className="w-5 h-5 text-primary" />
-                    Aulas Online
+                    Aula Online
                   </CardTitle>
                   <CardDescription>
                     Flexibilidade no conforto de casa
@@ -220,7 +220,7 @@ export function HomePage() {
                   <ul className="space-y-2 text-sm mb-4 flex-grow">
                     <li>• Plataformas digitais interativas</li>
                     <li>• Material em tempo real</li>
-                    <li>• Gravação das aulas disponível</li>
+                    <li>• Gravação das aula disponível</li>
                     <li>• Horários flexíveis</li>
                   </ul>
                   <div className="flex gap-2 mt-auto">
@@ -252,14 +252,14 @@ export function HomePage() {
                 <div className="aspect-video w-full overflow-hidden rounded-lg">
                   <LazyImage 
                     src={aulasIndividuaisImage} 
-                    alt="Aulas Individuais" 
+                    alt="Aula Individual" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <CardHeader className="flex-shrink-0">
                   <CardTitle className="flex items-center gap-2">
                     <Users className="w-5 h-5 text-primary" />
-                    Aulas Individuais
+                    Aula Individual
                   </CardTitle>
                   <CardDescription>
                     Atenção personalizada e foco total
@@ -301,14 +301,14 @@ export function HomePage() {
                 <div className="aspect-video w-full overflow-hidden rounded-lg">
                   <LazyImage 
                     src={aulaEmGrupoImage} 
-                    alt="Aulas em Grupo" 
+                    alt="Aula em Grupo" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <CardHeader className="flex-shrink-0">
                   <CardTitle className="flex items-center gap-2">
                     <BookOpen className="w-5 h-5 text-primary" />
-                    Aulas em Grupo
+                    Aula em Grupo
                   </CardTitle>
                   <CardDescription>
                     Aprendizado colaborativo
@@ -350,14 +350,14 @@ export function HomePage() {
                 <div className="aspect-video w-full overflow-hidden rounded-lg">
                   <LazyImage 
                     src={aulasConversacaoImage} 
-                    alt="Aulas de Conversação" 
+                    alt="Aula de Conversação" 
                     className="w-full h-full object-cover"
                   />
                 </div>
                 <CardHeader className="flex-shrink-0">
                   <CardTitle className="flex items-center gap-2">
                     <MessageCircle className="w-5 h-5 text-primary" />
-                    Aulas de Conversação
+                    Aula de Conversação
                   </CardTitle>
                   <CardDescription>
                     Desenvolva fluência e confiança
@@ -448,13 +448,13 @@ export function HomePage() {
                   <div className="w-24 h-16 mx-auto flex items-center justify-center">
                     <img 
                       src={homepageLogo} 
-                      alt="Aulas de Inglês em Casa - Andrew Rogers" 
+                      alt="Aula de Inglês em Casa - Andrew Rogers" 
                       className="max-w-full max-h-full object-contain"
                     />
                   </div>
                   
                   <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                    Aulas de Inglês em Casa em Campo Grande, MS
+                    Aula de Inglês em Casa em Campo Grande, MS
                   </h2>
                   
                   <div className="flex flex-col sm:flex-row gap-4 justify-center">

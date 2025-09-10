@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { WhatsAppIcon } from '@/components/icons/WhatsAppIcon'
-const logoHorizontal = '/AulasDeInglesEmCasaLogo.webp'
+const logoHorizontal = '/AulaDeInglesEmCasaLogo.webp'
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
@@ -19,7 +19,7 @@ export function Navigation() {
           <Link to="/" className="flex items-center py-2.5">
             <img 
               src={logoHorizontal} 
-              alt="Aulas de Inglês em Casa" 
+              alt="Aula de Inglês em Casa" 
               className="w-[300px] h-[60px]"
             />
           </Link>

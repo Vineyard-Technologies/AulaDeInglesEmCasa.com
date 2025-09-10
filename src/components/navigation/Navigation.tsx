@@ -24,10 +24,10 @@ export const Navigation = () => {
   ]
 
   const serviceItems = [
-    { path: '/servicos/aulas-online', label: 'Aulas Online' },
-    { path: '/servicos/aulas-individuais', label: 'Aulas Individuais' },
-    { path: '/servicos/aulas-em-grupo', label: 'Aulas em Grupo' },
-    { path: '/servicos/aulas-conversacao', label: 'Aulas de Conversação' },
+    { path: '/servicos/aula-online', label: 'Aula Online' },
+    { path: '/servicos/aula-individual', label: 'Aula Individual' },
+    { path: '/servicos/aula-em-grupo', label: 'Aula em Grupo' },
+    { path: '/servicos/aula-conversacao', label: 'Aula de Conversação' },
   ]
 
   return (
@@ -38,7 +38,7 @@ export const Navigation = () => {
           <Link to="/" className="flex items-center py-2.5">
             <img 
               src={logoHorizontal} 
-              alt="Aulas de Inglês em Casa" 
+              alt="Aula de Inglês em Casa" 
               className="w-[300px] h-[60px]"
             />
           </Link>

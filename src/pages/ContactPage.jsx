@@ -123,7 +123,7 @@ export function ContactPage() {
         </div>
       </section>
 
-      {/* Aulas de Inglês em Casa em Campo Grande, MS Section */}
+      {/* Aula de Inglês em Casa em Campo Grande, MS Section */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
@@ -133,13 +133,13 @@ export function ContactPage() {
                   <div className="w-24 h-16 mx-auto flex items-center justify-center">
                     <img 
                       src={homepageLogo} 
-                      alt="Aulas de Inglês em Casa - Andrew Rogers" 
+                      alt="Aula de Inglês em Casa - Andrew Rogers" 
                       className="max-w-full max-h-full object-contain"
                     />
                   </div>
                   
                   <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                    Aulas de Inglês em Casa em Campo Grande, MS
+                    Aula de Inglês em Casa em Campo Grande, MS
                   </h2>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
