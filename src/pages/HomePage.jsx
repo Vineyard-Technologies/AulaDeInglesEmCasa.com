@@ -2,14 +2,13 @@ import { useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon"
-import { LazyLoad, LazyImage, VideoBackground } from "@/components"
+import { LazyLoad, LazyImage } from "@/components"
 import { Link } from "react-router-dom"
 import { updateMetaTags, addStructuredData, createEducationServiceSchema, createPersonSchema, pageMetaData } from "@/utils/seo"
 
 // Public asset URLs (no imports needed)
 const homepageLogo = "/AulasDeInglesEmCasaIcon.webp"
-const cityVideoH264 = "/city-h264.mp4"
-const cityVideoAV1 = "/city-av1.mp4"
+const cityImage = "/city.webp"
 const aulasOnlineImage = "/aulasOnlineHomepage.webp"
 const aulasIndividuaisImage = "/AulasIndividuaisHomepage.webp"
 const aulaEmGrupoImage = "/aulaEmGrupoHomepage.webp"
@@ -44,19 +43,21 @@ export function HomePage() {
     addStructuredData(combinedSchema);
   }, [])
   
-  const videoSources = [
-    { src: cityVideoAV1, type: 'video/mp4; codecs=av01.0.05M.08' },
-    { src: cityVideoH264, type: 'video/mp4; codecs=avc1.640028' }
-  ]
-  
   return (
-    <div className="min-h-screen bg-background">
+    <div className="min-h-screen bg-background overflow-x-hidden">
       {/* Hero Section */}
-      <VideoBackground
-        videoSources={videoSources}
-        className="text-primary-foreground py-20"
-      >
+      <section className="relative text-primary-foreground py-20 overflow-hidden">
+        {/* Background Image */}
+        <img 
+          src={cityImage} 
+          alt="Campo Grande cityscape" 
+          className="absolute inset-0 w-full h-full object-cover"
+        />
+        
+        {/* Dark overlay */}
         <div className="absolute inset-0 bg-black/60"></div>
+        
+        {/* Content */}
         <div className="container mx-auto px-4 text-center relative z-10">
           <div className="max-w-4xl mx-auto">
             <div className="w-32 h-20 mx-auto flex items-center justify-center">
@@ -104,7 +105,7 @@ export function HomePage() {
             </div>
           </div>
         </div>
-      </VideoBackground>
+      </section>
 
       {/* Welcome Section */}
       <section className="py-16 bg-background">
