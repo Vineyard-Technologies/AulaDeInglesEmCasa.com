@@ -3,7 +3,7 @@ import { Link, useLocation } from 'react-router-dom'
 import { Menu, X } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { WhatsAppIcon } from '@/components/icons/WhatsAppIcon'
-import logoHorizontal from '@/assets/images/logoHorizontal.webp'
+const logoHorizontal = '/logoHorizontal.webp'
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)

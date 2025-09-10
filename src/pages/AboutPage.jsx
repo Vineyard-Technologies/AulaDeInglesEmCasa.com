@@ -3,10 +3,12 @@ import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { GraduationCap, Award } from "lucide-react"
 import { LazyLoad, LazyImage } from "@/components"
 import { updateMetaTags, addStructuredData, createPersonSchema, pageMetaData } from "@/utils/seo"
-import andrewRogersImage from "@/assets/images/Andrew Rogers.webp"
-import aboutPhoto1 from "@/assets/images/AboutPhoto1.webp"
-import aboutPhoto2 from "@/assets/images/AboutPhoto2.webp"
-import aboutPhoto3 from "@/assets/images/AboutPhoto3.webp"
+
+// Public asset URLs (no imports needed)
+const andrewRogersImage = "/Andrew Rogers.webp"
+const aboutPhoto1 = "/AboutPhoto1.webp"
+const aboutPhoto2 = "/AboutPhoto2.webp"
+const aboutPhoto3 = "/AboutPhoto3.webp"
 
 export function AboutPage() {
   useEffect(() => {

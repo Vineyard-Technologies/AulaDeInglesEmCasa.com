@@ -3,7 +3,8 @@ import { Navigation, Footer, ScrollToTop } from '@/components'
 import { 
   HomePage, 
   AboutPage, 
-  ContactPage
+  ContactPage,
+  NotFoundPage
 } from '@/pages'
 
 export default function App() {
@@ -16,6 +17,7 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/sobre" element={<AboutPage />} />
           <Route path="/contato" element={<ContactPage />} />
+          <Route path="*" element={<NotFoundPage />} />
         </Routes>
         <Footer />
       </div>

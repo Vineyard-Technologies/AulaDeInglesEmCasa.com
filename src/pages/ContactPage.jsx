@@ -6,8 +6,10 @@ import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon"
 import { LazyLoad } from "@/components"
-import homepageLogo from "@/assets/images/homepageLogo.webp"
 import { updateMetaTags, addStructuredData, createEducationServiceSchema, pageMetaData } from "@/utils/seo"
+
+// Public asset URLs (no imports needed)
+const homepageLogo = "/homepageLogo.webp"
 import { 
   MessageCircle, 
   Phone, 

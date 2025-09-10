@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom"
-import logoHorizontal from "@/assets/images/logoHorizontal.webp"
+const logoHorizontal = "/logoHorizontal.webp"
 
 export function Footer() {
   return (

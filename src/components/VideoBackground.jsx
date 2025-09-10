@@ -1,5 +1,8 @@
 import { useState, useRef, useEffect } from 'react'
 
+// "Page Shield" or "Bot Fight Mode" in Cloudflare may have broken video loading (with no console error)
+// Toggling those settings off then back on seems to fix the issue
+
 export function VideoBackground({ 
   videoSources, 
   className = '',

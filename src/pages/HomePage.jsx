@@ -5,15 +5,16 @@ import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon"
 import { LazyLoad, LazyImage, VideoBackground } from "@/components"
 import { Link } from "react-router-dom"
 import { updateMetaTags, addStructuredData, createEducationServiceSchema, createPersonSchema, pageMetaData } from "@/utils/seo"
-import homepageLogo from "@/assets/images/homepageLogo.webp"
-import seattleBackground from "@/assets/images/seattle.webp"
-import seattleVideoH264 from "@/assets/videos/city-h264.mp4"
-import seattleVideoAV1 from "@/assets/videos/city-av1.mp4"
-import aulasOnlineImage from "@/assets/images/aulasOnlineHomepage.webp"
-import aulasIndividuaisImage from "@/assets/images/AulasIndividuaisHomepage.webp"
-import aulaEmGrupoImage from "@/assets/images/aulaEmGrupoHomepage.webp"
-import aulasConversacaoImage from "@/assets/images/aulasDeConversacaoHomepage.webp"
-import andrewRogersImage from "@/assets/images/Andrew Rogers.webp"
+
+// Public asset URLs (no imports needed)
+const homepageLogo = "/homepageLogo.webp"
+const cityVideoH264 = "/city-h264.mp4"
+const cityVideoAV1 = "/city-av1.mp4"
+const aulasOnlineImage = "/aulasOnlineHomepage.webp"
+const aulasIndividuaisImage = "/AulasIndividuaisHomepage.webp"
+const aulaEmGrupoImage = "/aulaEmGrupoHomepage.webp"
+const aulasConversacaoImage = "/aulasDeConversacaoHomepage.webp"
+const andrewRogersImage = "/Andrew Rogers.webp"
 import { 
   MessageCircle, 
   Mail, 
@@ -44,8 +45,8 @@ export function HomePage() {
   }, [])
   
   const videoSources = [
-    { src: seattleVideoAV1, type: 'video/mp4; codecs=av01.0.05M.08' },
-    { src: seattleVideoH264, type: 'video/mp4; codecs=avc1.640028' }
+    { src: cityVideoAV1, type: 'video/mp4; codecs=av01.0.05M.08' },
+    { src: cityVideoH264, type: 'video/mp4; codecs=avc1.640028' }
   ]
   
   return (
