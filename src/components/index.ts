@@ -1,2 +1,6 @@
 export { Navigation } from './navigation/Navigation.jsx'
 export { Footer } from './Footer.jsx'
+export { ScrollToTop } from './ScrollToTop.jsx'
+export { LazyLoad } from './LazyLoad.jsx'
+export { LazyImage } from './LazyImage.jsx'
+export { VideoBackground } from './VideoBackground.jsx'

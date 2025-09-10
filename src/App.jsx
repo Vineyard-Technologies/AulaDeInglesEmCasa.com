@@ -1,5 +1,5 @@
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
-import { Navigation, Footer } from '@/components'
+import { Navigation, Footer, ScrollToTop } from '@/components'
 import { 
   HomePage, 
   AboutPage, 
@@ -9,6 +9,7 @@ import {
 export default function App() {
   return (
     <Router>
+      <ScrollToTop />
       <div className="min-h-screen bg-background">
         <Navigation />
         <Routes>

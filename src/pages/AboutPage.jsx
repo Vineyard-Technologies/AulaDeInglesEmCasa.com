@@ -1,6 +1,7 @@
 import { useEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { GraduationCap, Award } from "lucide-react"
+import { LazyLoad, LazyImage } from "@/components"
 import { updateMetaTags, addStructuredData, createPersonSchema, pageMetaData } from "@/utils/seo"
 import andrewRogersImage from "@/assets/images/Andrew Rogers.webp"
 import aboutPhoto1 from "@/assets/images/AboutPhoto1.webp"
@@ -24,22 +25,23 @@ export function AboutPage() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-start">
               {/* Biography */}
-              <div>
-                <h2 className="text-3xl font-bold mb-6">Sobre o professor</h2>
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <div className="flex gap-4 items-start">
-                    <p className="flex-1">
-                      Andrew é do estado de Washington, EUA, nascido e criado na região de Seattle.
-                      Estudou no Bellevue College e começou a aprender português em 2015.
-                      Casou-se com sua esposa campo-grandense em 2018.
-                      Ele era um membro ativo da comunidade de imigrantes brasileiros no oeste de Washington.
-                    </p>
-                    <img 
-                      src={andrewRogersImage} 
-                      alt="Andrew Rogers" 
-                      className="w-32 h-32 rounded-lg object-cover flex-shrink-0"
-                    />
-                  </div>
+              <LazyLoad delay={100} animationClass="fade-in-left">
+                <div>
+                  <h2 className="text-3xl font-bold mb-6">Sobre o professor</h2>
+                  <div className="space-y-4 text-muted-foreground leading-relaxed">
+                    <div className="flex gap-4 items-start">
+                      <p className="flex-1">
+                        Andrew é do estado de Washington, EUA, nascido e criado na região de Seattle.
+                        Estudou no Bellevue College e começou a aprender português em 2015.
+                        Casou-se com sua esposa campo-grandense em 2018.
+                        Ele era um membro ativo da comunidade de imigrantes brasileiros no oeste de Washington.
+                      </p>
+                      <LazyImage 
+                        src={andrewRogersImage} 
+                        alt="Andrew Rogers" 
+                        className="w-32 h-32 rounded-lg object-cover flex-shrink-0"
+                      />
+                    </div>
                   <p>
                     Andrew adquiriu vasta experiência ensinando inglês para brasileiros e estrangeiros sem nunca ter pisado no Brasil.
                     Isso incluiu uma aula on-line via Zoom durante a pandemia de COVID-19.
@@ -52,10 +54,12 @@ export function AboutPage() {
                   </p>
                 </div>
               </div>
+              </LazyLoad>
 
               {/* Qualifications */}
-              <div>
-                <h2 className="text-3xl font-bold mb-6">Qualificações</h2>
+              <LazyLoad delay={200} animationClass="fade-in-right">
+                <div>
+                  <h2 className="text-3xl font-bold mb-6">Qualificações</h2>
                 <div className="space-y-4">
                   <Card>
                     <CardHeader>
@@ -90,28 +94,31 @@ export function AboutPage() {
                   </Card>
                 </div>
               </div>
+              </LazyLoad>
             </div>
             
             {/* Photo Gallery */}
-            <div className="mt-12">
-              <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                <img 
-                  src={aboutPhoto1} 
-                  alt="Andrew Rogers ensinando inglês em ambiente profissional" 
-                  className="w-full h-48 rounded-lg object-cover"
-                />
-                <img 
-                  src={aboutPhoto2} 
-                  alt="Andrew Rogers com família em Campo Grande, MS" 
-                  className="w-full h-48 rounded-lg object-cover"
-                />
-                <img 
-                  src={aboutPhoto3} 
-                  alt="Andrew Rogers em atividades comunitárias e voluntariado" 
-                  className="w-full h-48 rounded-lg object-cover"
-                />
+            <LazyLoad delay={300}>
+              <div className="mt-12">
+                <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
+                  <LazyImage 
+                    src={aboutPhoto1} 
+                    alt="Andrew Rogers ensinando inglês em ambiente profissional" 
+                    className="w-full h-48 rounded-lg object-cover"
+                  />
+                  <LazyImage 
+                    src={aboutPhoto2} 
+                    alt="Andrew Rogers com família em Campo Grande, MS" 
+                    className="w-full h-48 rounded-lg object-cover"
+                  />
+                  <LazyImage 
+                    src={aboutPhoto3} 
+                    alt="Andrew Rogers em atividades comunitárias e voluntariado" 
+                    className="w-full h-48 rounded-lg object-cover"
+                  />
+                </div>
               </div>
-            </div>
+            </LazyLoad>
           </div>
         </div>
       </section>

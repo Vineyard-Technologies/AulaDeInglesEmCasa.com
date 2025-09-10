@@ -5,6 +5,7 @@ import { Input } from "@/components/ui/input"
 import { Textarea } from "@/components/ui/textarea"
 import { Label } from "@/components/ui/label"
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon"
+import { LazyLoad } from "@/components"
 import homepageLogo from "@/assets/images/homepageLogo.webp"
 import { updateMetaTags, addStructuredData, createEducationServiceSchema, pageMetaData } from "@/utils/seo"
 import { 
@@ -62,38 +63,41 @@ export function ContactPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">
-              Entre em Contato
-            </h2>
+            <LazyLoad delay={100}>
+              <h2 className="text-3xl font-bold text-center mb-12">
+                Entre em Contato
+              </h2>
+            </LazyLoad>
             
             {/* Contact Information */}
-            <div className="max-w-2xl mx-auto">
-              <div className="grid md:grid-cols-2 gap-8">
-                {/* WhatsApp */}
-                <Card className="text-center p-6">
-                  <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                    <WhatsAppIcon className="w-8 h-8 text-green-500" />
-                  </div>
-                  <h3 className="text-xl font-semibold mb-2">WhatsApp</h3>
-                  <p className="text-muted-foreground mb-4">
-                    <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer" className="text-green-500 hover:underline">
-                      (67) 99616-1199
+            <LazyLoad delay={200}>
+              <div className="max-w-2xl mx-auto">
+                <div className="grid md:grid-cols-2 gap-8">
+                  {/* WhatsApp */}
+                  <Card className="text-center p-6">
+                    <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                      <WhatsAppIcon className="w-8 h-8 text-green-500" />
+                    </div>
+                    <h3 className="text-xl font-semibold mb-2">WhatsApp</h3>
+                    <p className="text-muted-foreground mb-4">
+                      <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer" className="text-green-500 hover:underline">
+                        (67) 99616-1199
+                      </a>
+                    </p>
+                    <a 
+                      href={`https://wa.me/${whatsappNumber}`}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
+                      <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
+                        <WhatsAppIcon className="w-4 h-4 mr-2" />
+                        Enviar Mensagem
+                      </Button>
                     </a>
-                  </p>
-                  <a 
-                    href={`https://wa.me/${whatsappNumber}`}
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
-                      <WhatsAppIcon className="w-4 h-4 mr-2" />
-                      Enviar Mensagem
-                    </Button>
-                  </a>
-                </Card>
+                  </Card>
 
-                {/* Email */}
-                <Card className="text-center p-6">
+                  {/* Email */}
+                  <Card className="text-center p-6">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Mail className="w-8 h-8 text-primary" />
                   </div>
@@ -112,6 +116,7 @@ export function ContactPage() {
                 </Card>
               </div>
             </div>
+            </LazyLoad>
           </div>
         </div>
       </section>
@@ -121,18 +126,19 @@ export function ContactPage() {
         <div className="container mx-auto px-4">
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
-              <div className="text-center flex flex-col justify-center">
-                <div className="w-24 h-16 mx-auto flex items-center justify-center">
-                  <img 
-                    src={homepageLogo} 
-                    alt="Aulas de Inglês em Casa - Andrew Rogers" 
-                    className="max-w-full max-h-full object-contain"
-                  />
-                </div>
-                
-                <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                  Aulas de Inglês em Casa em Campo Grande, MS
-                </h2>
+              <LazyLoad delay={300} animationClass="fade-in-left">
+                <div className="text-center flex flex-col justify-center">
+                  <div className="w-24 h-16 mx-auto flex items-center justify-center">
+                    <img 
+                      src={homepageLogo} 
+                      alt="Aulas de Inglês em Casa - Andrew Rogers" 
+                      className="max-w-full max-h-full object-contain"
+                    />
+                  </div>
+                  
+                  <h2 className="text-3xl md:text-4xl font-bold mb-8">
+                    Aulas de Inglês em Casa em Campo Grande, MS
+                  </h2>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
                   <a 
@@ -159,21 +165,24 @@ export function ContactPage() {
                   </a>
                 </div>
               </div>
+              </LazyLoad>
               
-              <div>
-                <div className="bg-background rounded-lg p-4 shadow-lg">
-                  <iframe 
-                    src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119603.60236497635!2d-54.63553405!3d-20.481099800000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9486e6726b2b9f27%3A0xf5a8469ebc84d2c1!2sCampo%20Grande%2C%20State%20of%20Mato%20Grosso%20do%20Sul!5e0!3m2!1sen!2sbr!4v1757361385073!5m2!1sen!2sbr" 
-                    width="100%" 
-                    height="250" 
-                    style={{ border: 0 }} 
-                    allowFullScreen="" 
-                    loading="lazy" 
-                    referrerPolicy="no-referrer-when-downgrade"
-                    className="rounded-lg"
-                  ></iframe>
+              <LazyLoad delay={400} animationClass="fade-in-right">
+                <div>
+                  <div className="bg-background rounded-lg p-4 shadow-lg">
+                    <iframe 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119603.60236497635!2d-54.63553405!3d-20.481099800000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9486e6726b2b9f27%3A0xf5a8469ebc84d2c1!2sCampo%20Grande%2C%20State%20of%20Mato%20Grosso%20do%20Sul!5e0!3m2!1sen!2sbr!4v1757361385073!5m2!1sen!2sbr" 
+                      width="100%" 
+                      height="250" 
+                      style={{ border: 0 }} 
+                      allowFullScreen="" 
+                      loading="lazy" 
+                      referrerPolicy="no-referrer-when-downgrade"
+                      className="rounded-lg"
+                    ></iframe>
+                  </div>
                 </div>
-              </div>
+              </LazyLoad>
             </div>
           </div>
         </div>
