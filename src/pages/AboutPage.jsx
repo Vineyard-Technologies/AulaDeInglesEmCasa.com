@@ -2,6 +2,10 @@ import { useEffect } from "react"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { GraduationCap, Award } from "lucide-react"
 import { updateMetaTags, addStructuredData, createPersonSchema, pageMetaData } from "@/utils/seo"
+import andrewRogersImage from "@/assets/images/Andrew Rogers.webp"
+import aboutPhoto1 from "@/assets/images/AboutPhoto1.webp"
+import aboutPhoto2 from "@/assets/images/AboutPhoto2.webp"
+import aboutPhoto3 from "@/assets/images/AboutPhoto3.webp"
 
 export function AboutPage() {
   useEffect(() => {
@@ -31,7 +35,7 @@ export function AboutPage() {
                       Ele era um membro ativo da comunidade de imigrantes brasileiros no oeste de Washington.
                     </p>
                     <img 
-                      src="/src/assets/images/Andrew Rogers.webp" 
+                      src={andrewRogersImage} 
                       alt="Andrew Rogers" 
                       className="w-32 h-32 rounded-lg object-cover flex-shrink-0"
                     />
@@ -92,17 +96,17 @@ export function AboutPage() {
             <div className="mt-12">
               <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
                 <img 
-                  src="/src/assets/images/AboutPhoto1.webp" 
+                  src={aboutPhoto1} 
                   alt="Andrew Rogers ensinando inglês em ambiente profissional" 
                   className="w-full h-48 rounded-lg object-cover"
                 />
                 <img 
-                  src="/src/assets/images/AboutPhoto2.webp" 
+                  src={aboutPhoto2} 
                   alt="Andrew Rogers com família em Campo Grande, MS" 
                   className="w-full h-48 rounded-lg object-cover"
                 />
                 <img 
-                  src="/src/assets/images/AboutPhoto3.webp" 
+                  src={aboutPhoto3} 
                   alt="Andrew Rogers em atividades comunitárias e voluntariado" 
                   className="w-full h-48 rounded-lg object-cover"
                 />
