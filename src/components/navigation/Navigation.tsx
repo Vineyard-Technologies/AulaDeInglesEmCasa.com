@@ -8,7 +8,7 @@ import {
   DropdownMenuTrigger,
 } from '@/components/ui/dropdown-menu'
 import { ChevronDown, Menu, X } from 'lucide-react'
-import logoHorizontal from '@/assets/images/AulasDeInglesEmCasaLogo.webp'
+import logoHorizontal from '@/assets/images/AulaDeInglesEmCasaLogo.webp'
 
 export const Navigation = () => {
   const [isMenuOpen, setIsMenuOpen] = useState(false)

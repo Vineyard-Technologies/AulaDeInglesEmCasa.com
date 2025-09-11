@@ -143,18 +143,18 @@ export const pageMetaData = {
     title: "Início | Aula de Inglês em Casa | Campo Grande, MS",
     description: "Aula de inglês personalizadas em Campo Grande, MS com Andrew Rogers. Professor americano nativo com mais de 10 anos de experiência. Aula online, individual e em grupo.",
     url: "https://auladeinglesemcasa.com",
-    image: "https://auladeinglesemcasa.com/AulasDeInglesEmCasaLogo.webp"
+    image: "https://auladeinglesemcasa.com/AulaDeInglesEmCasaLogo.webp"
   },
   about: {
     title: "Sobre | Aula de Inglês em Casa | Campo Grande, MS",
     description: "Conheça Andrew Rogers, professor americano de inglês em Campo Grande, MS. Mais de 10 anos de experiência e 5 anos focado em alunos brasileiros.",
     url: "https://auladeinglesemcasa.com/sobre",
-    image: "https://auladeinglesemcasa.com/AulasDeInglesEmCasaLogo.webp"
+    image: "https://auladeinglesemcasa.com/AulaDeInglesEmCasaLogo.webp"
   },
   contact: {
     title: "Contato | Aula de Inglês em Casa | Campo Grande, MS",
     description: "Entre em contato para agendar sua aula de inglês em Campo Grande, MS. WhatsApp: (67) 99616-1199 ou email: contato@auladeinglesemcasa.com",
     url: "https://auladeinglesemcasa.com/contato",
-    image: "https://auladeinglesemcasa.com/AulasDeInglesEmCasaLogo.webp"
+    image: "https://auladeinglesemcasa.com/AulaDeInglesEmCasaLogo.webp"
   }
 };

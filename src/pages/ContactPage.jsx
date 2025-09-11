@@ -9,7 +9,7 @@ import { LazyLoad } from "@/components"
 import { updateMetaTags, addStructuredData, createEducationServiceSchema, pageMetaData } from "@/utils/seo"
 
 // Public asset URLs (no imports needed)
-const homepageLogo = "/AulasDeInglesEmCasaIcon.webp"
+const homepageLogo = "/AulaDeInglesEmCasaIcon.webp"
 import { 
   MessageCircle, 
   Phone, 
@@ -103,7 +103,7 @@ export function ContactPage() {
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Mail className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">E-mail</h3>
+                  <h3 className="text-xl font-semibold mb-2">Email</h3>
                   <p className="text-muted-foreground mb-4">
                     <a href="mailto:contato@auladeinglesemcasa.com" className="text-blue-600 hover:underline">
                       contato@auladeinglesemcasa.com
@@ -112,7 +112,7 @@ export function ContactPage() {
                   <a href="mailto:contato@auladeinglesemcasa.com">
                     <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
                       <Mail className="w-4 h-4 mr-2" />
-                      Enviar E-mail
+                      Enviar Email
                     </Button>
                   </a>
                 </Card>
@@ -173,7 +173,7 @@ export function ContactPage() {
                 <div>
                   <div className="bg-background rounded-lg p-4 shadow-lg">
                     <iframe 
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119603.60236497635!2d-54.63553405!3d-20.481099800000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9486e6726b2b9f27%3A0xf5a8469ebc84d2c1!2sCampo%20Grande%2C%20State%20of%20Mato%20Grosso%20do%20Sul!5e0!3m2!1sen!2sbr!4v1757361385073!5m2!1sen!2sbr" 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119603.60236497651!2d-54.63553405!3d-20.481099800000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x444d80abce0fb79b%3A0x396cea11aa65ef09!2sAula%20de%20Ingl%C3%AAs%20em%20Casa!5e0!3m2!1sen!2sbr!4v1757595739185!5m2!1sen!2sbr" 
                       width="100%" 
                       height="250" 
                       style={{ border: 0 }} 

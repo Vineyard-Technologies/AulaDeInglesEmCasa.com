@@ -488,7 +488,7 @@ export function HomePage() {
                 <div>
                   <div className="bg-background rounded-lg p-4 shadow-lg">
                     <iframe 
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119603.60236497635!2d-54.63553405!3d-20.481099800000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x9486e6726b2b9f27%3A0xf5a8469ebc84d2c1!2sCampo%20Grande%2C%20State%20of%20Mato%20Grosso%20do%20Sul!5e0!3m2!1sen!2sbr!4v1757361385073!5m2!1sen!2sbr" 
+                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119603.60236497651!2d-54.63553405!3d-20.481099800000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x444d80abce0fb79b%3A0x396cea11aa65ef09!2sAula%20de%20Ingl%C3%AAs%20em%20Casa!5e0!3m2!1sen!2sbr!4v1757595739185!5m2!1sen!2sbr" 
                       width="100%" 
                       height="250" 
                       style={{ border: 0 }} 
