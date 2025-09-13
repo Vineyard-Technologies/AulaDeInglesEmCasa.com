@@ -57,8 +57,8 @@
         sessionStorage.setItem('redirectPath', location.pathname + location.search + location.hash);
         location.replace('/');
       } else {
-        // For asset requests, show a proper 404 message
-        document.body.innerHTML = '<div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;"><h1>404 - File Not Found</h1><p>The requested file could not be found.</p><a href="/">Go to Homepage</a></div>';
+        // For missing assets, also redirect to homepage
+        location.replace('/');
       }
     </script>
 </head>
