@@ -20,6 +20,7 @@ import {
   MapPin, 
   Clock,
   Users,
+  User,
   BookOpen,
   Award,
   CheckCircle,
@@ -223,25 +224,16 @@ export function HomePage() {
                     <li>• Gravação das aula disponível</li>
                     <li>• Horários flexíveis</li>
                   </ul>
-                  <div className="flex gap-2 mt-auto">
-                    <a
-                      href={`https://wa.me/${whatsappNumber}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1"
+                  <div className="mt-auto">
+                    <Button 
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                      asChild
                     >
-                      <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
-                        <WhatsAppIcon className="w-4 h-4" />
-                      </Button>
-                    </a>
-                    <a
-                      href="mailto:contato@auladeinglesemcasa.com"
-                      className="flex-1"
-                    >
-                      <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                        <Mail className="w-4 h-4" />
-                      </Button>
-                    </a>
+                      <Link to="/servicos/aula-online" className="flex items-center justify-center gap-2">
+                        Saiba Mais
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -258,7 +250,7 @@ export function HomePage() {
                 </div>
                 <CardHeader className="flex-shrink-0">
                   <CardTitle className="flex items-center gap-2">
-                    <Users className="w-5 h-5 text-primary" />
+                    <User className="w-5 h-5 text-primary" />
                     Aula Individual
                   </CardTitle>
                   <CardDescription>
@@ -272,25 +264,16 @@ export function HomePage() {
                     <li>• Atenção exclusiva do professor</li>
                     <li>• Objetivos específicos</li>
                   </ul>
-                  <div className="flex gap-2 mt-auto">
-                    <a
-                      href={`https://wa.me/${whatsappNumber}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1"
+                  <div className="mt-auto">
+                    <Button 
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                      asChild
                     >
-                      <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
-                        <WhatsAppIcon className="w-4 h-4" />
-                      </Button>
-                    </a>
-                    <a
-                      href="mailto:contato@auladeinglesemcasa.com"
-                      className="flex-1"
-                    >
-                      <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                        <Mail className="w-4 h-4" />
-                      </Button>
-                    </a>
+                      <Link to="/servicos/aula-individual" className="flex items-center justify-center gap-2">
+                        Saiba Mais
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -307,7 +290,7 @@ export function HomePage() {
                 </div>
                 <CardHeader className="flex-shrink-0">
                   <CardTitle className="flex items-center gap-2">
-                    <BookOpen className="w-5 h-5 text-primary" />
+                    <Users className="w-5 h-5 text-primary" />
                     Aula em Grupo
                   </CardTitle>
                   <CardDescription>
@@ -321,25 +304,16 @@ export function HomePage() {
                     <li>• Ambiente motivador</li>
                     <li>• Custo mais acessível</li>
                   </ul>
-                  <div className="flex gap-2 mt-auto">
-                    <a
-                      href={`https://wa.me/${whatsappNumber}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1"
+                  <div className="mt-auto">
+                    <Button 
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                      asChild
                     >
-                      <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
-                        <WhatsAppIcon className="w-4 h-4" />
-                      </Button>
-                    </a>
-                    <a
-                      href="mailto:contato@auladeinglesemcasa.com"
-                      className="flex-1"
-                    >
-                      <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                        <Mail className="w-4 h-4" />
-                      </Button>
-                    </a>
+                      <Link to="/servicos/aula-em-grupo" className="flex items-center justify-center gap-2">
+                        Saiba Mais
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </Button>
                   </div>
                 </CardContent>
               </Card>
@@ -370,25 +344,16 @@ export function HomePage() {
                     <li>• Correção de pronúncia</li>
                     <li>• Ganho de confiança</li>
                   </ul>
-                  <div className="flex gap-2 mt-auto">
-                    <a
-                      href={`https://wa.me/${whatsappNumber}`}
-                      target="_blank"
-                      rel="noopener noreferrer"
-                      className="flex-1"
+                  <div className="mt-auto">
+                    <Button 
+                      className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
+                      asChild
                     >
-                      <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
-                        <WhatsAppIcon className="w-4 h-4" />
-                      </Button>
-                    </a>
-                    <a
-                      href="mailto:contato@auladeinglesemcasa.com"
-                      className="flex-1"
-                    >
-                      <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
-                        <Mail className="w-4 h-4" />
-                      </Button>
-                    </a>
+                      <Link to="/servicos/aula-de-conversacao" className="flex items-center justify-center gap-2">
+                        Saiba Mais
+                        <ArrowRight className="w-4 h-4" />
+                      </Link>
+                    </Button>
                   </div>
                 </CardContent>
               </Card>

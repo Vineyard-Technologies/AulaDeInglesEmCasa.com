@@ -4,7 +4,14 @@ import { Navigation, Footer, ScrollToTop } from '@/components'
 import { 
   HomePage, 
   AboutPage, 
-  ContactPage
+  ContactPage,
+  PrivacyPolicyPage,
+  TermsOfServicePage,
+  SitemapPage,
+  AulaOnlinePage,
+  AulaIndividualPage,
+  AulaEmGrupoPage,
+  AulaDeConversacaoPage
 } from '@/pages'
 
 function RedirectHandler() {
@@ -33,6 +40,13 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/sobre" element={<AboutPage />} />
           <Route path="/contato" element={<ContactPage />} />
+          <Route path="/servicos/aula-online" element={<AulaOnlinePage />} />
+          <Route path="/servicos/aula-individual" element={<AulaIndividualPage />} />
+          <Route path="/servicos/aula-em-grupo" element={<AulaEmGrupoPage />} />
+          <Route path="/servicos/aula-de-conversacao" element={<AulaDeConversacaoPage />} />
+          <Route path="/privacidade" element={<PrivacyPolicyPage />} />
+          <Route path="/termos" element={<TermsOfServicePage />} />
+          <Route path="/mapa-do-site" element={<SitemapPage />} />
           <Route path="*" element={<Navigate to="/" replace />} />
         </Routes>
         <Footer />

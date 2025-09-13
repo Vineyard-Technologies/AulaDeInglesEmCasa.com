@@ -29,9 +29,25 @@ export function AboutPage() {
               {/* Biography */}
               <LazyLoad delay={100} animationClass="fade-in-left">
                 <div>
-                  <h2 className="text-3xl font-bold mb-6">Sobre o professor</h2>
+                  <h2 className="text-3xl font-bold mb-6 text-center md:text-left">Sobre o professor</h2>
                   <div className="space-y-4 text-muted-foreground leading-relaxed">
-                    <div className="flex gap-4 items-start">
+                    {/* Mobile layout: image above text, both full width */}
+                    <div className="md:hidden">
+                      <LazyImage 
+                        src={andrewRogersImage} 
+                        alt="Andrew Rogers" 
+                        className="w-full aspect-square rounded-lg object-cover mb-4"
+                      />
+                      <p>
+                        Andrew é do estado de Washington, EUA, nascido e criado na região de Seattle.
+                        Estudou no Bellevue College e começou a aprender português em 2015.
+                        Casou-se com sua esposa campo-grandense em 2018.
+                        Ele era um membro ativo da comunidade de imigrantes brasileiros no oeste de Washington.
+                      </p>
+                    </div>
+                    
+                    {/* Desktop layout: image alongside text */}
+                    <div className="hidden md:flex gap-4 items-start">
                       <p className="flex-1">
                         Andrew é do estado de Washington, EUA, nascido e criado na região de Seattle.
                         Estudou no Bellevue College e começou a aprender português em 2015.
@@ -61,7 +77,7 @@ export function AboutPage() {
               {/* Qualifications */}
               <LazyLoad delay={200} animationClass="fade-in-right">
                 <div>
-                  <h2 className="text-3xl font-bold mb-6">Qualificações</h2>
+                  <h2 className="text-3xl font-bold mb-6 text-center md:text-left">Qualificações</h2>
                 <div className="space-y-4">
                   <Card>
                     <CardHeader>
