@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Andrew Rogers - Aula de Inglês em Casa | Campo Grande, MS</title>
+    
+    <!-- Meta Description -->
+    <meta name="description" content="Aula de inglês personalizadas em Campo Grande, MS com Andrew Rogers. Professor americano nativo com mais de 10 anos de experiência. Aula online, individual e em grupo." />
+    <meta name="keywords" content="aula de inglês, Campo Grande MS, professor americano, inglês nativo, aula online, aula particular" />
+    <meta name="author" content="Andrew Rogers" />
+    <meta name="robots" content="index, follow" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Aula de Inglês em Casa | Andrew Rogers | Campo Grande, MS" />
+    <meta property="og:description" content="Aula de inglês personalizadas com professor americano nativo em Campo Grande, MS. Mais de 10 anos de experiência." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://auladeinglesemcasa.com" />
+    <meta property="og:image" content="https://auladeinglesemcasa.com/AulaDeInglesEmCasaLogo.webp" />
+    <meta property="og:locale" content="pt_BR" />
+    <meta property="og:site_name" content="Aula de Inglês em Casa" />
+    
+    <!-- Twitter Card Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Aula de Inglês em Casa | Andrew Rogers | Campo Grande, MS" />
+    <meta name="twitter:description" content="Aula de inglês personalizadas com professor americano nativo em Campo Grande, MS. Mais de 10 anos de experiência." />
+    <meta name="twitter:image" content="https://auladeinglesemcasa.com/AulaDeInglesEmCasaLogo.webp" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://auladeinglesemcasa.com" />
+    
+    <!-- Google tag (gtag.js) -->
+    <script async src="https://www.googletagmanager.com/gtag/js?id=G-L9WNB6K0Y0"></script>
+    <script>
+      window.dataLayer = window.dataLayer || [];
+      function gtag(){dataLayer.push(arguments);}
+      gtag('js', new Date());
+
+      gtag('config', 'G-L9WNB6K0Y0');
+    </script>
+    
+    <link rel="icon" type="image/webp" href="/AulaDeInglesEmCasaFavicon.webp" />
+    <link rel="shortcut icon" type="image/webp" href="/AulaDeInglesEmCasaFavicon.webp" />
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Libre+Bodoni:ital,wght@0,400;0,500;0,600;0,700;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
+
+    <!-- Redirect script for client-side routing -->
+    <script>
+      // Only redirect if this looks like a page route, not an asset
+      const path = location.pathname;
+      const isAssetRequest = /\.(css|js|png|jpg|jpeg|gif|webp|svg|ico|woff|woff2|ttf|eot|mp4|mp3|pdf|zip|json|xml|txt)$/i.test(path);
+      
+      if (!isAssetRequest) {
+        // Store the current path and redirect to root for SPA routing
+        sessionStorage.setItem('redirectPath', location.pathname + location.search + location.hash);
+        location.replace('/');
+      } else {
+        // For asset requests, show a proper 404 message
+        document.body.innerHTML = '<div style="text-align: center; padding: 50px; font-family: Arial, sans-serif;"><h1>404 - File Not Found</h1><p>The requested file could not be found.</p><a href="/">Go to Homepage</a></div>';
+      }
+    </script>
+</head>
+
+<body>
+    <div id="root"></div>
+</body>
+
+</html>
