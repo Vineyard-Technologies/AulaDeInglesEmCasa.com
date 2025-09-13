@@ -3,7 +3,7 @@ import { updateMetaTags, addStructuredData } from "@/utils/seo"
 
 const privacyPolicyMetaData = {
   title: "Política de Privacidade | Aula de Inglês em Casa",
-  description: "Política de privacidade das aulas de inglês com Andrew Rogers em Campo Grande, MS. Saiba como protegemos seus dados pessoais.",
+  description: "Política de privacidade da aula de inglês com Andrew Rogers em Campo Grande, MS. Saiba como protegemos seus dados pessoais.",
   canonical: "https://auladeinglesemcasa.com/privacidade"
 }
 
@@ -32,7 +32,7 @@ export function PrivacyPolicyPage() {
               <li>Endereço de email</li>
               <li>Número de telefone/WhatsApp</li>
               <li>Informações sobre seu nível de inglês</li>
-              <li>Preferências de horário para as aulas</li>
+              <li>Preferências de horário para a aula</li>
             </ul>
           </section>
 
@@ -42,10 +42,10 @@ export function PrivacyPolicyPage() {
               Utilizamos suas informações para:
             </p>
             <ul className="list-disc pl-6 mb-4">
-              <li>Agendar e conduzir suas aulas de inglês</li>
+              <li>Agendar e conduzir sua aula de inglês</li>
               <li>Entrar em contato sobre horários e materiais</li>
-              <li>Personalizar o conteúdo das aulas conforme seu nível</li>
-              <li>Enviar lembretes sobre as aulas agendadas</li>
+              <li>Personalizar o conteúdo da aula conforme seu nível</li>
+              <li>Enviar lembretes sobre a aula agendada</li>
               <li>Processar pagamentos (quando aplicável)</li>
             </ul>
           </section>

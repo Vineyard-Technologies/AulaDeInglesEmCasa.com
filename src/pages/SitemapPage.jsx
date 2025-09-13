@@ -5,7 +5,7 @@ import { Home, User, MessageCircle, Shield, FileText, Map, Video, Users, Mic } f
 
 const sitemapMetaData = {
   title: "Mapa do Site | Aula de Inglês em Casa",
-  description: "Navegue facilmente pelo nosso site. Encontre todas as páginas das aulas de inglês com Andrew Rogers em Campo Grande, MS.",
+  description: "Navegue facilmente pelo nosso site. Encontre todas as páginas da aula de inglês com Andrew Rogers em Campo Grande, MS.",
   canonical: "https://auladeinglesemcasa.com/mapa-do-site"
 }
 
@@ -18,7 +18,7 @@ export function SitemapPage() {
     {
       title: "Início",
       path: "/",
-      description: "Página inicial com informações sobre as aulas de inglês e serviços oferecidos",
+      description: "Página inicial com informações sobre a aula de inglês e serviços oferecidos",
       icon: Home
     },
     {
@@ -37,26 +37,26 @@ export function SitemapPage() {
 
   const servicePages = [
     {
-      title: "Aulas Online",
-      path: "/servicos/aula-online",
-      description: "Aulas de inglês online com flexibilidade total de horários",
+      title: "Aula de Inglês Online",
+      path: "/servicos/aula-de-ingles-online",
+      description: "Aula de inglês online com flexibilidade total de horários",
       icon: Video
     },
     {
-      title: "Aulas Particulares",
-      path: "/servicos/aula-individual",
+      title: "Aula de Inglês Particular",
+      path: "/servicos/aula-de-ingles-individual",
       description: "Atenção 100% personalizada com professor americano nativo",
       icon: User
     },
     {
-      title: "Aulas em Grupo",
-      path: "/servicos/aula-em-grupo",
+      title: "Aula de Inglês em Grupo",
+      path: "/servicos/aula-de-ingles-em-grupo",
       description: "Aprenda inglês em pequenos grupos com ótimo custo-benefício",
       icon: Users
     },
     {
-      title: "Aulas de Conversação",
-      path: "/servicos/aula-de-conversacao",
+      title: "Aula de Conversação de Inglês",
+      path: "/servicos/aula-de-conversacao-de-ingles",
       description: "Desenvolva fluência e confiança falando inglês naturalmente",
       icon: Mic
     }
@@ -72,7 +72,7 @@ export function SitemapPage() {
     {
       title: "Termos de Serviço",
       path: "/termos",
-      description: "Condições e termos para as aulas de inglês e serviços educacionais",
+      description: "Condições e termos para a aula de inglês e serviços educacionais",
       icon: FileText
     },
     {
@@ -88,7 +88,7 @@ export function SitemapPage() {
       <div className="container mx-auto px-4 max-w-4xl">
         <h1 className="text-4xl font-bold text-primary mb-4">Mapa do Site</h1>
         <p className="text-muted-foreground text-lg mb-12">
-          Navegue facilmente por todas as páginas do nosso site. Encontre rapidamente as informações que você precisa sobre nossas aulas de inglês.
+          Navegue facilmente por todas as páginas do nosso site. Encontre rapidamente as informações que você precisa sobre nossa aula de inglês.
         </p>
         
         {/* Main Pages */}
@@ -203,7 +203,7 @@ export function SitemapPage() {
           <h3 className="text-lg font-semibold mb-3 text-foreground">Outras Informações</h3>
           <div className="space-y-2 text-sm text-muted-foreground">
             <p>• <strong>Localização:</strong> Campo Grande, MS, Brasil</p>
-            <p>• <strong>Especialidade:</strong> Aulas de inglês com professor americano nativo</p>
+            <p>• <strong>Especialidade:</strong> Aula de inglês com professor americano nativo</p>
             <p>• <strong>Tipos de aula:</strong> Individual, em grupo, online e presencial</p>
             <p>• <strong>Contato:</strong> <a href="https://wa.me/5567996161199" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">(67) 99616-1199</a></p>
           </div>

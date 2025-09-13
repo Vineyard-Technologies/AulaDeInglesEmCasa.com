@@ -17,9 +17,9 @@ import {
 } from "lucide-react"
 
 const aulaEmGrupoMetaData = {
-  title: "Aulas de Inglês em Grupo | Andrew Rogers | Campo Grande, MS",
-  description: "Aulas de inglês em pequenos grupos com professor americano nativo. Interação, prática e custo-benefício ideal para aprender inglês.",
-  canonical: "https://auladeinglesemcasa.com/servicos/aula-em-grupo"
+  title: "Aula de Inglês em Grupo | Andrew Rogers | Campo Grande, MS",
+  description: "Aula de inglês em pequenos grupos com professor americano nativo. Interação, prática e custo-benefício ideal para aprender inglês.",
+  canonical: "https://auladeinglesemcasa.com/servicos/aula-de-ingles-em-grupo"
 }
 
 export function AulaEmGrupoPage() {
@@ -52,12 +52,8 @@ export function AulaEmGrupoPage() {
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Aulas de Inglês em Grupo
+              Aula de Inglês em Grupo em Campo Grande, MS
             </h1>
-            
-            <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90">
-              Aprenda com outros alunos e pratique em um ambiente colaborativo
-            </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -97,7 +93,7 @@ export function AulaEmGrupoPage() {
       {/* Benefits Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Vantagens das Aulas em Grupo</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Vantagens da Aula em Grupo</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="hover:shadow-lg transition-shadow">
@@ -107,7 +103,7 @@ export function AulaEmGrupoPage() {
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-center">
-                  Qualidade premium com valor mais acessível que aulas particulares
+                  Qualidade premium com valor mais acessível que aula particular
                 </p>
               </CardContent>
             </Card>

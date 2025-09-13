@@ -17,9 +17,9 @@ import {
 } from "lucide-react"
 
 const aulaDeConversacaoMetaData = {
-  title: "Aulas de Conversação em Inglês | Andrew Rogers | Campo Grande, MS",
-  description: "Aulas de conversação em inglês com professor americano nativo. Desenvolva fluência, confiança e naturalidade ao falar inglês.",
-  canonical: "https://auladeinglesemcasa.com/servicos/aula-de-conversacao"
+  title: "Aula de Conversação em Inglês | Andrew Rogers | Campo Grande, MS",
+  description: "Aula de conversação em inglês com professor americano nativo. Desenvolva fluência, confiança e naturalidade ao falar inglês.",
+  canonical: "https://auladeinglesemcasa.com/servicos/aula-de-conversacao-de-ingles"
 }
 
 export function AulaDeConversacaoPage() {
@@ -52,12 +52,8 @@ export function AulaDeConversacaoPage() {
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Aulas de Conversação em Inglês
+              Aula de Conversação de Inglês em Campo Grande, MS
             </h1>
-            
-            <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90">
-              Desenvolva fluência e confiança falando inglês naturalmente
-            </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -154,7 +150,7 @@ export function AulaDeConversacaoPage() {
       {/* Topics Section */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Tópicos das Aulas de Conversação</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Tópicos da Aula de Conversação</h2>
           
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
             <Card className="hover:shadow-lg transition-shadow">

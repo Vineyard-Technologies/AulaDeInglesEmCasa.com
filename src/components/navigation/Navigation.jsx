@@ -56,35 +56,35 @@ export function Navigation() {
                   : 'opacity-0 transform -translate-y-2 invisible'
               }`}>
                   <Link
-                    to="/servicos/aula-online"
+                    to="/servicos/aula-de-ingles-online"
                     className="block px-4 py-3 text-sm hover:bg-muted transition-colors"
                     onClick={() => setIsServicesOpen(false)}
                   >
-                    <div className="font-medium">Aula Online</div>
+                    <div className="font-medium">Aula de Inglês Online</div>
                     <div className="text-muted-foreground text-xs">Flexibilidade total no conforto de casa</div>
                   </Link>
                   <Link
-                    to="/servicos/aula-individual"
+                    to="/servicos/aula-de-ingles-individual"
                     className="block px-4 py-3 text-sm hover:bg-muted transition-colors"
                     onClick={() => setIsServicesOpen(false)}
                   >
-                    <div className="font-medium">Aula Individual</div>
+                    <div className="font-medium">Aula de Inglês Individual</div>
                     <div className="text-muted-foreground text-xs">Atenção 100% personalizada</div>
                   </Link>
                   <Link
-                    to="/servicos/aula-em-grupo"
+                    to="/servicos/aula-de-ingles-em-grupo"
                     className="block px-4 py-3 text-sm hover:bg-muted transition-colors"
                     onClick={() => setIsServicesOpen(false)}
                   >
-                    <div className="font-medium">Aula em Grupo</div>
+                    <div className="font-medium">Aula de Inglês em Grupo</div>
                     <div className="text-muted-foreground text-xs">Aprenda com outros alunos</div>
                   </Link>
                   <Link
-                    to="/servicos/aula-de-conversacao"
+                    to="/servicos/aula-de-conversacao-de-ingles"
                     className="block px-4 py-3 text-sm hover:bg-muted transition-colors"
                     onClick={() => setIsServicesOpen(false)}
                   >
-                    <div className="font-medium">Aula de Conversação</div>
+                    <div className="font-medium">Aula de Conversação de Inglês</div>
                     <div className="text-muted-foreground text-xs">Desenvolva fluência e confiança</div>
                   </Link>
                 </div>
@@ -149,32 +149,32 @@ export function Navigation() {
                 <div className="text-sm font-medium text-muted-foreground mb-2">Serviços</div>
                 <div className="pl-4 space-y-1">
                   <Link
-                    to="/servicos/aula-online"
+                    to="/servicos/aula-de-ingles-online"
                     className="block py-1 text-sm hover:text-primary transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
-                    Aula Online
+                    Aula de Inglês Online
                   </Link>
                   <Link
-                    to="/servicos/aula-individual"
+                    to="/servicos/aula-de-ingles-individual"
                     className="block py-1 text-sm hover:text-primary transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
-                    Aula Individual
+                    Aula de Inglês Individual
                   </Link>
                   <Link
-                    to="/servicos/aula-em-grupo"
+                    to="/servicos/aula-de-ingles-em-grupo"
                     className="block py-1 text-sm hover:text-primary transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
-                    Aula em Grupo
+                    Aula de Inglês em Grupo
                   </Link>
                   <Link
-                    to="/servicos/aula-de-conversacao"
+                    to="/servicos/aula-de-conversacao-de-ingles"
                     className="block py-1 text-sm hover:text-primary transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
-                    Aula de Conversação
+                    Aula de Conversação de Inglês
                   </Link>
                 </div>
               </div>

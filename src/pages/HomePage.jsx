@@ -9,10 +9,10 @@ import { updateMetaTags, addStructuredData, createEducationServiceSchema, create
 // Public asset URLs (no imports needed)
 const homepageLogo = "/AulaDeInglesEmCasaIcon.webp"
 const cityImage = "/City.webp"
-const aulasOnlineImage = "/AulaOnline.webp"
-const aulasIndividuaisImage = "/AulaIndividual.webp"
+const aulaOnlineImage = "/AulaOnline.webp"
+const aulaIndividualImage = "/AulaIndividual.webp"
 const aulaEmGrupoImage = "/AulaEmGrupo.webp"
-const aulasConversacaoImage = "/AulaDeConversacao.webp"
+const aulaConversacaoImage = "/AulaDeConversacao.webp"
 const andrewRogersImage = "/AndrewRogers.webp"
 import { 
   MessageCircle, 
@@ -203,7 +203,7 @@ export function HomePage() {
               <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
                 <div className="aspect-video w-full overflow-hidden rounded-lg">
                   <LazyImage 
-                    src={aulasOnlineImage} 
+                    src={aulaOnlineImage} 
                     alt="Aula Online" 
                     className="w-full h-full object-cover"
                   />
@@ -211,7 +211,7 @@ export function HomePage() {
                 <CardHeader className="flex-shrink-0">
                   <CardTitle className="flex items-center gap-2">
                     <Video className="w-5 h-5 text-primary" />
-                    Aula Online
+                    Aula de Inglês Online
                   </CardTitle>
                   <CardDescription>
                     Flexibilidade no conforto de casa
@@ -229,7 +229,7 @@ export function HomePage() {
                       className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
                       asChild
                     >
-                      <Link to="/servicos/aula-online" className="flex items-center justify-center gap-2">
+                      <Link to="/servicos/aula-de-ingles-online" className="flex items-center justify-center gap-2">
                         Saiba Mais
                         <ArrowRight className="w-4 h-4" />
                       </Link>
@@ -243,7 +243,7 @@ export function HomePage() {
               <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
                 <div className="aspect-video w-full overflow-hidden rounded-lg">
                   <LazyImage 
-                    src={aulasIndividuaisImage} 
+                    src={aulaIndividualImage} 
                     alt="Aula Individual" 
                     className="w-full h-full object-cover"
                   />
@@ -251,7 +251,7 @@ export function HomePage() {
                 <CardHeader className="flex-shrink-0">
                   <CardTitle className="flex items-center gap-2">
                     <User className="w-5 h-5 text-primary" />
-                    Aula Individual
+                    Aula de Inglês Individual
                   </CardTitle>
                   <CardDescription>
                     Atenção personalizada e foco total
@@ -269,7 +269,7 @@ export function HomePage() {
                       className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
                       asChild
                     >
-                      <Link to="/servicos/aula-individual" className="flex items-center justify-center gap-2">
+                      <Link to="/servicos/aula-de-ingles-individual" className="flex items-center justify-center gap-2">
                         Saiba Mais
                         <ArrowRight className="w-4 h-4" />
                       </Link>
@@ -291,7 +291,7 @@ export function HomePage() {
                 <CardHeader className="flex-shrink-0">
                   <CardTitle className="flex items-center gap-2">
                     <Users className="w-5 h-5 text-primary" />
-                    Aula em Grupo
+                    Aula de Inglês em Grupo
                   </CardTitle>
                   <CardDescription>
                     Aprendizado colaborativo
@@ -309,7 +309,7 @@ export function HomePage() {
                       className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
                       asChild
                     >
-                      <Link to="/servicos/aula-em-grupo" className="flex items-center justify-center gap-2">
+                      <Link to="/servicos/aula-de-ingles-em-grupo" className="flex items-center justify-center gap-2">
                         Saiba Mais
                         <ArrowRight className="w-4 h-4" />
                       </Link>
@@ -323,7 +323,7 @@ export function HomePage() {
               <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
                 <div className="aspect-video w-full overflow-hidden rounded-lg">
                   <LazyImage 
-                    src={aulasConversacaoImage} 
+                    src={aulaConversacaoImage} 
                     alt="Aula de Conversação" 
                     className="w-full h-full object-cover"
                   />
@@ -331,7 +331,7 @@ export function HomePage() {
                 <CardHeader className="flex-shrink-0">
                   <CardTitle className="flex items-center gap-2">
                     <MessageCircle className="w-5 h-5 text-primary" />
-                    Aula de Conversação
+                    Aula de Conversação de Inglês
                   </CardTitle>
                   <CardDescription>
                     Desenvolva fluência e confiança
@@ -349,7 +349,7 @@ export function HomePage() {
                       className="w-full bg-primary hover:bg-primary/90 text-primary-foreground"
                       asChild
                     >
-                      <Link to="/servicos/aula-de-conversacao" className="flex items-center justify-center gap-2">
+                      <Link to="/servicos/aula-de-conversacao-de-ingles" className="flex items-center justify-center gap-2">
                         Saiba Mais
                         <ArrowRight className="w-4 h-4" />
                       </Link>

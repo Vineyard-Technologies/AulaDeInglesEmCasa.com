@@ -3,6 +3,7 @@ import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon"
+import { LazyImage } from "@/components"
 import { updateMetaTags, addStructuredData } from "@/utils/seo"
 import { 
   Video, 
@@ -17,9 +18,9 @@ import {
 } from "lucide-react"
 
 const aulaOnlineMetaData = {
-  title: "Aulas de Inglês Online | Andrew Rogers | Campo Grande, MS",
-  description: "Aulas de inglês online com professor americano nativo. Flexibilidade de horário, plataforma segura e metodologia personalizada. Agende sua aula!",
-  canonical: "https://auladeinglesemcasa.com/servicos/aula-online"
+  title: "Aula de Inglês Online | Andrew Rogers | Campo Grande, MS",
+  description: "Aula de inglês online com professor americano nativo. Flexibilidade de horário, plataforma segura e metodologia personalizada. Agende sua aula!",
+  canonical: "https://auladeinglesemcasa.com/servicos/aula-de-ingles-online"
 }
 
 export function AulaOnlinePage() {
@@ -52,12 +53,8 @@ export function AulaOnlinePage() {
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Aulas de Inglês Online
+              Aula de Inglês Online em Campo Grande, MS
             </h1>
-            
-            <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90">
-              Aprenda inglês no conforto da sua casa com professor americano nativo
-            </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -94,15 +91,60 @@ export function AulaOnlinePage() {
         </div>
       </section>
 
+      {/* About Online Classes Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-12 items-center">
+              <div>
+                <h2 className="text-3xl font-bold mb-6">Aulas de Inglês Online Personalizadas</h2>
+                <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
+                  <p>
+                    As aulas de inglês online revolucionaram a forma como aprendemos idiomas. Com a tecnologia atual, é possível ter uma experiência de aprendizado tão eficaz quanto as aulas presenciais, mas com muito mais flexibilidade e conveniência.
+                  </p>
+                  <p>
+                    Como professor americano nativo, utilizo plataformas modernas de videoconferência que garantem qualidade de áudio e vídeo excepcional. Cada aula é cuidadosamente planejada para maximizar o tempo que passamos juntos, focando nas suas necessidades específicas e objetivos de aprendizado.
+                  </p>
+                  <p>
+                    Durante nossas sessões online, você terá acesso a materiais interativos, exercícios práticos e conversação em tempo real. A metodologia é adaptada ao ambiente digital, garantindo que você pratique listening, speaking, reading e writing de forma integrada e natural.
+                  </p>
+                  <p>
+                    O que torna as aulas online especiais é a possibilidade de gravação (quando solicitado), permitindo que você revise o conteúdo posteriormente. Além disso, posso compartilhar recursos digitais instantaneamente, tornando o processo de aprendizado mais dinâmico e eficiente.
+                  </p>
+                  <p>
+                    A flexibilidade de horários é outro grande benefício. Você pode agendar suas aulas de acordo com sua rotina, eliminando tempo de deslocamento e permitindo que estude no conforto do seu lar, mantendo toda a qualidade de uma aula particular tradicional.
+                  </p>
+                </div>
+              </div>
+              <div className="lg:order-first">
+                <div className="relative">
+                  <LazyImage
+                    src="/VideoCall.webp"
+                    alt="Aulas de Inglês Online por Videoconferência"
+                    className="w-full h-auto rounded-lg shadow-lg"
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Benefits Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Vantagens das Aulas Online</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Vantagens da Aula Online</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
+              <div className="aspect-video w-full overflow-hidden rounded-lg">
+                <LazyImage
+                  src="/Flexible.webp"
+                  alt="Flexibilidade Total"
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <CardHeader className="text-center">
-                <Clock className="w-8 h-8 text-primary mx-auto mb-2" />
                 <CardTitle className="text-lg">Flexibilidade Total</CardTitle>
               </CardHeader>
               <CardContent>
@@ -112,21 +154,33 @@ export function AulaOnlinePage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
+              <div className="aspect-video w-full overflow-hidden rounded-lg">
+                <LazyImage
+                  src="/Platform.webp"
+                  alt="Plataforma Segura"
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <CardHeader className="text-center">
-                <Monitor className="w-8 h-8 text-primary mx-auto mb-2" />
                 <CardTitle className="text-lg">Plataforma Segura</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-center">
-                  Utilizamos Google Meet e Zoom para aulas estáveis e seguras
+                  Utilizamos Google Meet e Zoom para uma aula estável e segura
                 </p>
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
+              <div className="aspect-video w-full overflow-hidden rounded-lg">
+                <LazyImage
+                  src="/Audio.webp"
+                  alt="Áudio de Qualidade"
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <CardHeader className="text-center">
-                <Headphones className="w-8 h-8 text-primary mx-auto mb-2" />
                 <CardTitle className="text-lg">Áudio de Qualidade</CardTitle>
               </CardHeader>
               <CardContent>
@@ -136,9 +190,15 @@ export function AulaOnlinePage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
+              <div className="aspect-video w-full overflow-hidden rounded-lg">
+                <LazyImage
+                  src="/Attention.webp"
+                  alt="Atenção Individual"
+                  className="w-full h-full object-cover"
+                />
+              </div>
               <CardHeader className="text-center">
-                <Users className="w-8 h-8 text-primary mx-auto mb-2" />
                 <CardTitle className="text-lg">Atenção Individual</CardTitle>
               </CardHeader>
               <CardContent>
@@ -154,7 +214,7 @@ export function AulaOnlinePage() {
       {/* How it Works Section */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Como Funcionam as Aulas Online</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Como Funciona a Aula Online</h2>
           
           <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
             <div className="text-center">
@@ -193,7 +253,7 @@ export function AulaOnlinePage() {
       {/* Requirements Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <div className="max-w-3xl mx-auto">
+          <div className="mx-auto" style={{ maxWidth: '500px' }}>
             <h2 className="text-3xl font-bold text-center mb-8">Requisitos Técnicos</h2>
             
             <Card className="hover:shadow-lg transition-shadow">

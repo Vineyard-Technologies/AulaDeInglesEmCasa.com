@@ -18,7 +18,7 @@ export function Footer() {
               </div>
             </Link>
             <p className="text-primary-foreground/80 text-sm text-center md:text-left leading-relaxed">
-              Aulas de inglês personalizadas com professor americano nativo em Campo Grande, MS. 
+              Aula de inglês personalizada com professor americano nativo em Campo Grande, MS. 
             </p>
           </div>
           

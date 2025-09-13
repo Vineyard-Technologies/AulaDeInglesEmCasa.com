@@ -40,10 +40,10 @@ export default function App() {
           <Route path="/" element={<HomePage />} />
           <Route path="/sobre" element={<AboutPage />} />
           <Route path="/contato" element={<ContactPage />} />
-          <Route path="/servicos/aula-online" element={<AulaOnlinePage />} />
-          <Route path="/servicos/aula-individual" element={<AulaIndividualPage />} />
-          <Route path="/servicos/aula-em-grupo" element={<AulaEmGrupoPage />} />
-          <Route path="/servicos/aula-de-conversacao" element={<AulaDeConversacaoPage />} />
+          <Route path="/servicos/aula-de-ingles-online" element={<AulaOnlinePage />} />
+          <Route path="/servicos/aula-de-ingles-individual" element={<AulaIndividualPage />} />
+          <Route path="/servicos/aula-de-ingles-em-grupo" element={<AulaEmGrupoPage />} />
+          <Route path="/servicos/aula-de-conversacao-de-ingles" element={<AulaDeConversacaoPage />} />
           <Route path="/privacidade" element={<PrivacyPolicyPage />} />
           <Route path="/termos" element={<TermsOfServicePage />} />
           <Route path="/mapa-do-site" element={<SitemapPage />} />

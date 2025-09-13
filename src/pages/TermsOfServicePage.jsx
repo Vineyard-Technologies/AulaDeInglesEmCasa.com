@@ -3,7 +3,7 @@ import { updateMetaTags, addStructuredData } from "@/utils/seo"
 
 const termsOfServiceMetaData = {
   title: "Termos de Serviço | Aula de Inglês em Casa",
-  description: "Termos de serviço das aulas de inglês com Andrew Rogers em Campo Grande, MS. Conheça as condições para as aulas particulares.",
+  description: "Termos de serviço da aula de inglês com Andrew Rogers em Campo Grande, MS. Conheça as condições para a aula particular.",
   canonical: "https://auladeinglesemcasa.com/termos"
 }
 

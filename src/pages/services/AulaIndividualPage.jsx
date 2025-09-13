@@ -17,9 +17,9 @@ import {
 } from "lucide-react"
 
 const aulaIndividualMetaData = {
-  title: "Aulas Particulares de Inglês | Andrew Rogers | Campo Grande, MS",
-  description: "Aulas particulares de inglês com professor americano nativo. Atenção 100% personalizada, horários flexíveis e metodologia adaptada ao seu ritmo.",
-  canonical: "https://auladeinglesemcasa.com/servicos/aula-individual"
+  title: "Aula Particular de Inglês | Andrew Rogers | Campo Grande, MS",
+  description: "Aula particular de inglês com professor americano nativo. Atenção 100% personalizada, horários flexíveis e metodologia adaptada ao seu ritmo.",
+  canonical: "https://auladeinglesemcasa.com/servicos/aula-de-ingles-individual"
 }
 
 export function AulaIndividualPage() {
@@ -52,12 +52,8 @@ export function AulaIndividualPage() {
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Aulas Particulares de Inglês
+              Aula de Inglês Individual em Campo Grande, MS
             </h1>
-            
-            <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90">
-              Atenção 100% personalizada com professor americano nativo
-            </p>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
               <Button 
@@ -97,7 +93,7 @@ export function AulaIndividualPage() {
       {/* Benefits Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Por que Escolher Aulas Particulares?</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">Por que Escolher Aula Particular?</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card className="hover:shadow-lg transition-shadow">
@@ -260,7 +256,7 @@ export function AulaIndividualPage() {
               </div>
               <h3 className="text-lg font-semibold mb-2">Execução</h3>
               <p className="text-muted-foreground text-sm">
-                Aulas focadas com material adaptado ao seu ritmo
+                Aula focada com material adaptado ao seu ritmo
               </p>
             </div>
 
@@ -292,7 +288,7 @@ export function AulaIndividualPage() {
         <div className="container mx-auto px-4 text-center relative z-10">
           <h2 className="text-3xl font-bold mb-4">Invista no Seu Futuro</h2>
           <p className="text-xl mb-8 text-primary-foreground/90">
-            Aulas particulares são o investimento mais eficiente no seu aprendizado de inglês
+            Aula particular é o investimento mais eficiente no seu aprendizado de inglês
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
