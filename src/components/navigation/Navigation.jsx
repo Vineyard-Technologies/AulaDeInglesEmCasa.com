@@ -19,7 +19,7 @@ export function Navigation() {
         <div className="flex justify-between items-center h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center py-2.5">
-            <div className="bg-gray-200 rounded-lg shadow-2xl px-3 py-[10px]">
+            <div className="bg-gray-200 rounded-lg shadow-2xl px-3 py-[10px] hover:bg-gray-300 hover:shadow-3xl transition-all duration-300 hover:scale-105">
               <img 
                 src={logoHorizontal} 
                 alt="Aula de Inglês em Casa" 
@@ -95,6 +95,13 @@ export function Navigation() {
               className={`hover:text-primary transition-colors ${isActive('/sobre') ? 'text-primary font-medium' : 'text-muted-foreground'}`}
             >
               Sobre
+            </Link>
+            
+            <Link 
+              to="/blog" 
+              className={`hover:text-primary transition-colors ${isActive('/blog') || location.pathname.startsWith('/blog') ? 'text-primary font-medium' : 'text-muted-foreground'}`}
+            >
+              Blog
             </Link>
             
             <Link 
@@ -185,6 +192,14 @@ export function Navigation() {
                 onClick={() => setIsOpen(false)}
               >
                 Sobre
+              </Link>
+              
+              <Link 
+                to="/blog" 
+                className={`px-2 py-1 rounded hover:bg-muted transition-colors ${isActive('/blog') || location.pathname.startsWith('/blog') ? 'text-primary font-medium' : 'text-muted-foreground'}`}
+                onClick={() => setIsOpen(false)}
+              >
+                Blog
               </Link>
               
               <Link 

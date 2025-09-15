@@ -3,8 +3,9 @@ import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon"
-import { LazyImage } from "@/components"
+import { LazyImage, GoogleMap, RelatedBlogPosts } from "@/components"
 import { updateMetaTags, addStructuredData } from "@/utils/seo"
+import { BLOG_CATEGORIES } from "@/data/blogPosts"
 import { 
   Video, 
   Clock, 
@@ -287,6 +288,59 @@ export function AulaOnlinePage() {
           </div>
         </div>
       </section>
+
+      {/* Location Section */}
+      <section className="py-16 bg-muted/50">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid lg:grid-cols-2 gap-6 items-center">
+              <div className="text-center flex flex-col justify-center">
+                <div className="w-24 h-16 mx-auto flex items-center justify-center mb-6">
+                  <img 
+                    src="/AulaDeInglesEmCasaIcon.webp" 
+                    alt="Aula de Inglês em Casa - Andrew Rogers" 
+                    className="max-w-full max-h-full object-contain"
+                  />
+                </div>
+                
+                <h2 className="text-3xl md:text-4xl font-bold mb-8">
+                  Aula de Inglês Online em Campo Grande, MS
+                </h2>
+                
+                <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                  <a 
+                    href={`https://wa.me/${whatsappNumber}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <Button 
+                      size="lg" 
+                      className="bg-green-500 hover:bg-green-600 text-white px-4 w-full"
+                    >
+                      <WhatsAppIcon className="w-5 h-5" />
+                      WhatsApp
+                    </Button>
+                  </a>
+                  <a href="mailto:Contato@auladeinglesemcasa.com">
+                    <Button 
+                      size="lg" 
+                      className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary-foreground/20 w-full"
+                    >
+                      <Mail className="w-5 h-5" />
+                      Enviar Email
+                    </Button>
+                  </a>
+                </div>
+              </div>
+              
+              <GoogleMap />
+            </div>
+          </div>
+        </div>
+      </section>
+
+      {/* Related Blog Posts */}
+      <RelatedBlogPosts category={BLOG_CATEGORIES.ONLINE} />
 
       {/* CTA Section */}
       <section className="relative py-16 text-primary-foreground overflow-hidden">

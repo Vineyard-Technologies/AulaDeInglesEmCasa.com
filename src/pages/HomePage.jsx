@@ -2,7 +2,7 @@ import { useEffect } from "react"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon"
-import { LazyLoad, LazyImage } from "@/components"
+import { LazyLoad, LazyImage, GoogleMap } from "@/components"
 import { Link } from "react-router-dom"
 import { updateMetaTags, addStructuredData, createEducationServiceSchema, createPersonSchema, pageMetaData } from "@/utils/seo"
 
@@ -73,7 +73,7 @@ export function HomePage() {
               Aula de Inglês em Casa
             </h1>
             <p className="text-xl md:text-2xl mb-6 text-primary-foreground/90">
-              Professor Andrew Christopher Rogers
+              Professor Andrew Rogers
             </p>
             <div className="flex items-center justify-center gap-2 mb-8">
               <MapPin className="w-5 h-5" />
@@ -374,7 +374,7 @@ export function HomePage() {
                     Sobre o Professor
                   </h2>
                   <p className="text-lg text-muted-foreground mb-8 leading-relaxed">
-                  Andrew Christopher Rogers é um professor americano de inglês com mais de 10 anos de experiência, incluindo 5 anos com somente alunos brasileiros. Ele aprendeu português sozinho e mora em Campo Grande há 2 anos.
+                  Andrew Rogers é um professor americano de inglês com mais de 10 anos de experiência, incluindo 5 anos com somente alunos brasileiros. Ele aprendeu português sozinho e mora em Campo Grande há 2 anos.
                   </p>
                   <Link to="/sobre">
                     <Button size="lg" className="inline-flex items-center gap-2">
@@ -450,20 +450,7 @@ export function HomePage() {
               </LazyLoad>
               
               <LazyLoad delay={300} animationClass="fade-in-right">
-                <div>
-                  <div className="bg-background rounded-lg p-4 shadow-lg">
-                    <iframe 
-                      src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d119603.60236497651!2d-54.63553405!3d-20.481099800000003!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x444d80abce0fb79b%3A0x396cea11aa65ef09!2sAula%20de%20Ingl%C3%AAs%20em%20Casa!5e0!3m2!1sen!2sbr!4v1757595739185!5m2!1sen!2sbr" 
-                      width="100%" 
-                      height="250" 
-                      style={{ border: 0 }} 
-                      allowFullScreen="" 
-                      loading="lazy" 
-                      referrerPolicy="no-referrer-when-downgrade"
-                      className="rounded-lg"
-                    ></iframe>
-                  </div>
-                </div>
+                <GoogleMap />
               </LazyLoad>
             </div>
           </div>

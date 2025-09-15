@@ -70,7 +70,7 @@ export const addStructuredData = (schemaData) => {
 export const createPersonSchema = () => ({
   "@context": "https://schema.org",
   "@type": "Person",
-  "name": "Andrew Christopher Rogers",
+  "name": "Andrew Rogers",
   "jobTitle": "Professor de Inglês",
   "description": "Professor americano de inglês com mais de 10 anos de experiência, especializado em aula personalizada para brasileiros.",
   "nationality": "American",
@@ -109,7 +109,7 @@ export const createEducationServiceSchema = () => ({
   "serviceType": "English Language Education",
   "provider": {
     "@type": "Person",
-    "name": "Andrew Christopher Rogers"
+    "name": "Andrew Rogers"
   },
   "areaServed": {
     "@type": "City",
@@ -126,7 +126,7 @@ export const createServiceSchema = (serviceName, description) => ({
   "description": description,
   "provider": {
     "@type": "Person",
-    "name": "Andrew Christopher Rogers"
+    "name": "Andrew Rogers"
   },
   "areaServed": {
     "@type": "City",

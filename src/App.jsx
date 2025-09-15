@@ -5,6 +5,8 @@ import {
   HomePage, 
   AboutPage, 
   ContactPage,
+  BlogPage,
+  BlogPostPage,
   PrivacyPolicyPage,
   TermsOfServicePage,
   SitemapPage,
@@ -39,6 +41,8 @@ export default function App() {
         <Routes>
           <Route path="/" element={<HomePage />} />
           <Route path="/sobre" element={<AboutPage />} />
+          <Route path="/blog" element={<BlogPage />} />
+          <Route path="/blog/:slug" element={<BlogPostPage />} />
           <Route path="/contato" element={<ContactPage />} />
           <Route path="/servicos/aula-de-ingles-online" element={<AulaOnlinePage />} />
           <Route path="/servicos/aula-de-ingles-individual" element={<AulaIndividualPage />} />

@@ -1,7 +1,8 @@
 import { useEffect } from "react"
 import { Link } from "react-router-dom"
 import { updateMetaTags, addStructuredData } from "@/utils/seo"
-import { Home, User, MessageCircle, Shield, FileText, Map, Video, Users, Mic } from "lucide-react"
+import { Home, User, MessageCircle, Shield, FileText, Map, Video, Users, Mic, BookOpen } from "lucide-react"
+import { getAllBlogPosts } from "@/data/blogPosts"
 
 const sitemapMetaData = {
   title: "Mapa do Site | Aula de Inglês em Casa",
@@ -33,6 +34,23 @@ export function SitemapPage() {
       description: "Entre em contato para agendar sua aula de inglês ou tirar dúvidas",
       icon: MessageCircle
     }
+  ]
+
+  const blogPosts = getAllBlogPosts()
+  
+  const blogPages = [
+    {
+      title: "Blog",
+      path: "/blog",
+      description: "Artigos e dicas sobre aprendizado de inglês",
+      icon: BookOpen
+    },
+    ...blogPosts.map(post => ({
+      title: post.title,
+      path: `/blog/${post.slug}`,
+      description: post.excerpt,
+      icon: BookOpen
+    }))
   ]
 
   const servicePages = [
@@ -132,6 +150,42 @@ export function SitemapPage() {
           <h2 className="text-2xl font-semibold mb-6">Nossos Serviços</h2>
           <div className="grid gap-6 md:grid-cols-2">
             {servicePages.map((page, index) => {
+              const IconComponent = page.icon
+              return (
+                <Link
+                  key={index}
+                  to={page.path}
+                  className="group block p-6 bg-card rounded-lg border hover:border-primary/50 transition-all duration-200 hover:shadow-lg"
+                >
+                  <div className="flex items-start gap-4">
+                    <div className="flex-shrink-0 p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
+                      <IconComponent className="w-6 h-6 text-primary" />
+                    </div>
+                    
+                    <div className="flex-grow">
+                      <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2">
+                        {page.title}
+                      </h3>
+                      <p className="text-muted-foreground text-sm leading-relaxed">
+                        {page.description}
+                      </p>
+                      
+                      <div className="mt-3 text-sm text-primary group-hover:underline">
+                        Visitar página →
+                      </div>
+                    </div>
+                  </div>
+                </Link>
+              )
+            })}
+          </div>
+        </div>
+
+        {/* Blog Pages */}
+        <div className="mb-12">
+          <h2 className="text-2xl font-semibold mb-6">Blog e Artigos</h2>
+          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+            {blogPages.map((page, index) => {
               const IconComponent = page.icon
               return (
                 <Link

@@ -9,11 +9,11 @@ export function Footer() {
           {/* Logo and Description Section */}
           <div className="flex flex-col items-center md:items-start max-w-sm">
             <Link to="/" className="block mb-4">
-              <div className="w-[300px] h-[60px] bg-white rounded-full flex items-center justify-center px-4 hover:bg-gray-50 transition-colors cursor-pointer">
+              <div className="w-[300px] h-[60px] bg-white rounded-full flex items-center justify-center px-4 hover:bg-gray-50 hover:shadow-lg transition-all duration-300 hover:scale-105 cursor-pointer">
                 <img 
                   src={logoHorizontal} 
                   alt="Aula de Inglês em Casa - Andrew Rogers" 
-                  className="max-w-full max-h-full object-contain"
+                  className="max-w-full max-h-full object-contain transition-transform duration-300"
                 />
               </div>
             </Link>
