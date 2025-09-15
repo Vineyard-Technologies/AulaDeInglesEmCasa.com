@@ -2,7 +2,8 @@ import { useEffect } from "react"
 import { Link } from "react-router-dom"
 import { updateMetaTags, addStructuredData } from "@/utils/seo"
 import { Home, User, MessageCircle, Shield, FileText, Map, Video, Users, Mic, BookOpen } from "lucide-react"
-import { getAllBlogPosts } from "@/data/blogPosts"
+import { getAllBlogPosts } from "@/data/blogPostsBilingual"
+import { useLanguage } from "@/contexts/LanguageContext"
 
 const sitemapMetaData = {
   title: "Mapa do Site | Aula de Inglês em Casa",
@@ -11,6 +12,8 @@ const sitemapMetaData = {
 }
 
 export function SitemapPage() {
+  const { language } = useLanguage()
+  
   useEffect(() => {
     updateMetaTags(sitemapMetaData)
   }, [])
@@ -36,7 +39,7 @@ export function SitemapPage() {
     }
   ]
 
-  const blogPosts = getAllBlogPosts()
+  const blogPosts = getAllBlogPosts(language)
   
   const blogPages = [
     {

@@ -2,7 +2,9 @@ import { useEffect } from "react"
 import { Link } from "react-router-dom"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { updateMetaTags, addStructuredData } from "@/utils/seo"
-import { getAllBlogPosts } from "@/data/blogPosts"
+import { getAllBlogPosts } from "@/data/blogPostsBilingual"
+import { useTranslations } from "@/data/translations"
+import { useLanguage } from "@/contexts/LanguageContext"
 import { 
   BookOpen, 
   Clock, 
@@ -16,7 +18,9 @@ const blogMetaData = {
 }
 
 export function BlogPage() {
-  const allPosts = getAllBlogPosts()
+  const t = useTranslations()
+  const { language } = useLanguage()
+  const allPosts = getAllBlogPosts(language)
   
   useEffect(() => {
     updateMetaTags(blogMetaData)
@@ -48,10 +52,10 @@ export function BlogPage() {
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Blog
+              {t.blog.title}
             </h1>
             <p className="text-xl md:text-2xl mb-8 text-primary-foreground/90">
-              Artigos e conselhos de um professor americano nativo para acelerar seu aprendizado
+              {t.blog.subtitle}
             </p>
           </div>
         </div>
@@ -78,7 +82,7 @@ export function BlogPage() {
                   <div className="flex items-center justify-end mb-2">
                     <div className="flex items-center gap-1 text-muted-foreground text-sm">
                       <Clock className="w-4 h-4" />
-                      {post.readTime}
+                      {post.readTime} {t.blog.readTime}
                     </div>
                   </div>
                   
@@ -91,7 +95,7 @@ export function BlogPage() {
                     </Link>
                   </CardTitle>
                   
-                  <p className="text-sm text-muted-foreground mt-1">por <Link to="/sobre" className="hover:text-primary transition-colors">Andrew Rogers</Link></p>
+                  <p className="text-sm text-muted-foreground mt-1">{t.blog.author.replace('Andrew Rogers', '')} <Link to="/sobre" className="hover:text-primary transition-colors">Andrew Rogers</Link></p>
                 </CardHeader>
                 
                 <CardContent>
@@ -103,7 +107,7 @@ export function BlogPage() {
                     to={`/blog/${post.slug}`}
                     className="inline-flex items-center gap-1 text-primary hover:text-primary/80 font-medium text-sm transition-colors"
                   >
-                    Ler mais
+                    {t.actions.readMore}
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </CardContent>
@@ -114,9 +118,9 @@ export function BlogPage() {
           {allPosts.length === 0 && (
             <div className="text-center py-12">
               <BookOpen className="w-16 h-16 mx-auto text-muted-foreground mb-4" />
-              <h3 className="text-xl font-semibold mb-2">Nenhum artigo encontrado</h3>
+              <h3 className="text-xl font-semibold mb-2">{t.blog.emptyState.title}</h3>
               <p className="text-muted-foreground">
-                Não há artigos publicados no momento.
+                {t.blog.emptyState.description}
               </p>
             </div>
           )}

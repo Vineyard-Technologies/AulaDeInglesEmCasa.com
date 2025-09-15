@@ -5,7 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon"
 import { LazyImage, GoogleMap, RelatedBlogPosts } from "@/components"
 import { updateMetaTags, addStructuredData } from "@/utils/seo"
-import { BLOG_CATEGORIES } from "@/data/blogPosts"
+import { BLOG_CATEGORIES } from "@/data/blogPostsBilingual"
+import { useTranslations } from "@/data/translations"
 import { 
   Video, 
   Clock, 
@@ -26,6 +27,7 @@ const aulaOnlineMetaData = {
 
 export function AulaOnlinePage() {
   const whatsappNumber = "5567996161199"
+  const t = useTranslations()
   
   useEffect(() => {
     updateMetaTags(aulaOnlineMetaData)
@@ -54,7 +56,7 @@ export function AulaOnlinePage() {
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Aula de Inglês Online em Campo Grande, MS
+              {t.online.hero.title}
             </h1>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -70,7 +72,7 @@ export function AulaOnlinePage() {
                   className="inline-flex items-center gap-2"
                 >
                   <WhatsAppIcon className="w-5 h-5" />
-                  WhatsApp
+                  {t.actions.whatsapp}
                 </a>
               </Button>
               
@@ -84,7 +86,7 @@ export function AulaOnlinePage() {
                   className="inline-flex items-center gap-2"
                 >
                   <Mail className="w-5 h-5" />
-                  Enviar Email
+                  {t.actions.sendEmail}
                 </a>
               </Button>
             </div>
@@ -98,23 +100,12 @@ export function AulaOnlinePage() {
           <div className="max-w-6xl mx-auto">
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div>
-                <h2 className="text-3xl font-bold mb-6">Aulas de Inglês Online Personalizadas</h2>
+                <h2 className="text-3xl font-bold mb-6">{t.online.about.title}</h2>
                 <div className="prose prose-lg max-w-none text-muted-foreground space-y-4">
-                  <p>
-                    As aulas de inglês online revolucionaram a forma como aprendemos idiomas. Com a tecnologia atual, é possível ter uma experiência de aprendizado tão eficaz quanto as aulas presenciais, mas com muito mais flexibilidade e conveniência.
-                  </p>
-                  <p>
-                    Como professor americano nativo, utilizo plataformas modernas de videoconferência que garantem qualidade de áudio e vídeo excepcional. Cada aula é cuidadosamente planejada para maximizar o tempo que passamos juntos, focando nas suas necessidades específicas e objetivos de aprendizado.
-                  </p>
-                  <p>
-                    Durante nossas sessões online, você terá acesso a materiais interativos, exercícios práticos e conversação em tempo real. A metodologia é adaptada ao ambiente digital, garantindo que você pratique listening, speaking, reading e writing de forma integrada e natural.
-                  </p>
-                  <p>
-                    O que torna as aulas online especiais é a possibilidade de gravação (quando solicitado), permitindo que você revise o conteúdo posteriormente. Além disso, posso compartilhar recursos digitais instantaneamente, tornando o processo de aprendizado mais dinâmico e eficiente.
-                  </p>
-                  <p>
-                    A flexibilidade de horários é outro grande benefício. Você pode agendar suas aulas de acordo com sua rotina, eliminando tempo de deslocamento e permitindo que estude no conforto do seu lar, mantendo toda a qualidade de uma aula particular tradicional.
-                  </p>
+                  <p>{t.online.about.p1}</p>
+                  <p>{t.online.about.p2}</p>
+                  <p>{t.online.about.p3}</p>
+                  <p>{t.online.about.p4}</p>
                 </div>
               </div>
               <div className="lg:order-first">
@@ -134,7 +125,7 @@ export function AulaOnlinePage() {
       {/* Benefits Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Vantagens da Aula Online</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">{t.online.benefits.title}</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
@@ -146,11 +137,11 @@ export function AulaOnlinePage() {
                 />
               </div>
               <CardHeader className="text-center">
-                <CardTitle className="text-lg">Flexibilidade Total</CardTitle>
+                <CardTitle className="text-lg">{t.online.benefits.flexibility.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-center">
-                  Escolha os melhores horários para você, incluindo fins de semana
+                  {t.online.benefits.flexibility.description}
                 </p>
               </CardContent>
             </Card>
@@ -164,11 +155,11 @@ export function AulaOnlinePage() {
                 />
               </div>
               <CardHeader className="text-center">
-                <CardTitle className="text-lg">Plataforma Segura</CardTitle>
+                <CardTitle className="text-lg">{t.online.benefits.technology.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-center">
-                  Utilizamos Google Meet e Zoom para uma aula estável e segura
+                  {t.online.benefits.technology.description}
                 </p>
               </CardContent>
             </Card>
@@ -182,11 +173,11 @@ export function AulaOnlinePage() {
                 />
               </div>
               <CardHeader className="text-center">
-                <CardTitle className="text-lg">Áudio de Qualidade</CardTitle>
+                <CardTitle className="text-lg">{t.online.benefits.recording.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-center">
-                  Pronúncia clara e nativa para melhor compreensão
+                  {t.online.benefits.recording.description}
                 </p>
               </CardContent>
             </Card>
@@ -200,11 +191,11 @@ export function AulaOnlinePage() {
                 />
               </div>
               <CardHeader className="text-center">
-                <CardTitle className="text-lg">Atenção Individual</CardTitle>
+                <CardTitle className="text-lg">{t.online.benefits.comfort.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-center">
-                  Foco total no seu progresso e necessidades específicas
+                  {t.online.benefits.comfort.description}
                 </p>
               </CardContent>
             </Card>
@@ -215,16 +206,16 @@ export function AulaOnlinePage() {
       {/* How it Works Section */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Como Funciona a Aula Online</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">{t.online.methodology.title}</h2>
           
           <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                 1
               </div>
-              <h3 className="text-xl font-semibold mb-3">Agendamento</h3>
+              <h3 className="text-xl font-semibold mb-3">{t.online.methodology.step1.title}</h3>
               <p className="text-muted-foreground">
-                Entre em contato via WhatsApp para agendar sua aula no horário que funcionar melhor para você
+                {t.online.methodology.step1.description}
               </p>
             </div>
 
@@ -232,9 +223,9 @@ export function AulaOnlinePage() {
               <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                 2
               </div>
-              <h3 className="text-xl font-semibold mb-3">Preparação</h3>
+              <h3 className="text-xl font-semibold mb-3">{t.online.methodology.step2.title}</h3>
               <p className="text-muted-foreground">
-                Você recebe o link da reunião e as orientações necessárias antes da aula
+                {t.online.methodology.step2.description}
               </p>
             </div>
 
@@ -242,9 +233,9 @@ export function AulaOnlinePage() {
               <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                 3
               </div>
-              <h3 className="text-xl font-semibold mb-3">Aula Personalizada</h3>
+              <h3 className="text-xl font-semibold mb-3">{t.online.methodology.step3.title}</h3>
               <p className="text-muted-foreground">
-                Aula focada no seu nível e objetivos, com material didático compartilhado em tempo real
+                {t.online.methodology.step3.description}
               </p>
             </div>
           </div>
@@ -304,7 +295,7 @@ export function AulaOnlinePage() {
                 </div>
                 
                 <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                  Aula de Inglês Online em Campo Grande, MS
+                  {t.online.location.title}
                 </h2>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -318,7 +309,7 @@ export function AulaOnlinePage() {
                       className="bg-green-500 hover:bg-green-600 text-white px-4 w-full"
                     >
                       <WhatsAppIcon className="w-5 h-5" />
-                      WhatsApp
+                      {t.actions.whatsapp}
                     </Button>
                   </a>
                   <a href="mailto:Contato@auladeinglesemcasa.com">
@@ -327,7 +318,7 @@ export function AulaOnlinePage() {
                       className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary-foreground/20 w-full"
                     >
                       <Mail className="w-5 h-5" />
-                      Enviar Email
+                      {t.actions.sendEmail}
                     </Button>
                   </a>
                 </div>
@@ -355,9 +346,9 @@ export function AulaOnlinePage() {
         <div className="absolute inset-0 bg-black/60"></div>
         
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl font-bold mb-4">Pronto para Começar?</h2>
+          <h2 className="text-3xl font-bold mb-4">{t.online.finalCta.title}</h2>
           <p className="text-xl mb-8 text-primary-foreground/90">
-            Agende sua primeira aula online e experimente a qualidade do ensino personalizado
+            {t.online.finalCta.subtitle}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -373,7 +364,7 @@ export function AulaOnlinePage() {
                 className="inline-flex items-center gap-2"
               >
                 <WhatsAppIcon className="w-5 h-5" />
-                WhatsApp
+                {t.actions.whatsapp}
               </a>
             </Button>
             
@@ -383,7 +374,7 @@ export function AulaOnlinePage() {
                 className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary-foreground/20"
               >
                 <Mail className="w-5 h-5" />
-                Enviar Email
+                {t.actions.sendEmail}
               </Button>
             </a>
           </div>

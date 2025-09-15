@@ -3,7 +3,8 @@ import { useParams, Link, Navigate } from "react-router-dom"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { updateMetaTags } from "@/utils/seo"
-import { getBlogPostBySlug, getRelatedPosts } from "@/data/blogPosts"
+import { getBlogPostBySlug, getRelatedPosts } from "@/data/blogPostsBilingual"
+import { useLanguage } from "@/contexts/LanguageContext"
 import { 
   Clock, 
   ArrowLeft, 
@@ -13,13 +14,14 @@ import {
 
 export function BlogPostPage() {
   const { slug } = useParams()
-  const post = getBlogPostBySlug(slug)
+  const { language } = useLanguage()
+  const post = getBlogPostBySlug(slug, language)
   
   if (!post) {
     return <Navigate to="/blog" replace />
   }
   
-  const relatedPosts = getRelatedPosts(post)
+  const relatedPosts = getRelatedPosts(post, language)
   
   useEffect(() => {
     updateMetaTags({

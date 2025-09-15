@@ -1,16 +1,96 @@
 // Blog post data structure and utilities
 
 export const BLOG_CATEGORIES = {
-  ONLINE: 'Aula de Inglês Online',
-  INDIVIDUAL: 'Aula de Inglês Individual',
-  GROUP: 'Aula de Inglês em Grupo',
-  CONVERSATION: 'Aula de Conversação em Inglês'
+  ONLINE: 'online',
+  INDIVIDUAL: 'individual', 
+  GROUP: 'group',
+  CONVERSATION: 'conversation'
 }
 
-export const blogPosts = [
+// Category translations
+export const CATEGORY_TRANSLATIONS = {
+  pt: {
+    online: 'Aula de Inglês Online',
+    individual: 'Aula de Inglês Individual',
+    group: 'Aula de Inglês em Grupo',
+    conversation: 'Aula de Conversação em Inglês'
+  },
+  en: {
+    online: 'Online English Classes',
+    individual: 'Individual English Classes',
+    group: 'Group English Classes', 
+    conversation: 'English Conversation Classes'
+  }
+}
+
+export const blogPostsData = [
   // Online Classes Posts
   {
     id: 1,
+    category: BLOG_CATEGORIES.ONLINE,
+    image: "/BlogPicture-1.webp", 
+    readTime: "4",
+    slug: {
+      pt: "vantagens-aulas-ingles-online",
+      en: "advantages-online-english-classes"
+    },
+    content: {
+      pt: {
+        title: "5 Vantagens das Aulas de Inglês Online que Você Precisa Conhecer",
+        excerpt: "Descubra por que as aulas online estão revolucionando o aprendizado de inglês e como você pode aproveitar ao máximo essa modalidade.",
+        content: `As aulas de inglês online têm ganhado cada vez mais popularidade, especialmente nos últimos anos. Como professor americano nativo em Campo Grande, MS, tenho visto em primeira mão como essa modalidade pode transformar o aprendizado dos meus alunos. Aqui estão as 5 principais vantagens que fazem das aulas online uma escolha excepcional.
+
+**1. Flexibilidade de Horários Incomparável**
+
+A maior vantagem das aulas online é a flexibilidade. Você pode agendar suas aulas no horário que melhor se adapta à sua rotina, seja de manhã cedo, na hora do almoço ou à noite. Isso é especialmente valioso para profissionais ocupados ou estudantes com horários irregulares.
+
+**2. Conforto do Seu Próprio Ambiente**
+
+Estudar em casa elimina o tempo de deslocamento e permite que você aprenda em um ambiente familiar e confortável. Isso reduz a ansiedade e permite maior concentração no aprendizado.
+
+**3. Acesso a Recursos Digitais Avançados**
+
+Durante as aulas online, podemos compartilhar tela, usar apresentações interativas, acessar sites em tempo real e utilizar ferramentas digitais que enriquecem significativamente a experiência de aprendizado.
+
+**4. Gravação das Aulas para Revisão**
+
+Uma vantagem única das aulas online é a possibilidade de gravar as sessões (com permissão), permitindo que você revise o conteúdo sempre que necessário.
+
+**5. Economia de Tempo e Dinheiro**
+
+Sem necessidade de deslocamento, você economiza tempo e dinheiro com transporte, aproveitando melhor cada minuto dedicado aos estudos.
+
+Como professor experiente, posso afirmar que as aulas online, quando bem estruturadas, são tão eficazes quanto as presenciais, oferecendo benefícios únicos que podem acelerar seu progresso no inglês.`
+      },
+      en: {
+        title: "5 Advantages of Online English Classes You Need to Know",
+        excerpt: "Discover why online classes are revolutionizing English learning and how you can make the most of this modality.",
+        content: `Online English classes have gained increasing popularity, especially in recent years. As a native American teacher in Campo Grande, MS, I have seen firsthand how this modality can transform my students' learning. Here are the 5 main advantages that make online classes an exceptional choice.
+
+**1. Unmatched Schedule Flexibility**
+
+The biggest advantage of online classes is flexibility. You can schedule your classes at the time that best fits your routine, whether early morning, lunch time, or evening. This is especially valuable for busy professionals or students with irregular schedules.
+
+**2. Comfort of Your Own Environment**
+
+Studying at home eliminates commute time and allows you to learn in a familiar and comfortable environment. This reduces anxiety and allows for greater concentration on learning.
+
+**3. Access to Advanced Digital Resources**
+
+During online classes, we can share screens, use interactive presentations, access websites in real time, and use digital tools that significantly enrich the learning experience.
+
+**4. Class Recording for Review**
+
+A unique advantage of online classes is the possibility to record sessions (with permission), allowing you to review content whenever necessary.
+
+**5. Time and Money Savings**
+
+Without the need for commuting, you save time and money on transportation, making better use of every minute dedicated to studying.
+
+As an experienced teacher, I can affirm that online classes, when well-structured, are as effective as in-person classes, offering unique benefits that can accelerate your English progress.`
+      }
+    }
+  },
     title: "5 Vantagens das Aulas de Inglês Online que Você Precisa Conhecer",
     slug: "vantagens-aulas-ingles-online",
     category: BLOG_CATEGORIES.ONLINE,

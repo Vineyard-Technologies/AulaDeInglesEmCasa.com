@@ -5,7 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon"
 import { GoogleMap, RelatedBlogPosts } from "@/components"
 import { updateMetaTags, addStructuredData } from "@/utils/seo"
-import { BLOG_CATEGORIES } from "@/data/blogPosts"
+import { BLOG_CATEGORIES } from "@/data/blogPostsBilingual"
+import { useTranslations } from "@/data/translations"
 import { 
   User, 
   Target, 
@@ -26,6 +27,7 @@ const aulaIndividualMetaData = {
 
 export function AulaIndividualPage() {
   const whatsappNumber = "5567996161199"
+  const t = useTranslations()
   
   useEffect(() => {
     updateMetaTags(aulaIndividualMetaData)
@@ -54,7 +56,7 @@ export function AulaIndividualPage() {
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Aula de Inglês Individual em Campo Grande, MS
+              {t.individual.hero.title}
             </h1>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -70,7 +72,7 @@ export function AulaIndividualPage() {
                   className="inline-flex items-center gap-2"
                 >
                   <WhatsAppIcon className="w-5 h-5" />
-                  WhatsApp
+                  {t.actions.whatsapp}
                 </a>
               </Button>
               
@@ -84,7 +86,7 @@ export function AulaIndividualPage() {
                   className="inline-flex items-center gap-2"
                 >
                   <Mail className="w-5 h-5" />
-                  Enviar Email
+                  {t.actions.sendEmail}
                 </a>
               </Button>
             </div>
@@ -99,23 +101,23 @@ export function AulaIndividualPage() {
             <div className="grid lg:grid-cols-2 gap-12 items-center">
               <div className="space-y-6">
                 <h2 className="text-3xl font-bold">
-                  Transforme Seu Inglês com Aulas Individuais
+                  {t.individual.about.title}
                 </h2>
                 
                 <p className="text-lg text-muted-foreground">
-                  A aula de inglês individual representa a forma mais eficiente e personalizada de dominar o idioma. Com atenção 100% focada em você, cada minuto da aula é otimizado para acelerar seu aprendizado e alcançar seus objetivos específicos.
+                  {t.individual.about.p1}
                 </p>
                 
                 <p className="text-muted-foreground">
-                  Diferente das aulas em grupo, onde o ritmo é determinado pela média da turma, as aulas individuais se adaptam completamente ao seu nível, estilo de aprendizagem e necessidades. Seja você um iniciante absoluto ou alguém que precisa aperfeiçoar habilidades específicas para o trabalho, cada aula é desenhada exclusivamente para você.
+                  {t.individual.about.p2}
                 </p>
                 
                 <p className="text-muted-foreground">
-                  Como professor americano nativo em Campo Grande, MS, ofereço não apenas o domínio natural da língua, mas também a compreensão cultural que faz toda a diferença na comunicação real. Nas aulas individuais, você tem liberdade para fazer todas as perguntas, praticar pronunciação sem constrangimento e focar nos temas que mais interessam ou desafiam você.
+                  {t.individual.about.p3}
                 </p>
                 
                 <p className="text-muted-foreground">
-                  A flexibilidade de horários é outro grande diferencial. Você agenda conforme sua disponibilidade, incluindo fins de semana e horários alternativos. Isso significa que seu aprendizado nunca para, mantendo a continuidade essencial para o progresso consistente no inglês.
+                  {t.individual.about.p4}
                 </p>
               </div>
               
@@ -134,7 +136,7 @@ export function AulaIndividualPage() {
       {/* Benefits Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Por que Escolher Aula Particular?</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">{t.individual.benefits.title}</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Card className="hover:shadow-lg transition-shadow">
@@ -145,11 +147,11 @@ export function AulaIndividualPage() {
                   className="w-full h-40 object-cover rounded-md mb-4"
                 />
                 <Target className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">Foco Total</CardTitle>
+                <CardTitle className="text-lg">{t.individual.benefits.focus.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-center">
-                  100% da atenção do professor direcionada para você e seus objetivos específicos
+                  {t.individual.benefits.focus.description}
                 </p>
               </CardContent>
             </Card>
@@ -162,11 +164,11 @@ export function AulaIndividualPage() {
                   className="w-full h-40 object-cover rounded-md mb-4"
                 />
                 <BookOpen className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">Método Personalizado</CardTitle>
+                <CardTitle className="text-lg">{t.individual.benefits.method.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-center">
-                  Conteúdo e ritmo adaptados ao seu nível e estilo de aprendizagem
+                  {t.individual.benefits.method.description}
                 </p>
               </CardContent>
             </Card>
@@ -179,11 +181,11 @@ export function AulaIndividualPage() {
                   className="w-full h-40 object-cover rounded-md mb-4"
                 />
                 <Clock className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">Horário Flexível</CardTitle>
+                <CardTitle className="text-lg">{t.individual.benefits.schedule.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-center">
-                  Agende conforme sua disponibilidade, incluindo fins de semana
+                  {t.individual.benefits.schedule.description}
                 </p>
               </CardContent>
             </Card>
@@ -196,11 +198,11 @@ export function AulaIndividualPage() {
                   className="w-full h-40 object-cover rounded-md mb-4"
                 />
                 <MessageCircle className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">Mais Conversação</CardTitle>
+                <CardTitle className="text-lg">{t.individual.benefits.conversation.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-center">
-                  Máximo tempo de prática oral sem divisão com outros alunos
+                  {t.individual.benefits.conversation.description}
                 </p>
               </CardContent>
             </Card>
@@ -213,11 +215,11 @@ export function AulaIndividualPage() {
                   className="w-full h-40 object-cover rounded-md mb-4"
                 />
                 <Award className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">Progresso Rápido</CardTitle>
+                <CardTitle className="text-lg">{t.individual.benefits.progress.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-center">
-                  Aprendizado acelerado com correções e feedback imediatos
+                  {t.individual.benefits.progress.description}
                 </p>
               </CardContent>
             </Card>
@@ -230,11 +232,11 @@ export function AulaIndividualPage() {
                   className="w-full h-40 object-cover rounded-md mb-4"
                 />
                 <Calendar className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">Sem Pressa</CardTitle>
+                <CardTitle className="text-lg">{t.individual.benefits.pace.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-center">
-                  Aprenda no seu ritmo, sem pressão de acompanhar outros alunos
+                  {t.individual.benefits.pace.description}
                 </p>
               </CardContent>
             </Card>
@@ -245,16 +247,16 @@ export function AulaIndividualPage() {
       {/* Methodology Section */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Nossa Metodologia</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">{t.individual.methodology.title}</h2>
           
           <div className="max-w-4xl mx-auto grid md:grid-cols-4 gap-6">
             <div className="text-center">
               <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                 1
               </div>
-              <h3 className="text-lg font-semibold mb-2">Avaliação</h3>
+              <h3 className="text-lg font-semibold mb-2">{t.individual.methodology.step1.title}</h3>
               <p className="text-muted-foreground text-sm">
-                Identificamos seu nível atual e objetivos específicos
+                {t.individual.methodology.step1.description}
               </p>
             </div>
 
@@ -262,9 +264,9 @@ export function AulaIndividualPage() {
               <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                 2
               </div>
-              <h3 className="text-lg font-semibold mb-2">Planejamento</h3>
+              <h3 className="text-lg font-semibold mb-2">{t.individual.methodology.step2.title}</h3>
               <p className="text-muted-foreground text-sm">
-                Criamos um plano personalizado para suas necessidades
+                {t.individual.methodology.step2.description}
               </p>
             </div>
 
@@ -272,9 +274,9 @@ export function AulaIndividualPage() {
               <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                 3
               </div>
-              <h3 className="text-lg font-semibold mb-2">Execução</h3>
+              <h3 className="text-lg font-semibold mb-2">{t.individual.methodology.step3.title}</h3>
               <p className="text-muted-foreground text-sm">
-                Aula focada com material adaptado ao seu ritmo
+                {t.individual.methodology.step3.description}
               </p>
             </div>
 
@@ -282,9 +284,9 @@ export function AulaIndividualPage() {
               <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
                 4
               </div>
-              <h3 className="text-lg font-semibold mb-2">Acompanhamento</h3>
+              <h3 className="text-lg font-semibold mb-2">{t.individual.methodology.step4.title}</h3>
               <p className="text-muted-foreground text-sm">
-                Monitoramento contínuo do progresso e ajustes
+                {t.individual.methodology.step4.description}
               </p>
             </div>
           </div>
@@ -294,7 +296,7 @@ export function AulaIndividualPage() {
       {/* Perfect For Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Ideal Para Quem</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">{t.individual.idealFor.title}</h2>
           
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
             <Card className="hover:shadow-lg transition-shadow">
@@ -304,21 +306,21 @@ export function AulaIndividualPage() {
                   alt="Busca Resultados Rápidos - Aula Individual" 
                   className="w-full h-40 object-cover rounded-md mb-4"
                 />
-                <CardTitle>Busca Resultados Rápidos</CardTitle>
+                <CardTitle>{t.individual.idealFor.quickResults.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Precisa do inglês para trabalho ou viagem</span>
+                    <span>{t.individual.idealFor.quickResults.need1}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Tem prazos específicos para alcançar objetivos</span>
+                    <span>{t.individual.idealFor.quickResults.need2}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Quer preparação para entrevistas em inglês</span>
+                    <span>{t.individual.idealFor.quickResults.need3}</span>
                   </li>
                 </ul>
               </CardContent>
@@ -331,21 +333,21 @@ export function AulaIndividualPage() {
                   alt="Prefere Atenção Individual - Aula Individual" 
                   className="w-full h-40 object-cover rounded-md mb-4"
                 />
-                <CardTitle>Prefere Atenção Individual</CardTitle>
+                <CardTitle>{t.individual.idealFor.individualAttention.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Se sente tímido em grupos</span>
+                    <span>{t.individual.idealFor.individualAttention.need1}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Quer corrigir erros específicos na pronúncia</span>
+                    <span>{t.individual.idealFor.individualAttention.need2}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Tem necessidades muito específicas de aprendizado</span>
+                    <span>{t.individual.idealFor.individualAttention.need3}</span>
                   </li>
                 </ul>
               </CardContent>
@@ -369,7 +371,7 @@ export function AulaIndividualPage() {
                 </div>
                 
                 <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                  Aula de Inglês Individual em Campo Grande, MS
+                  {t.individual.location.title}
                 </h2>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -383,7 +385,7 @@ export function AulaIndividualPage() {
                       className="bg-green-500 hover:bg-green-600 text-white px-4 w-full"
                     >
                       <WhatsAppIcon className="w-5 h-5" />
-                      WhatsApp
+                      {t.actions.whatsapp}
                     </Button>
                   </a>
                   <a href="mailto:Contato@auladeinglesemcasa.com">
@@ -392,7 +394,7 @@ export function AulaIndividualPage() {
                       className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary-foreground/20 w-full"
                     >
                       <Mail className="w-5 h-5" />
-                      Enviar Email
+                      {t.actions.sendEmail}
                     </Button>
                   </a>
                 </div>
@@ -420,9 +422,9 @@ export function AulaIndividualPage() {
         <div className="absolute inset-0 bg-black/60"></div>
         
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl font-bold mb-4">Invista no Seu Futuro</h2>
+          <h2 className="text-3xl font-bold mb-4">{t.individual.finalCta.title}</h2>
           <p className="text-xl mb-8 text-primary-foreground/90">
-            Aula particular é o investimento mais eficiente no seu aprendizado de inglês
+            {t.individual.finalCta.subtitle}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -438,7 +440,7 @@ export function AulaIndividualPage() {
                 className="inline-flex items-center gap-2"
               >
                 <WhatsAppIcon className="w-5 h-5" />
-                WhatsApp
+                {t.actions.whatsapp}
               </a>
             </Button>
             
@@ -448,7 +450,7 @@ export function AulaIndividualPage() {
                 className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary-foreground/20"
               >
                 <Mail className="w-5 h-5" />
-                Enviar Email
+                {t.actions.sendEmail}
               </Button>
             </a>
           </div>

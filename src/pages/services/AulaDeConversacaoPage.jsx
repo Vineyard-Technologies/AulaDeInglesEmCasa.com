@@ -5,7 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon"
 import { GoogleMap, RelatedBlogPosts } from "@/components"
 import { updateMetaTags, addStructuredData } from "@/utils/seo"
-import { BLOG_CATEGORIES } from "@/data/blogPosts"
+import { BLOG_CATEGORIES } from "@/data/blogPostsBilingual"
+import { useTranslations } from "@/data/translations"
 import { 
   MessageCircle, 
   Mic, 
@@ -26,6 +27,7 @@ const aulaDeConversacaoMetaData = {
 
 export function AulaDeConversacaoPage() {
   const whatsappNumber = "5567996161199"
+  const t = useTranslations()
   
   useEffect(() => {
     updateMetaTags(aulaDeConversacaoMetaData)
@@ -54,7 +56,7 @@ export function AulaDeConversacaoPage() {
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Aula de Conversação de Inglês em Campo Grande, MS
+              {t.conversation.hero.title}
             </h1>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -70,7 +72,7 @@ export function AulaDeConversacaoPage() {
                   className="inline-flex items-center gap-2"
                 >
                   <WhatsAppIcon className="w-5 h-5" />
-                  WhatsApp
+                  {t.actions.whatsapp}
                 </a>
               </Button>
               
@@ -84,7 +86,7 @@ export function AulaDeConversacaoPage() {
                   className="inline-flex items-center gap-2"
                 >
                   <Mail className="w-5 h-5" />
-                  Enviar Email
+                  {t.actions.sendEmail}
                 </a>
               </Button>
             </div>
@@ -95,17 +97,17 @@ export function AulaDeConversacaoPage() {
       {/* Benefits Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Por que Focar na Conversação?</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">{t.conversation.benefits.title}</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader className="text-center">
                 <Mic className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">Fluência Real</CardTitle>
+                <CardTitle className="text-lg">{t.conversation.benefits.fluency.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-center">
-                  Desenvolva a habilidade de falar inglês de forma natural e espontânea
+                  {t.conversation.benefits.fluency.description}
                 </p>
               </CardContent>
             </Card>
@@ -113,11 +115,11 @@ export function AulaDeConversacaoPage() {
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader className="text-center">
                 <Award className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">Confiança</CardTitle>
+                <CardTitle className="text-lg">{t.conversation.benefits.confidence.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-center">
-                  Ganhe segurança para falar inglês em qualquer situação
+                  {t.conversation.benefits.confidence.description}
                 </p>
               </CardContent>
             </Card>
@@ -125,11 +127,11 @@ export function AulaDeConversacaoPage() {
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader className="text-center">
                 <Globe className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">Pronúncia Nativa</CardTitle>
+                <CardTitle className="text-lg">{t.conversation.benefits.pronunciation.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-center">
-                  Aprenda sotaque americano autêntico com professor nativo
+                  {t.conversation.benefits.pronunciation.description}
                 </p>
               </CardContent>
             </Card>
@@ -137,11 +139,11 @@ export function AulaDeConversacaoPage() {
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader className="text-center">
                 <Clock className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">Prática Intensiva</CardTitle>
+                <CardTitle className="text-lg">{t.conversation.benefits.speaking.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-center">
-                  Máximo tempo de fala para acelerar seu progresso
+                  {t.conversation.benefits.speaking.description}
                 </p>
               </CardContent>
             </Card>
@@ -152,7 +154,7 @@ export function AulaDeConversacaoPage() {
       {/* Topics Section */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Tópicos da Aula de Conversação</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">{t.conversation.methodology.title}</h2>
           
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
             <Card className="hover:shadow-lg transition-shadow">
@@ -304,7 +306,7 @@ export function AulaDeConversacaoPage() {
       {/* Perfect For Section */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Ideal Para Quem</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">{t.conversation.idealFor.title}</h2>
           
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
@@ -377,7 +379,7 @@ export function AulaDeConversacaoPage() {
                 </div>
                 
                 <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                  Aula de Conversação em Inglês em Campo Grande, MS
+                  {t.conversation.location.title}
                 </h2>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -391,7 +393,7 @@ export function AulaDeConversacaoPage() {
                       className="bg-green-500 hover:bg-green-600 text-white px-4 w-full"
                     >
                       <WhatsAppIcon className="w-5 h-5" />
-                      WhatsApp
+                      {t.actions.whatsapp}
                     </Button>
                   </a>
                   <a href="mailto:Contato@auladeinglesemcasa.com">
@@ -400,7 +402,7 @@ export function AulaDeConversacaoPage() {
                       className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary-foreground/20 w-full"
                     >
                       <Mail className="w-5 h-5" />
-                      Enviar Email
+                      {t.actions.sendEmail}
                     </Button>
                   </a>
                 </div>
@@ -428,9 +430,9 @@ export function AulaDeConversacaoPage() {
         <div className="absolute inset-0 bg-black/60"></div>
         
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl font-bold mb-4">Comece a Falar Inglês Hoje</h2>
+          <h2 className="text-3xl font-bold mb-4">{t.conversation.finalCta.title}</h2>
           <p className="text-xl mb-8 text-primary-foreground/90">
-            Transforme seu conhecimento em fluência real através da prática constante
+            {t.conversation.finalCta.subtitle}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -446,7 +448,7 @@ export function AulaDeConversacaoPage() {
                 className="inline-flex items-center gap-2"
               >
                 <WhatsAppIcon className="w-5 h-5" />
-                WhatsApp
+                {t.actions.whatsapp}
               </a>
             </Button>
             
@@ -456,7 +458,7 @@ export function AulaDeConversacaoPage() {
                 className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary-foreground/20"
               >
                 <Mail className="w-5 h-5" />
-                Enviar Email
+                {t.actions.sendEmail}
               </Button>
             </a>
           </div>

@@ -5,7 +5,8 @@ import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/com
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon"
 import { GoogleMap, RelatedBlogPosts } from "@/components"
 import { updateMetaTags, addStructuredData } from "@/utils/seo"
-import { BLOG_CATEGORIES } from "@/data/blogPosts"
+import { BLOG_CATEGORIES } from "@/data/blogPostsBilingual"
+import { useTranslations } from "@/data/translations"
 import { 
   Users, 
   DollarSign, 
@@ -26,6 +27,7 @@ const aulaEmGrupoMetaData = {
 
 export function AulaEmGrupoPage() {
   const whatsappNumber = "5567996161199"
+  const t = useTranslations()
   
   useEffect(() => {
     updateMetaTags(aulaEmGrupoMetaData)
@@ -54,7 +56,7 @@ export function AulaEmGrupoPage() {
             </div>
             
             <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              Aula de Inglês em Grupo em Campo Grande, MS
+              {t.group.hero.title}
             </h1>
             
             <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -70,7 +72,7 @@ export function AulaEmGrupoPage() {
                   className="inline-flex items-center gap-2"
                 >
                   <WhatsAppIcon className="w-5 h-5" />
-                  WhatsApp
+                  {t.actions.whatsapp}
                 </a>
               </Button>
               
@@ -84,7 +86,7 @@ export function AulaEmGrupoPage() {
                   className="inline-flex items-center gap-2"
                 >
                   <Mail className="w-5 h-5" />
-                  Enviar Email
+                  {t.actions.sendEmail}
                 </a>
               </Button>
             </div>
@@ -95,17 +97,17 @@ export function AulaEmGrupoPage() {
       {/* Benefits Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Vantagens da Aula em Grupo</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">{t.group.benefits.title}</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader className="text-center">
                 <DollarSign className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">Custo-Benefício</CardTitle>
+                <CardTitle className="text-lg">{t.group.benefits.costBenefit.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-center">
-                  Qualidade premium com valor mais acessível que aula particular
+                  {t.group.benefits.costBenefit.description}
                 </p>
               </CardContent>
             </Card>
@@ -113,11 +115,11 @@ export function AulaEmGrupoPage() {
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader className="text-center">
                 <MessageCircle className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">Prática Real</CardTitle>
+                <CardTitle className="text-lg">{t.group.benefits.realPractice.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-center">
-                  Interação com outros alunos simula situações reais de comunicação
+                  {t.group.benefits.realPractice.description}
                 </p>
               </CardContent>
             </Card>
@@ -125,11 +127,11 @@ export function AulaEmGrupoPage() {
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader className="text-center">
                 <Award className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">Motivação Mútua</CardTitle>
+                <CardTitle className="text-lg">{t.group.benefits.motivation.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-center">
-                  Aprenda com os colegas e mantenha-se motivado em grupo
+                  {t.group.benefits.motivation.description}
                 </p>
               </CardContent>
             </Card>
@@ -137,11 +139,11 @@ export function AulaEmGrupoPage() {
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader className="text-center">
                 <Target className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">Grupos Pequenos</CardTitle>
+                <CardTitle className="text-lg">{t.group.benefits.smallGroups.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <p className="text-muted-foreground text-center">
-                  Máximo 4 alunos por grupo para garantir atenção individual
+                  {t.group.benefits.smallGroups.description}
                 </p>
               </CardContent>
             </Card>
@@ -152,7 +154,7 @@ export function AulaEmGrupoPage() {
       {/* Group Structure Section */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Como Funcionam os Grupos</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">{t.group.methodology.title}</h2>
           
           <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
             <Card className="hover:shadow-lg transition-shadow">
@@ -230,7 +232,7 @@ export function AulaEmGrupoPage() {
       {/* Perfect For Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Ideal Para Quem</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">{t.group.idealFor.title}</h2>
           
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
             <div className="space-y-4">
@@ -303,7 +305,7 @@ export function AulaEmGrupoPage() {
                 </div>
                 
                 <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                  Aula de Inglês em Grupo em Campo Grande, MS
+                  {t.group.location.title}
                 </h2>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -317,7 +319,7 @@ export function AulaEmGrupoPage() {
                       className="bg-green-500 hover:bg-green-600 text-white px-4 w-full"
                     >
                       <WhatsAppIcon className="w-5 h-5" />
-                      WhatsApp
+                      {t.actions.whatsapp}
                     </Button>
                   </a>
                   <a href="mailto:Contato@auladeinglesemcasa.com">
@@ -326,7 +328,7 @@ export function AulaEmGrupoPage() {
                       className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary-foreground/20 w-full"
                     >
                       <Mail className="w-5 h-5" />
-                      Enviar Email
+                      {t.actions.sendEmail}
                     </Button>
                   </a>
                 </div>
@@ -354,9 +356,9 @@ export function AulaEmGrupoPage() {
         <div className="absolute inset-0 bg-black/60"></div>
         
         <div className="container mx-auto px-4 text-center relative z-10">
-          <h2 className="text-3xl font-bold mb-4">Junte-se a um Grupo</h2>
+          <h2 className="text-3xl font-bold mb-4">{t.group.finalCta.title}</h2>
           <p className="text-xl mb-8 text-primary-foreground/90">
-            Encontre o grupo ideal para o seu nível e comece a praticar inglês hoje mesmo
+            {t.group.finalCta.subtitle}
           </p>
           
           <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -372,7 +374,7 @@ export function AulaEmGrupoPage() {
                 className="inline-flex items-center gap-2"
               >
                 <WhatsAppIcon className="w-5 h-5" />
-                WhatsApp
+                {t.actions.whatsapp}
               </a>
             </Button>
             
@@ -382,7 +384,7 @@ export function AulaEmGrupoPage() {
                 className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary-foreground/20"
               >
                 <Mail className="w-5 h-5" />
-                Enviar Email
+                {t.actions.sendEmail}
               </Button>
             </a>
           </div>

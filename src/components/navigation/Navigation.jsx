@@ -1,14 +1,41 @@
 import { useState } from 'react'
-import { Link, useLocation } from 'react-router-dom'
+import { Link, useLocation, useNavigate } from 'react-router-dom'
 import { Menu, X, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { WhatsAppIcon } from '@/components/icons/WhatsAppIcon'
+import { USFlag, BrazilFlag } from '@/components/icons/FlagIcons'
+import { useLanguage } from '@/contexts/LanguageContext'
+import { useTranslations } from '@/data/translations'
+import { getCorrespondingSlug } from '@/data/blogPostsBilingual'
 const logoHorizontal = '/AulaDeInglesEmCasaLogo.webp'
 
 export function Navigation() {
   const [isOpen, setIsOpen] = useState(false)
   const [isServicesOpen, setIsServicesOpen] = useState(false)
   const location = useLocation()
+  const navigate = useNavigate()
+  const { toggleLanguage, isPortuguese, language } = useLanguage()
+  const t = useTranslations()
+
+  const handleLanguageToggle = () => {
+    const currentPath = location.pathname
+    const newLanguage = language === 'pt' ? 'en' : 'pt'
+    
+    // Toggle the language first
+    toggleLanguage()
+    
+    // Check if we're on a blog post page and navigate to translated version
+    const blogPostMatch = currentPath.match(/^\/blog\/(.+)$/)
+    if (blogPostMatch) {
+      const currentSlug = blogPostMatch[1]
+      const newSlug = getCorrespondingSlug(currentSlug, language, newLanguage)
+      
+      if (newSlug) {
+        // Navigate to the corresponding blog post in the other language
+        navigate(`/blog/${newSlug}`)
+      }
+    }
+  }
 
   const isActive = (path) => location.pathname === path
   const isServicesActive = () => location.pathname.startsWith('/servicos')
@@ -28,13 +55,35 @@ export function Navigation() {
             </div>
           </Link>
 
-          {/* Desktop Navigation */}
+          <div className="flex items-center gap-8">
+            {/* Language Toggle */}
+            <div className="hidden md:flex items-center">
+              <button
+                onClick={handleLanguageToggle}
+                className="flex items-center gap-2 p-2 rounded-lg hover:bg-muted transition-colors"
+                title={isPortuguese ? "Switch to English" : "Mudar para Português"}
+              >
+                {isPortuguese ? (
+                  <>
+                    <USFlag className="w-6 h-4" />
+                    <span className="text-sm text-muted-foreground">EN</span>
+                  </>
+                ) : (
+                  <>
+                    <BrazilFlag className="w-6 h-4" />
+                    <span className="text-sm text-muted-foreground">PT</span>
+                  </>
+                )}
+              </button>
+            </div>
+
+            {/* Desktop Navigation */}
           <div className="hidden md:flex items-center space-x-8">
             <Link 
               to="/" 
               className={`hover:text-primary transition-colors ${isActive('/') ? 'text-primary font-medium' : 'text-muted-foreground'}`}
             >
-              Início
+              {t.nav.home}
             </Link>
             
             {/* Services Dropdown */}
@@ -46,7 +95,7 @@ export function Navigation() {
               <button
                 className={`flex items-center gap-1 hover:text-primary transition-colors ${isServicesActive() ? 'text-primary font-medium' : 'text-muted-foreground'}`}
               >
-                Serviços
+                {t.nav.services}
                 <ChevronDown className={`w-4 h-4 transition-transform duration-200 ${isServicesOpen ? 'rotate-180' : ''}`} />
               </button>
               
@@ -60,32 +109,40 @@ export function Navigation() {
                     className="block px-4 py-3 text-sm hover:bg-muted transition-colors"
                     onClick={() => setIsServicesOpen(false)}
                   >
-                    <div className="font-medium">Aula de Inglês Online</div>
-                    <div className="text-muted-foreground text-xs">Flexibilidade total no conforto de casa</div>
+                    <div className="font-medium">{t.nav.online}</div>
+                    <div className="text-muted-foreground text-xs">
+                      {isPortuguese ? "Flexibilidade total no conforto de casa" : "Total flexibility from home comfort"}
+                    </div>
                   </Link>
                   <Link
                     to="/servicos/aula-de-ingles-individual"
                     className="block px-4 py-3 text-sm hover:bg-muted transition-colors"
                     onClick={() => setIsServicesOpen(false)}
                   >
-                    <div className="font-medium">Aula de Inglês Individual</div>
-                    <div className="text-muted-foreground text-xs">Atenção 100% personalizada</div>
+                    <div className="font-medium">{t.nav.individual}</div>
+                    <div className="text-muted-foreground text-xs">
+                      {isPortuguese ? "Atenção 100% personalizada" : "100% personalized attention"}
+                    </div>
                   </Link>
                   <Link
                     to="/servicos/aula-de-ingles-em-grupo"
                     className="block px-4 py-3 text-sm hover:bg-muted transition-colors"
                     onClick={() => setIsServicesOpen(false)}
                   >
-                    <div className="font-medium">Aula de Inglês em Grupo</div>
-                    <div className="text-muted-foreground text-xs">Aprenda com outros alunos</div>
+                    <div className="font-medium">{t.nav.group}</div>
+                    <div className="text-muted-foreground text-xs">
+                      {isPortuguese ? "Aprenda com outros alunos" : "Learn with other students"}
+                    </div>
                   </Link>
                   <Link
                     to="/servicos/aula-de-conversacao-de-ingles"
                     className="block px-4 py-3 text-sm hover:bg-muted transition-colors"
                     onClick={() => setIsServicesOpen(false)}
                   >
-                    <div className="font-medium">Aula de Conversação de Inglês</div>
-                    <div className="text-muted-foreground text-xs">Desenvolva fluência e confiança</div>
+                    <div className="font-medium">{t.nav.conversation}</div>
+                    <div className="text-muted-foreground text-xs">
+                      {isPortuguese ? "Desenvolva fluência e confiança" : "Develop fluency and confidence"}
+                    </div>
                   </Link>
                 </div>
             </div>
@@ -94,21 +151,21 @@ export function Navigation() {
               to="/sobre" 
               className={`hover:text-primary transition-colors ${isActive('/sobre') ? 'text-primary font-medium' : 'text-muted-foreground'}`}
             >
-              Sobre
+              {t.nav.about}
             </Link>
             
             <Link 
               to="/blog" 
               className={`hover:text-primary transition-colors ${isActive('/blog') || location.pathname.startsWith('/blog') ? 'text-primary font-medium' : 'text-muted-foreground'}`}
             >
-              Blog
+              {t.nav.blog}
             </Link>
             
             <Link 
               to="/contato" 
               className={`hover:text-primary transition-colors ${isActive('/contato') ? 'text-primary font-medium' : 'text-muted-foreground'}`}
             >
-              Contato
+              {t.nav.contact}
             </Link>
             
             <a
@@ -121,9 +178,10 @@ export function Navigation() {
                 className="bg-green-500 hover:bg-green-600 text-white ml-4 px-2"
               >
                 <WhatsAppIcon className="w-4 h-4" />
-                WhatsApp
+                {t.actions.whatsapp}
               </Button>
             </a>
+          </div>
           </div>
 
           {/* Mobile menu button */}
@@ -148,12 +206,12 @@ export function Navigation() {
                 className={`px-2 py-1 rounded hover:bg-muted transition-colors ${isActive('/') ? 'text-primary font-medium' : 'text-muted-foreground'}`}
                 onClick={() => setIsOpen(false)}
               >
-                Início
+                {t.nav.home}
               </Link>
               
               {/* Mobile Services Section */}
               <div className="px-2 py-1">
-                <div className="text-sm font-medium text-muted-foreground mb-2">Serviços</div>
+                <div className="text-sm font-medium text-muted-foreground mb-2">{t.nav.services}</div>
                 <div className="pl-4 space-y-1">
                   <Link
                     to="/servicos/aula-de-ingles-online"

@@ -1,6 +1,7 @@
 import { Link } from "react-router-dom"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
-import { getBlogPostsByCategory } from "@/data/blogPosts"
+import { getBlogPostsByCategory } from "@/data/blogPostsBilingual"
+import { useLanguage } from "@/contexts/LanguageContext"
 import { 
   Clock, 
   ArrowRight,
@@ -8,7 +9,8 @@ import {
 } from "lucide-react"
 
 export const RelatedBlogPosts = ({ category, limit = 3, variant = "white" }) => {
-  const relatedPosts = getBlogPostsByCategory(category).slice(0, limit)
+  const { language } = useLanguage()
+  const relatedPosts = getBlogPostsByCategory(category, language).slice(0, limit)
   
   if (relatedPosts.length === 0) {
     return null

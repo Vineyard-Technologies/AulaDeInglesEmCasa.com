@@ -1,7 +1,10 @@
 import { Link } from "react-router-dom"
+import { useTranslations } from "@/data/translations"
 const logoHorizontal = "/AulaDeInglesEmCasaLogo.webp"
 
 export function Footer() {
+  const t = useTranslations()
+  
   return (
     <footer className="bg-primary text-primary-foreground py-8">
       <div className="container mx-auto px-4">
@@ -18,7 +21,7 @@ export function Footer() {
               </div>
             </Link>
             <p className="text-primary-foreground/80 text-sm text-center md:text-left leading-relaxed">
-              Aula de inglês personalizada com professor americano nativo em Campo Grande, MS. 
+              {t.footer.description}
             </p>
           </div>
           
@@ -27,19 +30,19 @@ export function Footer() {
             {/* Legal Links */}
             <div className="mb-3 flex flex-wrap justify-center md:justify-end gap-4">
               <Link to="/mapa-do-site" className="text-primary-foreground hover:underline">
-                Mapa do Site
+                {t.footer.links.sitemap}
               </Link>
               <Link to="/privacidade" className="text-primary-foreground hover:underline">
-                Política de Privacidade
+                {t.footer.links.privacy}
               </Link>
               <Link to="/termos" className="text-primary-foreground hover:underline">
-                Termos de Serviço
+                {t.footer.links.terms}
               </Link>
             </div>
             
-            <p className="mb-1">© 2025 <Link to="/" className="text-primary-foreground hover:underline">Aula de Inglês em Casa</Link>. Todos os direitos reservados.</p>
-            <p className="mb-1">Este site está licenciado sob a Licença MIT.</p>
-            <p>Desenvolvido por <a href="https://vineyardtechnologies.org/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground hover:underline">Vineyard Technologies</a>.</p>
+            <p className="mb-1">© 2025 <Link to="/" className="text-primary-foreground hover:underline">Aula de Inglês em Casa</Link>. {t.footer.copyright}</p>
+            <p className="mb-1">{t.footer.license}</p>
+            <p>{t.footer.developer} <a href="https://vineyardtechnologies.org/" target="_blank" rel="noopener noreferrer" className="text-primary-foreground hover:underline">Vineyard Technologies</a>.</p>
           </div>
         </div>
       </div>

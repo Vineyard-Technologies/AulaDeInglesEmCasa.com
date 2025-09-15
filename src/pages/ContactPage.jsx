@@ -7,6 +7,7 @@ import { Label } from "@/components/ui/label"
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon"
 import { LazyLoad, GoogleMap } from "@/components"
 import { updateMetaTags, addStructuredData, createEducationServiceSchema, pageMetaData } from "@/utils/seo"
+import { useTranslations } from "@/data/translations"
 
 // Public asset URLs (no imports needed)
 const homepageLogo = "/AulaDeInglesEmCasaIcon.webp"
@@ -21,6 +22,7 @@ import {
 } from "lucide-react"
 
 export function ContactPage() {
+  const t = useTranslations()
   const [formData, setFormData] = useState({
     name: '',
     email: '',
@@ -67,7 +69,7 @@ export function ContactPage() {
           <div className="max-w-6xl mx-auto">
             <LazyLoad delay={100}>
               <h2 className="text-3xl font-bold text-center mb-12">
-                Entre em Contato
+                {t.contact.title}
               </h2>
             </LazyLoad>
             
@@ -80,7 +82,7 @@ export function ContactPage() {
                     <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
                       <WhatsAppIcon className="w-8 h-8 text-green-500" />
                     </div>
-                    <h3 className="text-xl font-semibold mb-2">WhatsApp</h3>
+                    <h3 className="text-xl font-semibold mb-2">{t.contact.whatsapp.title}</h3>
                     <p className="text-muted-foreground mb-4">
                       <a href={`https://wa.me/${whatsappNumber}`} target="_blank" rel="noopener noreferrer" className="text-green-500 hover:underline">
                         (67) 99616-1199
@@ -93,7 +95,7 @@ export function ContactPage() {
                     >
                       <Button className="w-full bg-green-500 hover:bg-green-600 text-white">
                         <WhatsAppIcon className="w-4 h-4 mr-2" />
-                        Enviar Mensagem
+                        {t.contact.whatsapp.button}
                       </Button>
                     </a>
                   </Card>
@@ -103,7 +105,7 @@ export function ContactPage() {
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Mail className="w-8 h-8 text-primary" />
                   </div>
-                  <h3 className="text-xl font-semibold mb-2">Email</h3>
+                  <h3 className="text-xl font-semibold mb-2">{t.contact.email.title}</h3>
                   <p className="text-muted-foreground mb-4">
                     <a href="mailto:contato@auladeinglesemcasa.com" className="text-blue-600 hover:underline">
                       contato@auladeinglesemcasa.com
@@ -112,7 +114,7 @@ export function ContactPage() {
                   <a href="mailto:contato@auladeinglesemcasa.com">
                     <Button className="w-full bg-blue-600 hover:bg-blue-700 text-white">
                       <Mail className="w-4 h-4 mr-2" />
-                      Enviar Email
+                      {t.contact.email.button}
                     </Button>
                   </a>
                 </Card>
@@ -139,7 +141,7 @@ export function ContactPage() {
                   </div>
                   
                   <h2 className="text-3xl md:text-4xl font-bold mb-8">
-                    Aula de Inglês em Casa em Campo Grande, MS
+                    {t.contact.cta.title}
                   </h2>
                 
                 <div className="flex flex-col sm:flex-row gap-4 justify-center">
@@ -162,7 +164,7 @@ export function ContactPage() {
                       className="bg-blue-600 hover:bg-blue-700 text-white w-full"
                     >
                       <Mail className="w-5 h-5" />
-                      Enviar Email
+                      {t.contact.email.button}
                     </Button>
                   </a>
                 </div>
