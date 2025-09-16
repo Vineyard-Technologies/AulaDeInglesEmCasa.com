@@ -93,6 +93,47 @@ const defaultTheme = {
         inset: "var(--color-bg-inset)",
         overlay: "var(--color-bg-overlay)",
       },
+      background: {
+        DEFAULT: "var(--color-bg)",
+        muted: "var(--color-muted)",
+        card: "var(--color-card)",
+        primary: "var(--color-primary)",
+        secondary: "var(--color-secondary)",
+        destructive: "var(--color-destructive)",
+      },
+      foreground: {
+        DEFAULT: "var(--color-fg)",
+        muted: "var(--color-muted-foreground)",
+        card: "var(--color-card-foreground)",
+        primary: "var(--color-primary-foreground)",
+        secondary: "var(--color-secondary-foreground)",
+        destructive: "var(--color-destructive-foreground)",
+      },
+      border: {
+        DEFAULT: "var(--color-border)",
+        secondary: "var(--color-border-secondary)",
+      },
+      muted: {
+        DEFAULT: "var(--color-muted)",
+        foreground: "var(--color-muted-foreground)",
+      },
+      card: {
+        DEFAULT: "var(--color-card)",
+        foreground: "var(--color-card-foreground)",
+      },
+      primary: {
+        DEFAULT: "var(--color-primary)",
+        foreground: "var(--color-primary-foreground)",
+      },
+      secondary: {
+        DEFAULT: "var(--color-secondary)",
+        foreground: "var(--color-secondary-foreground)",
+      },
+      destructive: {
+        DEFAULT: "var(--color-destructive)",
+        foreground: "var(--color-destructive-foreground)",
+      },
+      ring: "var(--color-ring)",
       "focus-ring": "var(--color-focus-ring)",
     },
     borderRadius: {

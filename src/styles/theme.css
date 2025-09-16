@@ -1,5 +1,6 @@
 @import "tailwindcss";
 
+@import '@radix-ui/colors/sage.css' layer(base);
 @import '@radix-ui/colors/sage-dark.css' layer(base);
 @import '@radix-ui/colors/olive.css' layer(base);
 @import '@radix-ui/colors/olive-dark.css' layer(base);
@@ -241,9 +242,36 @@
     --color-bg: #ffffff;
     --color-bg-inset: var(--color-neutral-2);
     --color-bg-overlay: #ffffff;
+    
+    /* Border colors for light mode */
+    --color-border: var(--color-neutral-6);
+    --color-border-secondary: var(--color-neutral-4);
+    
+    /* Muted colors for light mode */
+    --color-muted: var(--color-neutral-2);
+    --color-muted-foreground: var(--color-neutral-11);
+    
+    /* Card colors for light mode */
+    --color-card: #ffffff;
+    --color-card-foreground: var(--color-neutral-12);
+    
+    /* Primary colors for light mode */
+    --color-primary: var(--color-accent-9);
+    --color-primary-foreground: var(--color-accent-contrast);
+    
+    /* Secondary colors for light mode */
+    --color-secondary: var(--color-neutral-2);
+    --color-secondary-foreground: var(--color-neutral-12);
+    
+    /* Destructive colors for light mode */
+    --color-destructive: var(--red-9);
+    --color-destructive-foreground: var(--red-contrast);
 
     /* Focus ring */
     --color-focus-ring: var(--color-accent-9);
+    
+    /* Ring color for light mode */
+    --color-ring: var(--color-accent-9);
 
     /* Fonts */
     --font-sans-serif: ui-sans-serif, system-ui, sans-serif, "Apple Color Emoji",
@@ -254,9 +282,41 @@
     --font-family: var(--font-sans-serif);
   }
 
-  [data-appearance="dark"] {
+  .dark {
+    /* Background colors for dark mode */
     --color-bg: var(--color-neutral-1);
     --color-bg-inset: #000000;
     --color-bg-overlay: var(--color-neutral-3);
+    
+    /* Foreground colors for dark mode */
+    --color-fg: var(--color-neutral-12);
+    --color-fg-secondary: var(--color-neutral-a11);
+    
+    /* Border colors for dark mode */
+    --color-border: var(--color-neutral-6);
+    --color-border-secondary: var(--color-neutral-4);
+    
+    /* Muted colors for dark mode */
+    --color-muted: var(--color-neutral-3);
+    --color-muted-foreground: var(--color-neutral-11);
+    
+    /* Card colors for dark mode */
+    --color-card: var(--color-neutral-2);
+    --color-card-foreground: var(--color-neutral-12);
+    
+    /* Primary colors for dark mode */
+    --color-primary: var(--color-accent-9);
+    --color-primary-foreground: var(--color-accent-contrast);
+    
+    /* Secondary colors for dark mode */
+    --color-secondary: var(--color-neutral-3);
+    --color-secondary-foreground: var(--color-neutral-12);
+    
+    /* Destructive colors for dark mode */
+    --color-destructive: var(--red-9);
+    --color-destructive-foreground: var(--red-contrast);
+    
+    /* Ring color for dark mode */
+    --color-ring: var(--color-accent-9);
   }
 }

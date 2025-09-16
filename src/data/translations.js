@@ -11,7 +11,8 @@ export const translations = {
       about: "Sobre",
       blog: "Blog",
       contact: "Contato",
-      language: "Idioma"
+      language: "Idioma",
+      theme: "Tema"
     },
 
     // Common Actions
@@ -918,7 +919,8 @@ export const translations = {
       about: "About",
       blog: "Blog", 
       contact: "Contact",
-      language: "Language"
+      language: "Language",
+      theme: "Theme"
     },
 
     // Common Actions

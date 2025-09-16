@@ -4,7 +4,9 @@ import { Menu, X, ChevronDown } from 'lucide-react'
 import { Button } from '@/components/ui/button'
 import { WhatsAppIcon } from '@/components/icons/WhatsAppIcon'
 import { USFlag, BrazilFlag } from '@/components/icons/FlagIcons'
+import { ThemeToggle } from '@/components/icons/ThemeToggle'
 import { useLanguage } from '@/contexts/LanguageContext'
+import { useTheme } from '@/contexts/ThemeContext'
 import { useTranslations } from '@/data/translations'
 import { getCorrespondingSlug } from '@/data/blogPostsBilingual'
 const logoHorizontal = '/AulaDeInglesEmCasaLogo.webp'
@@ -15,6 +17,7 @@ export function Navigation() {
   const location = useLocation()
   const navigate = useNavigate()
   const { toggleLanguage, isPortuguese, language } = useLanguage()
+  const { theme, toggleTheme } = useTheme()
   const t = useTranslations()
 
   const handleLanguageToggle = () => {
@@ -55,7 +58,12 @@ export function Navigation() {
             </div>
           </Link>
 
-          <div className="flex items-center gap-8">
+          <div className="flex items-center gap-4">
+            {/* Theme Toggle */}
+            <div className="hidden md:flex items-center">
+              <ThemeToggle theme={theme} onToggle={toggleTheme} />
+            </div>
+
             {/* Language Toggle */}
             <div className="hidden md:flex items-center">
               <button
@@ -284,27 +292,33 @@ export function Navigation() {
                 {t.nav.contact}
               </Link>
               
-              {/* Mobile Language Toggle */}
+              {/* Mobile Theme Toggle */}
               <div className="px-2 py-1 mt-4">
+                <div className="text-sm font-medium text-muted-foreground mb-2">{t.nav.theme}</div>
+                <ThemeToggle theme={theme} onToggle={toggleTheme} />
+              </div>
+              
+              {/* Mobile Language Toggle */}
+              <div className="px-2 py-1 mt-2">
                 <div className="text-sm font-medium text-muted-foreground mb-2">{t.nav.language}</div>
                 <div 
-                  onClick={toggleLanguage}
+                  onClick={handleLanguageToggle}
                   className="relative inline-flex items-center w-20 h-10 bg-gradient-to-r from-blue-100 to-green-100 rounded-full cursor-pointer transition-all duration-300 ease-in-out"
                 >
                   <div 
                     className={`absolute w-8 h-8 bg-white rounded-full shadow-lg transition-transform duration-300 ease-in-out ${
-                      currentLanguage === 'pt' ? 'translate-x-1' : 'translate-x-11'
+                      language === 'pt' ? 'translate-x-1' : 'translate-x-11'
                     }`}
                   />
                   <div className="flex items-center justify-between w-full px-2 relative z-10">
                     <BrazilFlag 
                       className={`w-5 h-5 transition-opacity duration-300 ${
-                        currentLanguage === 'pt' ? 'opacity-100' : 'opacity-40'
+                        language === 'pt' ? 'opacity-100' : 'opacity-40'
                       }`} 
                     />
                     <USFlag 
                       className={`w-5 h-5 transition-opacity duration-300 ${
-                        currentLanguage === 'en' ? 'opacity-100' : 'opacity-40'
+                        language === 'en' ? 'opacity-100' : 'opacity-40'
                       }`} 
                     />
                   </div>

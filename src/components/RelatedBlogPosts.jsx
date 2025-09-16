@@ -1,5 +1,6 @@
 import { Link } from "react-router-dom"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 import { getBlogPostsByCategory } from "@/data/blogPostsBilingual"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { useTranslations } from "@/data/translations"
@@ -73,12 +74,15 @@ export const RelatedBlogPosts = ({ category, limit = 3, variant = "white" }) => 
                     {post.excerpt}
                   </p>
                   
-                  <Link 
-                    to={`/blog/${post.slug}`}
-                    className="inline-flex items-center gap-1 text-primary hover:text-primary/80 font-medium text-sm transition-colors"
-                  >
-                    {t.blog.relatedPosts.readArticle}
-                    <ArrowRight className="w-4 h-4" />
+                  <Link to={`/blog/${post.slug}`}>
+                    <Button 
+                      variant="outline" 
+                      size="sm" 
+                      className="w-full"
+                    >
+                      {t.blog.relatedPosts.readArticle}
+                      <ArrowRight className="w-4 h-4 ml-1" />
+                    </Button>
                   </Link>
                 </CardContent>
               </Card>
@@ -86,12 +90,15 @@ export const RelatedBlogPosts = ({ category, limit = 3, variant = "white" }) => 
           </div>
           
           <div className="text-center mt-8">
-            <Link 
-              to="/blog"
-              className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors"
-            >
-              {t.blog.relatedPosts.viewAllArticles}
-              <ArrowRight className="w-4 h-4" />
+            <Link to="/blog">
+              <Button 
+                variant="default" 
+                size="lg"
+                className="bg-primary hover:bg-primary/90 text-primary-foreground"
+              >
+                {t.blog.relatedPosts.viewAllArticles}
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
             </Link>
           </div>
         </div>
