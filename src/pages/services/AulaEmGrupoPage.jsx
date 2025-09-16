@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon"
-import { GoogleMap, RelatedBlogPosts, LazyImage } from "@/components"
+import { LazyLoad, GoogleMap, RelatedBlogPosts, LazyImage } from "@/components"
 import { updateMetaTags, addStructuredData } from "@/utils/seo"
 import { BLOG_CATEGORIES } from "@/data/blogPostsBilingual"
 import { useTranslations } from "@/data/translations"
@@ -49,47 +49,53 @@ export function AulaEmGrupoPage() {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="flex justify-center mb-6">
-              <div className="p-4 bg-white/20 rounded-full">
-                <Users className="w-12 h-12" />
+            <LazyLoad delay={100} animationClass="fade-in-scale">
+              <div className="flex justify-center mb-6">
+                <div className="p-4 bg-white/20 rounded-full">
+                  <Users className="w-12 h-12" />
+                </div>
               </div>
-            </div>
+            </LazyLoad>
             
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              {t.group.hero.title}
-            </h1>
+            <LazyLoad delay={200} animationClass="fade-in">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                {t.group.hero.title}
+              </h1>
+            </LazyLoad>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-green-500 hover:bg-green-600 text-white"
-                asChild
-              >
-                <a 
-                  href={`https://wa.me/${whatsappNumber}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2"
+            <LazyLoad delay={300} animationClass="fade-in-scale">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  size="lg" 
+                  className="bg-green-500 hover:bg-green-600 text-white"
+                  asChild
                 >
-                  <WhatsAppIcon className="w-5 h-5" />
-                  {t.actions.whatsapp}
-                </a>
-              </Button>
-              
-              <Button 
-                size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary-foreground/20"
-                asChild
-              >
-                <a 
-                  href="mailto:Contato@auladeinglesemcasa.com"
-                  className="inline-flex items-center gap-2"
+                  <a 
+                    href={`https://wa.me/${whatsappNumber}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2"
+                  >
+                    <WhatsAppIcon className="w-5 h-5" />
+                    {t.actions.whatsapp}
+                  </a>
+                </Button>
+                
+                <Button 
+                  size="lg" 
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary-foreground/20"
+                  asChild
                 >
-                  <Mail className="w-5 h-5" />
-                  {t.actions.sendEmail}
-                </a>
-              </Button>
-            </div>
+                  <a 
+                    href="mailto:Contato@auladeinglesemcasa.com"
+                    className="inline-flex items-center gap-2"
+                  >
+                    <Mail className="w-5 h-5" />
+                    {t.actions.sendEmail}
+                  </a>
+                </Button>
+              </div>
+            </LazyLoad>
           </div>
         </div>
       </section>
@@ -100,23 +106,27 @@ export function AulaEmGrupoPage() {
           <div className="max-w-6xl mx-auto">
             <div className="grid md:grid-cols-2 gap-12 items-center">
               {/* Content */}
-              <div className="space-y-6">
-                <h2 className="text-3xl font-bold">{t.group.about.title}</h2>
-                <div className="space-y-4 text-muted-foreground leading-relaxed">
-                  <p>{t.group.about.p1}</p>
-                  <p>{t.group.about.p2}</p>
-                  <p>{t.group.about.p3}</p>
+              <LazyLoad delay={100} animationClass="fade-in-left">
+                <div className="space-y-6">
+                  <h2 className="text-3xl font-bold">{t.group.about.title}</h2>
+                  <div className="space-y-4 text-muted-foreground leading-relaxed">
+                    <p>{t.group.about.p1}</p>
+                    <p>{t.group.about.p2}</p>
+                    <p>{t.group.about.p3}</p>
+                  </div>
                 </div>
-              </div>
+              </LazyLoad>
               
               {/* Image */}
-              <div className="flex justify-center">
-                <LazyImage 
-                  src="/groupInlinePhoto.webp" 
-                  alt={t.group.about.imageAlt} 
-                  className="w-full max-w-md h-auto rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
-                />
-              </div>
+              <LazyLoad delay={200} animationClass="fade-in-right">
+                <div className="flex justify-center">
+                  <LazyImage 
+                    src="/groupInlinePhoto.webp" 
+                    alt={t.group.about.imageAlt} 
+                    className="w-full max-w-md h-auto rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                  />
+                </div>
+              </LazyLoad>
             </div>
           </div>
         </div>
@@ -125,76 +135,86 @@ export function AulaEmGrupoPage() {
       {/* Benefits Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">{t.group.benefits.title}</h2>
+          <LazyLoad delay={100} animationClass="fade-in">
+            <h2 className="text-3xl font-bold text-center mb-12">{t.group.benefits.title}</h2>
+          </LazyLoad>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer">
-              <LazyImage 
-                src="/groupPhoto4.webp" 
-                alt="Grupo de estudantes praticando inglês" 
-                className="w-full h-48 object-cover rounded-lg hover:scale-105 transition-transform duration-300"
-              />
-              <CardHeader className="text-center">
-                <DollarSign className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">{t.group.benefits.costBenefit.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center">
-                  {t.group.benefits.costBenefit.description}
-                </p>
-              </CardContent>
-            </Card>
+            <LazyLoad delay={200} animationClass="fade-in-scale">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer">
+                <LazyImage 
+                  src="/groupPhoto4.webp" 
+                  alt="Grupo de estudantes praticando inglês" 
+                  className="w-full h-48 object-cover rounded-lg hover:scale-105 transition-transform duration-300"
+                />
+                <CardHeader className="text-center">
+                  <DollarSign className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <CardTitle className="text-lg">{t.group.benefits.costBenefit.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground text-center">
+                    {t.group.benefits.costBenefit.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </LazyLoad>
 
-            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer">
-              <LazyImage 
-                src="/groupPhoto1.webp" 
-                alt="Estudantes interagindo em aula de inglês em grupo" 
-                className="w-full h-48 object-cover rounded-lg hover:scale-105 transition-transform duration-300"
-              />
-              <CardHeader className="text-center">
-                <MessageCircle className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">{t.group.benefits.realPractice.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center">
-                  {t.group.benefits.realPractice.description}
-                </p>
-              </CardContent>
-            </Card>
+            <LazyLoad delay={300} animationClass="fade-in-scale">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer">
+                <LazyImage 
+                  src="/groupPhoto1.webp" 
+                  alt="Estudantes interagindo em aula de inglês em grupo" 
+                  className="w-full h-48 object-cover rounded-lg hover:scale-105 transition-transform duration-300"
+                />
+                <CardHeader className="text-center">
+                  <MessageCircle className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <CardTitle className="text-lg">{t.group.benefits.realPractice.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground text-center">
+                    {t.group.benefits.realPractice.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </LazyLoad>
 
-            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer">
-              <LazyImage 
-                src="/groupPhoto2.webp" 
-                alt="Grupo motivado aprendendo inglês juntos" 
-                className="w-full h-48 object-cover rounded-lg hover:scale-105 transition-transform duration-300"
-              />
-              <CardHeader className="text-center">
-                <Award className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">{t.group.benefits.motivation.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center">
-                  {t.group.benefits.motivation.description}
-                </p>
-              </CardContent>
-            </Card>
+            <LazyLoad delay={400} animationClass="fade-in-scale">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer">
+                <LazyImage 
+                  src="/groupPhoto2.webp" 
+                  alt="Grupo motivado aprendendo inglês juntos" 
+                  className="w-full h-48 object-cover rounded-lg hover:scale-105 transition-transform duration-300"
+                />
+                <CardHeader className="text-center">
+                  <Award className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <CardTitle className="text-lg">{t.group.benefits.motivation.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground text-center">
+                    {t.group.benefits.motivation.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </LazyLoad>
 
-            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer">
-              <LazyImage 
-                src="/groupPhoto3.webp" 
-                alt="Pequeno grupo focado no aprendizado de inglês" 
-                className="w-full h-48 object-cover rounded-lg hover:scale-105 transition-transform duration-300"
-              />
-              <CardHeader className="text-center">
-                <Target className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">{t.group.benefits.smallGroups.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center">
-                  {t.group.benefits.smallGroups.description}
-                </p>
-              </CardContent>
-            </Card>
+            <LazyLoad delay={500} animationClass="fade-in-scale">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer">
+                <LazyImage 
+                  src="/groupPhoto3.webp" 
+                  alt="Pequeno grupo focado no aprendizado de inglês" 
+                  className="w-full h-48 object-cover rounded-lg hover:scale-105 transition-transform duration-300"
+                />
+                <CardHeader className="text-center">
+                  <Target className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <CardTitle className="text-lg">{t.group.benefits.smallGroups.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground text-center">
+                    {t.group.benefits.smallGroups.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </LazyLoad>
           </div>
         </div>
       </section>
@@ -202,77 +222,85 @@ export function AulaEmGrupoPage() {
       {/* Group Structure Section */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">{t.group.methodology.title}</h2>
+          <LazyLoad delay={100} animationClass="fade-in">
+            <h2 className="text-3xl font-bold text-center mb-12">{t.group.methodology.title}</h2>
+          </LazyLoad>
           
           <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
-            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
-              <CardHeader>
-                <CardTitle className="text-center">{t.group.levels.beginner.title}</CardTitle>
-                <CardDescription className="text-center">{t.group.levels.beginner.level}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>{t.group.levels.beginner.skills.skill1}</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>{t.group.levels.beginner.skills.skill2}</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>{t.group.levels.beginner.skills.skill3}</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+            <LazyLoad delay={200} animationClass="fade-in-scale">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                <CardHeader>
+                  <CardTitle className="text-center">{t.group.levels.beginner.title}</CardTitle>
+                  <CardDescription className="text-center">{t.group.levels.beginner.level}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span>{t.group.levels.beginner.skills.skill1}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span>{t.group.levels.beginner.skills.skill2}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span>{t.group.levels.beginner.skills.skill3}</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </LazyLoad>
 
-            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
-              <CardHeader>
-                <CardTitle className="text-center">{t.group.levels.intermediate.title}</CardTitle>
-                <CardDescription className="text-center">{t.group.levels.intermediate.level}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>{t.group.levels.intermediate.skills.skill1}</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>{t.group.levels.intermediate.skills.skill2}</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>{t.group.levels.intermediate.skills.skill3}</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+            <LazyLoad delay={300} animationClass="fade-in-scale">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                <CardHeader>
+                  <CardTitle className="text-center">{t.group.levels.intermediate.title}</CardTitle>
+                  <CardDescription className="text-center">{t.group.levels.intermediate.level}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span>{t.group.levels.intermediate.skills.skill1}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span>{t.group.levels.intermediate.skills.skill2}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span>{t.group.levels.intermediate.skills.skill3}</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </LazyLoad>
 
-            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
-              <CardHeader>
-                <CardTitle className="text-center">{t.group.levels.advanced.title}</CardTitle>
-                <CardDescription className="text-center">{t.group.levels.advanced.level}</CardDescription>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>{t.group.levels.advanced.skills.skill1}</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>{t.group.levels.advanced.skills.skill2}</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>{t.group.levels.advanced.skills.skill3}</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+            <LazyLoad delay={400} animationClass="fade-in-scale">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                <CardHeader>
+                  <CardTitle className="text-center">{t.group.levels.advanced.title}</CardTitle>
+                  <CardDescription className="text-center">{t.group.levels.advanced.level}</CardDescription>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span>{t.group.levels.advanced.skills.skill1}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span>{t.group.levels.advanced.skills.skill2}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span>{t.group.levels.advanced.skills.skill3}</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </LazyLoad>
           </div>
         </div>
       </section>
@@ -280,60 +308,66 @@ export function AulaEmGrupoPage() {
       {/* Perfect For Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">{t.group.idealFor.title}</h2>
+          <LazyLoad delay={100} animationClass="fade-in">
+            <h2 className="text-3xl font-bold text-center mb-12">{t.group.idealFor.title}</h2>
+          </LazyLoad>
           
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-primary mt-1" />
-                <div>
-                  <h3 className="font-semibold mb-1">{t.group.perfectFor.socialInteraction.title}</h3>
-                  <p className="text-muted-foreground">{t.group.perfectFor.socialInteraction.description}</p>
+            <LazyLoad delay={200} animationClass="fade-in-left">
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-primary mt-1" />
+                  <div>
+                    <h3 className="font-semibold mb-1">{t.group.perfectFor.socialInteraction.title}</h3>
+                    <p className="text-muted-foreground">{t.group.perfectFor.socialInteraction.description}</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-primary mt-1" />
+                  <div>
+                    <h3 className="font-semibold mb-1">{t.group.perfectFor.costBenefit.title}</h3>
+                    <p className="text-muted-foreground">{t.group.perfectFor.costBenefit.description}</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-primary mt-1" />
+                  <div>
+                    <h3 className="font-semibold mb-1">{t.group.perfectFor.motivation.title}</h3>
+                    <p className="text-muted-foreground">{t.group.perfectFor.motivation.description}</p>
+                  </div>
                 </div>
               </div>
-              
-              <div className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-primary mt-1" />
-                <div>
-                  <h3 className="font-semibold mb-1">{t.group.perfectFor.costBenefit.title}</h3>
-                  <p className="text-muted-foreground">{t.group.perfectFor.costBenefit.description}</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-primary mt-1" />
-                <div>
-                  <h3 className="font-semibold mb-1">{t.group.perfectFor.motivation.title}</h3>
-                  <p className="text-muted-foreground">{t.group.perfectFor.motivation.description}</p>
-                </div>
-              </div>
-            </div>
+            </LazyLoad>
 
-            <div className="space-y-4">
-              <div className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-primary mt-1" />
-                <div>
-                  <h3 className="font-semibold mb-1">{t.group.perfectFor.conversation.title}</h3>
-                  <p className="text-muted-foreground">{t.group.perfectFor.conversation.description}</p>
+            <LazyLoad delay={300} animationClass="fade-in-right">
+              <div className="space-y-4">
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-primary mt-1" />
+                  <div>
+                    <h3 className="font-semibold mb-1">{t.group.perfectFor.conversation.title}</h3>
+                    <p className="text-muted-foreground">{t.group.perfectFor.conversation.description}</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-primary mt-1" />
+                  <div>
+                    <h3 className="font-semibold mb-1">{t.group.perfectFor.schedule.title}</h3>
+                    <p className="text-muted-foreground">{t.group.perfectFor.schedule.description}</p>
+                  </div>
+                </div>
+                
+                <div className="flex items-start gap-3">
+                  <CheckCircle className="w-6 h-6 text-primary mt-1" />
+                  <div>
+                    <h3 className="font-semibold mb-1">{t.group.perfectFor.learning.title}</h3>
+                    <p className="text-muted-foreground">{t.group.perfectFor.learning.description}</p>
+                  </div>
                 </div>
               </div>
-              
-              <div className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-primary mt-1" />
-                <div>
-                  <h3 className="font-semibold mb-1">{t.group.perfectFor.schedule.title}</h3>
-                  <p className="text-muted-foreground">{t.group.perfectFor.schedule.description}</p>
-                </div>
-              </div>
-              
-              <div className="flex items-start gap-3">
-                <CheckCircle className="w-6 h-6 text-primary mt-1" />
-                <div>
-                  <h3 className="font-semibold mb-1">{t.group.perfectFor.learning.title}</h3>
-                  <p className="text-muted-foreground">{t.group.perfectFor.learning.description}</p>
-                </div>
-              </div>
-            </div>
+            </LazyLoad>
           </div>
         </div>
       </section>

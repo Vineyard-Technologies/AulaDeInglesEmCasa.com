@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon"
-import { GoogleMap, RelatedBlogPosts, LazyImage } from "@/components"
+import { LazyLoad, GoogleMap, RelatedBlogPosts, LazyImage } from "@/components"
 import { updateMetaTags, addStructuredData } from "@/utils/seo"
 import { BLOG_CATEGORIES } from "@/data/blogPostsBilingual"
 import { useTranslations } from "@/data/translations"
@@ -49,47 +49,53 @@ export function AulaDeConversacaoPage() {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="flex justify-center mb-6">
-              <div className="p-4 bg-white/20 rounded-full">
-                <MessageCircle className="w-12 h-12" />
+            <LazyLoad delay={100} animationClass="fade-in-scale">
+              <div className="flex justify-center mb-6">
+                <div className="p-4 bg-white/20 rounded-full">
+                  <MessageCircle className="w-12 h-12" />
+                </div>
               </div>
-            </div>
+            </LazyLoad>
             
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              {t.conversation.hero.title}
-            </h1>
+            <LazyLoad delay={200} animationClass="fade-in">
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                {t.conversation.hero.title}
+              </h1>
+            </LazyLoad>
             
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-green-500 hover:bg-green-600 text-white"
-                asChild
-              >
-                <a 
-                  href={`https://wa.me/${whatsappNumber}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2"
+            <LazyLoad delay={300} animationClass="fade-in-scale">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  size="lg" 
+                  className="bg-green-500 hover:bg-green-600 text-white"
+                  asChild
                 >
-                  <WhatsAppIcon className="w-5 h-5" />
-                  {t.actions.whatsapp}
-                </a>
-              </Button>
-              
-              <Button 
-                size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary-foreground/20"
-                asChild
-              >
-                <a 
-                  href="mailto:Contato@auladeinglesemcasa.com"
+                  <a 
+                    href={`https://wa.me/${whatsappNumber}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2"
+                  >
+                    <WhatsAppIcon className="w-5 h-5" />
+                    {t.actions.whatsapp}
+                  </a>
+                </Button>
+                
+                <Button 
+                  size="lg" 
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary-foreground/20"
+                  asChild
+                >
+                  <a 
+                    href="mailto:Contato@auladeinglesemcasa.com"
                   className="inline-flex items-center gap-2"
                 >
                   <Mail className="w-5 h-5" />
                   {t.actions.sendEmail}
                 </a>
-              </Button>
-            </div>
+                </Button>
+              </div>
+            </LazyLoad>
           </div>
         </div>
       </section>
@@ -98,30 +104,36 @@ export function AulaDeConversacaoPage() {
       <section className="py-16 bg-muted/30">
         <div className="container mx-auto px-4">
           <div className="max-w-4xl mx-auto">
-            <h2 className="text-3xl font-bold text-center mb-12">{t.conversation.about.title}</h2>
+            <LazyLoad delay={100} animationClass="fade-in">
+              <h2 className="text-3xl font-bold text-center mb-12">{t.conversation.about.title}</h2>
+            </LazyLoad>
             
             <div className="grid md:grid-cols-2 gap-8 items-center">
               {/* Content */}
-              <div className="space-y-6">
-                <p className="text-lg leading-relaxed">
-                  {t.conversation.about.p1}
-                </p>
-                <p className="text-lg leading-relaxed">
-                  {t.conversation.about.p2}
-                </p>
-                <p className="text-lg leading-relaxed">
-                  {t.conversation.about.p3}
-                </p>
-              </div>
+              <LazyLoad delay={200} animationClass="fade-in-left">
+                <div className="space-y-6">
+                  <p className="text-lg leading-relaxed">
+                    {t.conversation.about.p1}
+                  </p>
+                  <p className="text-lg leading-relaxed">
+                    {t.conversation.about.p2}
+                  </p>
+                  <p className="text-lg leading-relaxed">
+                    {t.conversation.about.p3}
+                  </p>
+                </div>
+              </LazyLoad>
               
               {/* Image */}
-              <div className="flex justify-center">
-                <LazyImage 
-                  src="/conversationInline.webp" 
-                  alt={t.conversation.about.imageAlt} 
-                  className="w-full max-w-md h-auto rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
-                />
-              </div>
+              <LazyLoad delay={300} animationClass="fade-in-right">
+                <div className="flex justify-center">
+                  <LazyImage 
+                    src="/conversationInline.webp" 
+                    alt={t.conversation.about.imageAlt} 
+                    className="w-full max-w-md h-auto rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
+                  />
+                </div>
+              </LazyLoad>
             </div>
           </div>
         </div>
@@ -130,76 +142,86 @@ export function AulaDeConversacaoPage() {
       {/* Benefits Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">{t.conversation.benefits.title}</h2>
+          <LazyLoad delay={100} animationClass="fade-in">
+            <h2 className="text-3xl font-bold text-center mb-12">{t.conversation.benefits.title}</h2>
+          </LazyLoad>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
-              <LazyImage
-                src="/conversation1.webp"
-                alt={t.conversation.benefits.fluency.title}
-                className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
-              />
-              <CardHeader className="text-center">
-                <Mic className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">{t.conversation.benefits.fluency.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center">
-                  {t.conversation.benefits.fluency.description}
-                </p>
-              </CardContent>
-            </Card>
+            <LazyLoad delay={200} animationClass="fade-in-scale">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+                <LazyImage
+                  src="/conversation1.webp"
+                  alt={t.conversation.benefits.fluency.title}
+                  className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
+                />
+                <CardHeader className="text-center">
+                  <Mic className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <CardTitle className="text-lg">{t.conversation.benefits.fluency.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground text-center">
+                    {t.conversation.benefits.fluency.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </LazyLoad>
 
-            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
-              <LazyImage
-                src="/conversation2.webp"
-                alt={t.conversation.benefits.confidence.title}
-                className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
-              />
-              <CardHeader className="text-center">
-                <Award className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">{t.conversation.benefits.confidence.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center">
-                  {t.conversation.benefits.confidence.description}
-                </p>
-              </CardContent>
-            </Card>
+            <LazyLoad delay={300} animationClass="fade-in-scale">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+                <LazyImage
+                  src="/conversation2.webp"
+                  alt={t.conversation.benefits.confidence.title}
+                  className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
+                />
+                <CardHeader className="text-center">
+                  <Award className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <CardTitle className="text-lg">{t.conversation.benefits.confidence.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground text-center">
+                    {t.conversation.benefits.confidence.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </LazyLoad>
 
-            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
-              <LazyImage
-                src="/conversation4.webp"
-                alt={t.conversation.benefits.pronunciation.title}
-                className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
-              />
-              <CardHeader className="text-center">
-                <Globe className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">{t.conversation.benefits.pronunciation.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center">
-                  {t.conversation.benefits.pronunciation.description}
-                </p>
-              </CardContent>
-            </Card>
+            <LazyLoad delay={400} animationClass="fade-in-scale">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+                <LazyImage
+                  src="/conversation4.webp"
+                  alt={t.conversation.benefits.pronunciation.title}
+                  className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
+                />
+                <CardHeader className="text-center">
+                  <Globe className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <CardTitle className="text-lg">{t.conversation.benefits.pronunciation.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground text-center">
+                    {t.conversation.benefits.pronunciation.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </LazyLoad>
 
-            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
-              <LazyImage
-                src="/conversation3.webp"
-                alt={t.conversation.benefits.speaking.title}
-                className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
-              />
-              <CardHeader className="text-center">
-                <Clock className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">{t.conversation.benefits.speaking.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center">
-                  {t.conversation.benefits.speaking.description}
-                </p>
-              </CardContent>
-            </Card>
+            <LazyLoad delay={500} animationClass="fade-in-scale">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+                <LazyImage
+                  src="/conversation3.webp"
+                  alt={t.conversation.benefits.speaking.title}
+                  className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
+                />
+                <CardHeader className="text-center">
+                  <Clock className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <CardTitle className="text-lg">{t.conversation.benefits.speaking.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground text-center">
+                    {t.conversation.benefits.speaking.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </LazyLoad>
           </div>
         </div>
       </section>
@@ -207,60 +229,66 @@ export function AulaDeConversacaoPage() {
       {/* Topics Section */}
       <section className="py-16 bg-muted/50">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">{t.conversation.methodology.title}</h2>
+          <LazyLoad delay={100} animationClass="fade-in">
+            <h2 className="text-3xl font-bold text-center mb-12">{t.conversation.methodology.title}</h2>
+          </LazyLoad>
           
           <div className="max-w-3xl mx-auto grid md:grid-cols-2 gap-6">
-            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
-              <CardHeader>
-                <CardTitle>{t.conversation.topics.dailyLife.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>{t.conversation.topics.dailyLife.items.presentations}</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>{t.conversation.topics.dailyLife.items.shopping}</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>{t.conversation.topics.dailyLife.items.travel}</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>{t.conversation.topics.dailyLife.items.medical}</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+            <LazyLoad delay={200} animationClass="fade-in-left">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                <CardHeader>
+                  <CardTitle>{t.conversation.topics.dailyLife.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span>{t.conversation.topics.dailyLife.items.presentations}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span>{t.conversation.topics.dailyLife.items.shopping}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span>{t.conversation.topics.dailyLife.items.travel}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span>{t.conversation.topics.dailyLife.items.medical}</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </LazyLoad>
 
-            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
-              <CardHeader>
-                <CardTitle>{t.conversation.topics.professional.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>{t.conversation.topics.professional.items.meetings}</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>{t.conversation.topics.professional.items.interviews}</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>{t.conversation.topics.professional.items.negotiations}</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>{t.conversation.topics.professional.items.networking}</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+            <LazyLoad delay={300} animationClass="fade-in-right">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                <CardHeader>
+                  <CardTitle>{t.conversation.topics.professional.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span>{t.conversation.topics.professional.items.meetings}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span>{t.conversation.topics.professional.items.interviews}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span>{t.conversation.topics.professional.items.negotiations}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span>{t.conversation.topics.professional.items.networking}</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </LazyLoad>
 
             <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
               <CardHeader>

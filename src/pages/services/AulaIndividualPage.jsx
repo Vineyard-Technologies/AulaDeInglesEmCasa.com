@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon"
-import { GoogleMap, RelatedBlogPosts } from "@/components"
+import { LazyLoad, LazyImage, GoogleMap, RelatedBlogPosts } from "@/components"
 import { updateMetaTags, addStructuredData } from "@/utils/seo"
 import { BLOG_CATEGORIES } from "@/data/blogPostsBilingual"
 import { useTranslations } from "@/data/translations"
@@ -49,47 +49,51 @@ export function AulaIndividualPage() {
         
         <div className="container mx-auto px-4 relative z-10">
           <div className="max-w-4xl mx-auto text-center">
-            <div className="flex justify-center mb-6">
-              <div className="p-4 bg-white/20 rounded-full">
-                <User className="w-12 h-12" />
+            <LazyLoad delay={100} animationClass="fade-in">
+              <div className="flex justify-center mb-6">
+                <div className="p-4 bg-white/20 rounded-full">
+                  <User className="w-12 h-12" />
+                </div>
               </div>
-            </div>
-            
-            <h1 className="text-4xl md:text-5xl font-bold mb-6">
-              {t.individual.hero.title}
-            </h1>
-            
-            <div className="flex flex-col sm:flex-row gap-4 justify-center">
-              <Button 
-                size="lg" 
-                className="bg-green-500 hover:bg-green-600 text-white"
-                asChild
-              >
-                <a 
-                  href={`https://wa.me/${whatsappNumber}`}
-                  target="_blank"
-                  rel="noopener noreferrer"
-                  className="inline-flex items-center gap-2"
-                >
-                  <WhatsAppIcon className="w-5 h-5" />
-                  {t.actions.whatsapp}
-                </a>
-              </Button>
               
-              <Button 
-                size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary-foreground/20"
-                asChild
-              >
-                <a 
-                  href="mailto:Contato@auladeinglesemcasa.com"
-                  className="inline-flex items-center gap-2"
+              <h1 className="text-4xl md:text-5xl font-bold mb-6">
+                {t.individual.hero.title}
+              </h1>
+            </LazyLoad>
+            
+            <LazyLoad delay={200} animationClass="fade-in">
+              <div className="flex flex-col sm:flex-row gap-4 justify-center">
+                <Button 
+                  size="lg" 
+                  className="bg-green-500 hover:bg-green-600 text-white"
+                  asChild
                 >
-                  <Mail className="w-5 h-5" />
-                  {t.actions.sendEmail}
-                </a>
-              </Button>
-            </div>
+                  <a 
+                    href={`https://wa.me/${whatsappNumber}`}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    className="inline-flex items-center gap-2"
+                  >
+                    <WhatsAppIcon className="w-5 h-5" />
+                    {t.actions.whatsapp}
+                  </a>
+                </Button>
+                
+                <Button 
+                  size="lg" 
+                  className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary-foreground/20"
+                  asChild
+                >
+                  <a 
+                    href="mailto:Contato@auladeinglesemcasa.com"
+                    className="inline-flex items-center gap-2"
+                  >
+                    <Mail className="w-5 h-5" />
+                    {t.actions.sendEmail}
+                  </a>
+                </Button>
+              </div>
+            </LazyLoad>
           </div>
         </div>
       </section>
@@ -136,44 +140,51 @@ export function AulaIndividualPage() {
       {/* Benefits Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">{t.individual.benefits.title}</h2>
+          <LazyLoad delay={100} animationClass="fade-in">
+            <h2 className="text-3xl font-bold text-center mb-12">{t.individual.benefits.title}</h2>
+          </LazyLoad>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
-              <img 
-                src="/IndividualImage-1.webp" 
-                alt="Foco Total - Aula Individual" 
-                className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
-              />
-              <CardHeader className="text-center">
-                <Target className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">{t.individual.benefits.focus.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center">
-                  {t.individual.benefits.focus.description}
-                </p>
-              </CardContent>
-            </Card>
+            <LazyLoad delay={200} animationClass="fade-in-scale">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+                <img 
+                  src="/IndividualImage-1.webp" 
+                  alt="Foco Total - Aula Individual" 
+                  className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
+                />
+                <CardHeader className="text-center">
+                  <Target className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <CardTitle className="text-lg">{t.individual.benefits.focus.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground text-center">
+                    {t.individual.benefits.focus.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </LazyLoad>
 
-            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
-              <img 
-                src="/IndividualImage-2.webp" 
-                alt="Método Personalizado - Aula Individual" 
-                className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
-              />
-              <CardHeader className="text-center">
-                <BookOpen className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">{t.individual.benefits.method.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center">
-                  {t.individual.benefits.method.description}
-                </p>
-              </CardContent>
-            </Card>
+            <LazyLoad delay={300} animationClass="fade-in-scale">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+                <img 
+                  src="/IndividualImage-2.webp" 
+                  alt="Método Personalizado - Aula Individual" 
+                  className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
+                />
+                <CardHeader className="text-center">
+                  <BookOpen className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <CardTitle className="text-lg">{t.individual.benefits.method.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground text-center">
+                    {t.individual.benefits.method.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </LazyLoad>
 
-            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+            <LazyLoad delay={400} animationClass="fade-in-scale">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
               <img 
                 src="/IndividualImage-3.webp" 
                 alt="Horário Flexível - Aula Individual" 
@@ -189,13 +200,15 @@ export function AulaIndividualPage() {
                 </p>
               </CardContent>
             </Card>
+            </LazyLoad>
 
-            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
-              <img 
-                src="/IndividualImage-4.webp" 
-                alt="Mais Conversação - Aula Individual" 
-                className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
-              />
+            <LazyLoad delay={500} animationClass="fade-in-scale">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+                <img 
+                  src="/IndividualImage-4.webp" 
+                  alt="Mais Conversação - Aula Individual" 
+                  className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
+                />
               <CardHeader className="text-center">
                 <MessageCircle className="w-8 h-8 text-primary mx-auto mb-2" />
                 <CardTitle className="text-lg">{t.individual.benefits.conversation.title}</CardTitle>
@@ -206,25 +219,29 @@ export function AulaIndividualPage() {
                 </p>
               </CardContent>
             </Card>
+            </LazyLoad>
 
-            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
-              <img 
-                src="/IndividualImage-5.webp" 
-                alt="Progresso Rápido - Aula Individual" 
-                className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
-              />
-              <CardHeader className="text-center">
-                <Award className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">{t.individual.benefits.progress.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center">
-                  {t.individual.benefits.progress.description}
-                </p>
-              </CardContent>
-            </Card>
+            <LazyLoad delay={600} animationClass="fade-in-scale">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+                <img 
+                  src="/IndividualImage-5.webp" 
+                  alt="Progresso Rápido - Aula Individual" 
+                  className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
+                />
+                <CardHeader className="text-center">
+                  <Award className="w-8 h-8 text-primary mx-auto mb-2" />
+                  <CardTitle className="text-lg">{t.individual.benefits.progress.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <p className="text-muted-foreground text-center">
+                    {t.individual.benefits.progress.description}
+                  </p>
+                </CardContent>
+              </Card>
+            </LazyLoad>
 
-            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+            <LazyLoad delay={700} animationClass="fade-in-scale">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
               <img 
                 src="/IndividualImage-6.webp" 
                 alt="Sem Pressa - Aula Individual" 
@@ -240,6 +257,7 @@ export function AulaIndividualPage() {
                 </p>
               </CardContent>
             </Card>
+            </LazyLoad>
           </div>
         </div>
       </section>

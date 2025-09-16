@@ -601,6 +601,7 @@ export const translations = {
       subtitle: "Artigos e conselhos de um professor americano nativo para acelerar seu aprendizado",
       author: "por Andrew Rogers",
       readTime: "min de leitura",
+      backToBlog: "Voltar para o Blog",
       emptyState: {
         title: "Nenhum artigo encontrado",
         description: "Não há artigos publicados no momento."
@@ -619,8 +620,14 @@ export const translations = {
         title: "Artigos Relacionados",
         subtitle: "Leia mais sobre {category} e melhore suas habilidades no inglês",
         readArticle: "Ler artigo",
+        readMore: "Ler mais",
         viewAllArticles: "Ver todos os artigos",
         by: "por"
+      },
+      authorBio: {
+        name: "Andrew Rogers",
+        bio: "Professor americano de inglês com mais de 10 anos de experiência, incluindo 5 anos ensinando exclusivamente alunos brasileiros. Mora em Campo Grande, MS e é especializado em ajudar brasileiros a alcançarem fluência em inglês.",
+        learnMore: "Saiba Mais"
       }
     },
 
@@ -1511,6 +1518,7 @@ export const translations = {
       subtitle: "Articles and advice from an American teacher to accelerate your learning",
       author: "by Andrew Rogers",
       readTime: "min read",
+      backToBlog: "Back to Blog",
       emptyState: {
         title: "No articles found",
         description: "There are no published articles at the moment."
@@ -1529,8 +1537,14 @@ export const translations = {
         title: "Related Articles",
         subtitle: "Read more about {category} and improve your English skills",
         readArticle: "Read article",
+        readMore: "Read more",
         viewAllArticles: "View all articles",
         by: "by"
+      },
+      authorBio: {
+        name: "Andrew Rogers",
+        bio: "American English teacher with over 10 years of experience, including 5 years teaching exclusively Brazilian students. Lives in Campo Grande, MS and specializes in helping Brazilians achieve English fluency.",
+        learnMore: "Learn More"
       }
     },
 
