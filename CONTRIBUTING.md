@@ -1,14 +1,14 @@
-# Contributing to VineyardTechnologies.com
+# Contributing to AulaDeInglesEmCasa.com
 
-First off, thank you for considering contributing to VineyardTechnologies.com. It's people like you that make VineyardTechnologies.com such a great tool.
+First off, thank you for considering contributing to AulaDeInglesEmCasa.com. It's people like you that make AulaDeInglesEmCasa.com such a great website.
 
 ## Where do I go from here?
 
-If you've noticed a bug or have a feature request, [make one](https://github.com/Vineyard-Technologies/VineyardTechnologies.com/issues/new)! It's generally best if you get confirmation of your bug or approval for your feature request this way before starting to code.
+If you've noticed a bug or have a feature request, [make one](https://github.com/Vineyard-Technologies/AulaDeInglesEmCasa.com/issues/new)! It's generally best if you get confirmation of your bug or approval for your feature request this way before starting to code.
 
 ### Fork & create a branch
 
-If this is something you think you can fix, then [fork VineyardTechnologies.com](https://github.com/Vineyard-Technologies/VineyardTechnologies.com/fork) and create a branch with a descriptive name.
+If this is something you think you can fix, then [fork AulaDeInglesEmCasa.com](https://github.com/Vineyard-Technologies/AulaDeInglesEmCasa.com/fork) and create a branch with a descriptive name.
 
 A good branch name would be (where issue #325 is the ticket you're working on):
 
@@ -26,10 +26,10 @@ At this point, you're ready to make your changes! Feel free to ask for help; eve
 
 ### Make a Pull Request
 
-At this point, you should switch back to your master branch and make sure it's up to date with VineyardTechnologies.com's master branch:
+At this point, you should switch back to your master branch and make sure it's up to date with AulaDeInglesEmCasa.com's master branch:
 
 ```sh
-git remote add upstream git@github.com:Vineyard-Technologies/VineyardTechnologies.com.git
+git remote add upstream git@github.com:Vineyard-Technologies/AulaDeInglesEmCasa.com.git
 git checkout master
 git pull upstream master
 ```
@@ -42,7 +42,7 @@ git rebase master
 git push --force-with-lease origin 325-add-japanese-translations
 ```
 
-Finally, go to GitHub and [make a Pull Request](https://github.com/Vineyard-Technologies/VineyardTechnologies.com/compare)
+Finally, go to GitHub and [make a Pull Request](https://github.com/Vineyard-Technologies/AulaDeInglesEmCasa.com/compare)
 
 ### Keeping your Pull Request updated
 
