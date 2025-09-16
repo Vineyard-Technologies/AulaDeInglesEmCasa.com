@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon"
-import { GoogleMap, RelatedBlogPosts } from "@/components"
+import { GoogleMap, RelatedBlogPosts, LazyImage } from "@/components"
 import { updateMetaTags, addStructuredData } from "@/utils/seo"
 import { BLOG_CATEGORIES } from "@/data/blogPostsBilingual"
 import { useTranslations } from "@/data/translations"
@@ -94,13 +94,46 @@ export function AulaEmGrupoPage() {
         </div>
       </section>
 
+      {/* About Group Classes Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-6xl mx-auto">
+            <div className="grid md:grid-cols-2 gap-12 items-center">
+              {/* Content */}
+              <div className="space-y-6">
+                <h2 className="text-3xl font-bold">{t.group.about.title}</h2>
+                <div className="space-y-4 text-muted-foreground leading-relaxed">
+                  <p>{t.group.about.p1}</p>
+                  <p>{t.group.about.p2}</p>
+                  <p>{t.group.about.p3}</p>
+                </div>
+              </div>
+              
+              {/* Image */}
+              <div className="flex justify-center">
+                <LazyImage 
+                  src="/groupInlinePhoto.webp" 
+                  alt={t.group.about.imageAlt} 
+                  className="w-full max-w-md h-auto rounded-xl shadow-lg hover:shadow-xl hover:scale-105 transition-all duration-300"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Benefits Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">{t.group.benefits.title}</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer">
+              <LazyImage 
+                src="/groupPhoto4.webp" 
+                alt="Grupo de estudantes praticando inglês" 
+                className="w-full h-48 object-cover rounded-lg hover:scale-105 transition-transform duration-300"
+              />
               <CardHeader className="text-center">
                 <DollarSign className="w-8 h-8 text-primary mx-auto mb-2" />
                 <CardTitle className="text-lg">{t.group.benefits.costBenefit.title}</CardTitle>
@@ -112,7 +145,12 @@ export function AulaEmGrupoPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer">
+              <LazyImage 
+                src="/groupPhoto1.webp" 
+                alt="Estudantes interagindo em aula de inglês em grupo" 
+                className="w-full h-48 object-cover rounded-lg hover:scale-105 transition-transform duration-300"
+              />
               <CardHeader className="text-center">
                 <MessageCircle className="w-8 h-8 text-primary mx-auto mb-2" />
                 <CardTitle className="text-lg">{t.group.benefits.realPractice.title}</CardTitle>
@@ -124,7 +162,12 @@ export function AulaEmGrupoPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer">
+              <LazyImage 
+                src="/groupPhoto2.webp" 
+                alt="Grupo motivado aprendendo inglês juntos" 
+                className="w-full h-48 object-cover rounded-lg hover:scale-105 transition-transform duration-300"
+              />
               <CardHeader className="text-center">
                 <Award className="w-8 h-8 text-primary mx-auto mb-2" />
                 <CardTitle className="text-lg">{t.group.benefits.motivation.title}</CardTitle>
@@ -136,7 +179,12 @@ export function AulaEmGrupoPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 overflow-hidden cursor-pointer">
+              <LazyImage 
+                src="/groupPhoto3.webp" 
+                alt="Pequeno grupo focado no aprendizado de inglês" 
+                className="w-full h-48 object-cover rounded-lg hover:scale-105 transition-transform duration-300"
+              />
               <CardHeader className="text-center">
                 <Target className="w-8 h-8 text-primary mx-auto mb-2" />
                 <CardTitle className="text-lg">{t.group.benefits.smallGroups.title}</CardTitle>
@@ -157,7 +205,7 @@ export function AulaEmGrupoPage() {
           <h2 className="text-3xl font-bold text-center mb-12">{t.group.methodology.title}</h2>
           
           <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
               <CardHeader>
                 <CardTitle className="text-center">{t.group.levels.beginner.title}</CardTitle>
                 <CardDescription className="text-center">{t.group.levels.beginner.level}</CardDescription>
@@ -180,7 +228,7 @@ export function AulaEmGrupoPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
               <CardHeader>
                 <CardTitle className="text-center">{t.group.levels.intermediate.title}</CardTitle>
                 <CardDescription className="text-center">{t.group.levels.intermediate.level}</CardDescription>
@@ -203,7 +251,7 @@ export function AulaEmGrupoPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
               <CardHeader>
                 <CardTitle className="text-center">{t.group.levels.advanced.title}</CardTitle>
                 <CardDescription className="text-center">{t.group.levels.advanced.level}</CardDescription>
@@ -298,9 +346,9 @@ export function AulaEmGrupoPage() {
               <div className="text-center flex flex-col justify-center">
                 <div className="w-24 h-16 mx-auto flex items-center justify-center mb-6">
                   <img 
-                    src="/AulaDeInglesEmCasaIcon.webp" 
+                    src="/AulaDeInglesEmCasa Icon.webp" 
                     alt="Aula de Inglês em Casa - Andrew Rogers" 
-                    className="max-w-full max-h-full object-contain"
+                    className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 

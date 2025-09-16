@@ -125,7 +125,7 @@ export function AulaIndividualPage() {
                 <img 
                   src="/interior.webp" 
                   alt="Ambiente de Aula Individual de Inglês" 
-                  className="w-full max-w-lg h-auto object-cover rounded-lg shadow-lg"
+                  className="w-full max-w-lg h-auto object-cover rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
                 />
               </div>
             </div>
@@ -139,13 +139,13 @@ export function AulaIndividualPage() {
           <h2 className="text-3xl font-bold text-center mb-12">{t.individual.benefits.title}</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+              <img 
+                src="/IndividualImage-1.webp" 
+                alt="Foco Total - Aula Individual" 
+                className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
+              />
               <CardHeader className="text-center">
-                <img 
-                  src="/IndividualImage-1.webp" 
-                  alt="Foco Total - Aula Individual" 
-                  className="w-full h-40 object-cover rounded-md mb-4"
-                />
                 <Target className="w-8 h-8 text-primary mx-auto mb-2" />
                 <CardTitle className="text-lg">{t.individual.benefits.focus.title}</CardTitle>
               </CardHeader>
@@ -156,13 +156,13 @@ export function AulaIndividualPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+              <img 
+                src="/IndividualImage-2.webp" 
+                alt="Método Personalizado - Aula Individual" 
+                className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
+              />
               <CardHeader className="text-center">
-                <img 
-                  src="/IndividualImage-2.webp" 
-                  alt="Método Personalizado - Aula Individual" 
-                  className="w-full h-40 object-cover rounded-md mb-4"
-                />
                 <BookOpen className="w-8 h-8 text-primary mx-auto mb-2" />
                 <CardTitle className="text-lg">{t.individual.benefits.method.title}</CardTitle>
               </CardHeader>
@@ -173,13 +173,13 @@ export function AulaIndividualPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+              <img 
+                src="/IndividualImage-3.webp" 
+                alt="Horário Flexível - Aula Individual" 
+                className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
+              />
               <CardHeader className="text-center">
-                <img 
-                  src="/IndividualImage-3.webp" 
-                  alt="Horário Flexível - Aula Individual" 
-                  className="w-full h-40 object-cover rounded-md mb-4"
-                />
                 <Clock className="w-8 h-8 text-primary mx-auto mb-2" />
                 <CardTitle className="text-lg">{t.individual.benefits.schedule.title}</CardTitle>
               </CardHeader>
@@ -190,13 +190,13 @@ export function AulaIndividualPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+              <img 
+                src="/IndividualImage-4.webp" 
+                alt="Mais Conversação - Aula Individual" 
+                className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
+              />
               <CardHeader className="text-center">
-                <img 
-                  src="/IndividualImage-4.webp" 
-                  alt="Mais Conversação - Aula Individual" 
-                  className="w-full h-40 object-cover rounded-md mb-4"
-                />
                 <MessageCircle className="w-8 h-8 text-primary mx-auto mb-2" />
                 <CardTitle className="text-lg">{t.individual.benefits.conversation.title}</CardTitle>
               </CardHeader>
@@ -207,13 +207,13 @@ export function AulaIndividualPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+              <img 
+                src="/IndividualImage-5.webp" 
+                alt="Progresso Rápido - Aula Individual" 
+                className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
+              />
               <CardHeader className="text-center">
-                <img 
-                  src="/IndividualImage-5.webp" 
-                  alt="Progresso Rápido - Aula Individual" 
-                  className="w-full h-40 object-cover rounded-md mb-4"
-                />
                 <Award className="w-8 h-8 text-primary mx-auto mb-2" />
                 <CardTitle className="text-lg">{t.individual.benefits.progress.title}</CardTitle>
               </CardHeader>
@@ -224,13 +224,13 @@ export function AulaIndividualPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+              <img 
+                src="/IndividualImage-6.webp" 
+                alt="Sem Pressa - Aula Individual" 
+                className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
+              />
               <CardHeader className="text-center">
-                <img 
-                  src="/IndividualImage-6.webp" 
-                  alt="Sem Pressa - Aula Individual" 
-                  className="w-full h-40 object-cover rounded-md mb-4"
-                />
                 <Calendar className="w-8 h-8 text-primary mx-auto mb-2" />
                 <CardTitle className="text-lg">{t.individual.benefits.pace.title}</CardTitle>
               </CardHeader>
@@ -299,13 +299,13 @@ export function AulaIndividualPage() {
           <h2 className="text-3xl font-bold text-center mb-12">{t.individual.idealFor.title}</h2>
           
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+              <img 
+                src="/ideal1.webp" 
+                alt="Busca Resultados Rápidos - Aula Individual" 
+                className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
+              />
               <CardHeader>
-                <img 
-                  src="/ideal1.webp" 
-                  alt="Busca Resultados Rápidos - Aula Individual" 
-                  className="w-full h-40 object-cover rounded-md mb-4"
-                />
                 <CardTitle>{t.individual.idealFor.quickResults.title}</CardTitle>
               </CardHeader>
               <CardContent>
@@ -326,13 +326,13 @@ export function AulaIndividualPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+              <img 
+                src="/ideal2.webp" 
+                alt="Prefere Atenção Individual - Aula Individual" 
+                className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
+              />
               <CardHeader>
-                <img 
-                  src="/ideal2.webp" 
-                  alt="Prefere Atenção Individual - Aula Individual" 
-                  className="w-full h-40 object-cover rounded-md mb-4"
-                />
                 <CardTitle>{t.individual.idealFor.individualAttention.title}</CardTitle>
               </CardHeader>
               <CardContent>

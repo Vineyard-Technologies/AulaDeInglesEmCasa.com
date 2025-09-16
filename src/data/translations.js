@@ -302,7 +302,8 @@ export const translations = {
         p1: "As aulas de inglês em grupo oferecem uma experiência de aprendizado rica e colaborativa, onde você interage com outros estudantes e pratica o idioma em situações mais próximas da realidade. Com grupos pequenos de no máximo 4 alunos, garantimos atenção individual sem perder os benefícios da interação social.",
         p2: "A dinâmica de grupo cria um ambiente motivador onde cada aluno contribui para o aprendizado dos demais. Você pratica conversação de forma natural, aprende com os erros e acertos dos colegas, e desenvolve confiança para usar o inglês em situações reais de comunicação.",
         p3: "Como professor americano nativo, facilito discussões e atividades que simulam situações cotidianas, profissionais e sociais. Isso prepara você para usar o inglês com confiança em qualquer contexto, desde reuniões de trabalho até conversas casuais.",
-        p4: "O custo-benefício das aulas em grupo é excelente, oferecendo ensino de qualidade premium por um valor mais acessível que aulas individuais, sem comprometer a eficácia do aprendizado."
+        p4: "O custo-benefício das aulas em grupo é excelente, oferecendo ensino de qualidade premium por um valor mais acessível que aulas individuais, sem comprometer a eficácia do aprendizado.",
+        imageAlt: "Estudantes em aula de inglês em grupo interagindo e praticando conversação"
       },
       benefits: {
         title: "Vantagens das Aulas em Grupo",
@@ -439,7 +440,8 @@ export const translations = {
         p1: "As aulas de conversação em inglês são focadas exclusivamente em desenvolver sua habilidade de falar e se comunicar naturalmente. Se você já tem base no idioma mas sente dificuldade para se expressar com fluência, estas aulas são perfeitas para quebrar a barreira da conversação.",
         p2: "Durante as sessões, praticamos diálogos sobre temas variados do cotidiano, trabalho, viagens, cultura e atualidades. Como professor americano nativo, ofereço correções naturais e ensino expressões idiomáticas que tornarão sua comunicação mais autêntica e confiante.",
         p3: "O foco é na prática intensiva da fala, com mínima teoria e máxima conversação. Você desenvolve vocabulário contextual, melhora a pronunciação, e ganha segurança para usar o inglês em situações reais, seja em reuniões de trabalho, viagens ou situações sociais.",
-        p4: "As aulas de conversação podem ser individuais ou em pequenos grupos, sempre priorizando o máximo tempo de fala para cada aluno. É o método mais eficaz para quem já tem conhecimento básico e quer desenvolver fluência prática."
+        p4: "As aulas de conversação podem ser individuais ou em pequenos grupos, sempre priorizando o máximo tempo de fala para cada aluno. É o método mais eficaz para quem já tem conhecimento básico e quer desenvolver fluência prática.",
+        imageAlt: "Estudantes praticando conversação em inglês com professor nativo"
       },
       benefits: {
         title: "Vantagens das Aulas de Conversação",
@@ -945,8 +947,8 @@ export const translations = {
       },
       welcome: {
         title: "Transform Your Future with English",
-        description: "Imagine being able to communicate confidently in English, open new professional opportunities, and connect with people worldwide. As a native American teacher in Campo Grande, I'm here to make that dream come true, in the comfort of your home.",
-        feature1: "Native American teacher",
+        description: "Imagine being able to communicate confidently in English, open new professional opportunities, and connect with people worldwide. As an American teacher in Campo Grande, I'm here to make that dream come true, in the comfort of your home.",
+        feature1: "American teacher",
         feature2: "Over 10 years of experience",
         feature3: "Home classes in Campo Grande",
         feature4: "Personalized methodology for you",
@@ -1035,7 +1037,7 @@ export const translations = {
         title: "Transform Your English with Individual Classes",
         p1: "Individual English classes represent the most efficient and personalized way to master the language. With 100% focused attention on you, every minute of class is optimized to accelerate your learning and achieve your specific goals.",
         p2: "Unlike group classes, where the pace is determined by the class average, individual classes adapt completely to your level, learning style, and needs. Whether you're an absolute beginner or someone who needs to perfect specific skills for work, each class is designed exclusively for you.",
-        p3: "As a native American teacher in Campo Grande, MS, I offer not only natural language mastery but also the cultural understanding that makes all the difference in real communication. In individual classes, you have the freedom to ask all questions, practice pronunciation without embarrassment, and focus on topics that interest or challenge you most.",
+        p3: "As an American teacher in Campo Grande, MS, I offer not only natural language mastery but also the cultural understanding that makes all the difference in real communication. In individual classes, you have the freedom to ask all questions, practice pronunciation without embarrassment, and focus on topics that interest or challenge you most.",
         p4: "Schedule flexibility is another great advantage. You schedule according to your availability, including weekends and alternative hours. This means your learning never stops, maintaining the essential continuity for consistent progress in English."
       },
       benefits: {
@@ -1116,7 +1118,7 @@ export const translations = {
       about: {
         title: "The Convenience of Online Classes",
         p1: "Online English classes have revolutionized learning, offering all the quality of in-person classes with the convenience of studying from wherever you are. With modern technology and interactive platforms, you have access to the same level of personalized teaching without leaving home.",
-        p2: "As a native American teacher, I use advanced digital tools that allow real-time interaction, screen sharing for visual materials, and class recordings for later review. This means you never lose content and can review important points as many times as you need.",
+        p2: "As an American teacher, I use advanced digital tools that allow real-time interaction, screen sharing for visual materials, and class recordings for later review. This means you never lose content and can review important points as many times as you need.",
         p3: "The flexibility of online classes is perfect for those with busy schedules or who prefer studying in a familiar environment. With no time lost in traffic, you maximize your learning and maintain the consistency necessary for progress in English.",
         p4: "I serve students from Campo Grande, MS and surrounding areas through online classes that are as effective as in-person ones, with the additional advantage of accommodating more flexible schedules, including weekends and alternative hours."
       },
@@ -1209,8 +1211,9 @@ export const translations = {
         title: "Collaborative and Dynamic Learning",
         p1: "Group English classes offer a rich and collaborative learning experience, where you interact with other students and practice the language in situations closer to reality. With small groups of maximum 4 students, we ensure individual attention without losing the benefits of social interaction.",
         p2: "Group dynamics create a motivating environment where each student contributes to the learning of others. You practice conversation naturally, learn from colleagues' mistakes and successes, and develop confidence to use English in real communication situations.",
-        p3: "As a native American teacher, I facilitate discussions and activities that simulate everyday, professional, and social situations. This prepares you to use English confidently in any context, from work meetings to casual conversations.",
-        p4: "The cost-benefit of group classes is excellent, offering premium quality teaching at a more affordable price than individual classes, without compromising learning effectiveness."
+        p3: "As an American teacher, I facilitate discussions and activities that simulate everyday, professional, and social situations. This prepares you to use English confidently in any context, from work meetings to casual conversations.",
+        p4: "The cost-benefit of group classes is excellent, offering premium quality teaching at a more affordable price than individual classes, without compromising learning effectiveness.",
+        imageAlt: "Students in group English class interacting and practicing conversation"
       },
       benefits: {
         title: "Advantages of Group Classes",
@@ -1345,9 +1348,10 @@ export const translations = {
       about: {
         title: "Develop Natural Conversational Fluency",
         p1: "English conversation classes are exclusively focused on developing your ability to speak and communicate naturally. If you already have a foundation in the language but feel difficulty expressing yourself fluently, these classes are perfect for breaking the conversation barrier.",
-        p2: "During sessions, we practice dialogues on various topics from daily life, work, travel, culture, and current events. As a native American teacher, I offer natural corrections and teach idiomatic expressions that will make your communication more authentic and confident.",
+        p2: "During sessions, we practice dialogues on various topics from daily life, work, travel, culture, and current events. As an American teacher, I offer natural corrections and teach idiomatic expressions that will make your communication more authentic and confident.",
         p3: "The focus is on intensive speaking practice, with minimal theory and maximum conversation. You develop contextual vocabulary, improve pronunciation, and gain confidence to use English in real situations, whether in work meetings, travel, or social situations.",
-        p4: "Conversation classes can be individual or in small groups, always prioritizing maximum speaking time for each student. It's the most effective method for those who already have basic knowledge and want to develop practical fluency."
+        p4: "Conversation classes can be individual or in small groups, always prioritizing maximum speaking time for each student. It's the most effective method for those who already have basic knowledge and want to develop practical fluency.",
+        imageAlt: "Students practicing English conversation with native teacher"
       },
       benefits: {
         title: "Advantages of Conversation Classes",
@@ -1504,7 +1508,7 @@ export const translations = {
     // Blog
     blog: {
       title: "Blog",
-      subtitle: "Articles and advice from a native American teacher to accelerate your learning",
+      subtitle: "Articles and advice from an American teacher to accelerate your learning",
       author: "by Andrew Rogers",
       readTime: "min read",
       emptyState: {
@@ -1794,7 +1798,7 @@ export const translations = {
         location: "Location:",
         locationValue: "Campo Grande, MS, Brazil",
         specialty: "Specialty:",
-        specialtyValue: "English classes with native American teacher",
+        specialtyValue: "English classes with an American teacher",
         classTypes: "Class types:",
         classTypesValue: "Individual, group, online and in-person",
         contact: "Contact:"
@@ -1803,7 +1807,7 @@ export const translations = {
 
     // Footer
     footer: {
-      description: "Personalized English classes with native American teacher in Campo Grande, MS.",
+      description: "Personalized English classes with an American teacher in Campo Grande, MS.",
       links: {
         sitemap: "Sitemap",
         privacy: "Privacy Policy",

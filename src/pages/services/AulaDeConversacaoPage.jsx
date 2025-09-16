@@ -3,7 +3,7 @@ import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon"
-import { GoogleMap, RelatedBlogPosts } from "@/components"
+import { GoogleMap, RelatedBlogPosts, LazyImage } from "@/components"
 import { updateMetaTags, addStructuredData } from "@/utils/seo"
 import { BLOG_CATEGORIES } from "@/data/blogPostsBilingual"
 import { useTranslations } from "@/data/translations"
@@ -94,13 +94,51 @@ export function AulaDeConversacaoPage() {
         </div>
       </section>
 
+      {/* About Conversation Classes Section */}
+      <section className="py-16 bg-muted/30">
+        <div className="container mx-auto px-4">
+          <div className="max-w-4xl mx-auto">
+            <h2 className="text-3xl font-bold text-center mb-12">{t.conversation.about.title}</h2>
+            
+            <div className="grid md:grid-cols-2 gap-8 items-center">
+              {/* Content */}
+              <div className="space-y-6">
+                <p className="text-lg leading-relaxed">
+                  {t.conversation.about.p1}
+                </p>
+                <p className="text-lg leading-relaxed">
+                  {t.conversation.about.p2}
+                </p>
+                <p className="text-lg leading-relaxed">
+                  {t.conversation.about.p3}
+                </p>
+              </div>
+              
+              {/* Image */}
+              <div className="flex justify-center">
+                <LazyImage 
+                  src="/conversationInline.webp" 
+                  alt={t.conversation.about.imageAlt} 
+                  className="w-full max-w-md h-auto rounded-xl shadow-lg hover:scale-105 transition-transform duration-300"
+                />
+              </div>
+            </div>
+          </div>
+        </div>
+      </section>
+
       {/* Benefits Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">{t.conversation.benefits.title}</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+              <LazyImage
+                src="/conversation1.webp"
+                alt={t.conversation.benefits.fluency.title}
+                className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
+              />
               <CardHeader className="text-center">
                 <Mic className="w-8 h-8 text-primary mx-auto mb-2" />
                 <CardTitle className="text-lg">{t.conversation.benefits.fluency.title}</CardTitle>
@@ -112,7 +150,12 @@ export function AulaDeConversacaoPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+              <LazyImage
+                src="/conversation2.webp"
+                alt={t.conversation.benefits.confidence.title}
+                className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
+              />
               <CardHeader className="text-center">
                 <Award className="w-8 h-8 text-primary mx-auto mb-2" />
                 <CardTitle className="text-lg">{t.conversation.benefits.confidence.title}</CardTitle>
@@ -124,7 +167,12 @@ export function AulaDeConversacaoPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+              <LazyImage
+                src="/conversation4.webp"
+                alt={t.conversation.benefits.pronunciation.title}
+                className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
+              />
               <CardHeader className="text-center">
                 <Globe className="w-8 h-8 text-primary mx-auto mb-2" />
                 <CardTitle className="text-lg">{t.conversation.benefits.pronunciation.title}</CardTitle>
@@ -136,7 +184,12 @@ export function AulaDeConversacaoPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+              <LazyImage
+                src="/conversation3.webp"
+                alt={t.conversation.benefits.speaking.title}
+                className="w-full h-48 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
+              />
               <CardHeader className="text-center">
                 <Clock className="w-8 h-8 text-primary mx-auto mb-2" />
                 <CardTitle className="text-lg">{t.conversation.benefits.speaking.title}</CardTitle>
@@ -156,8 +209,8 @@ export function AulaDeConversacaoPage() {
         <div className="container mx-auto px-4">
           <h2 className="text-3xl font-bold text-center mb-12">{t.conversation.methodology.title}</h2>
           
-          <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
-            <Card className="hover:shadow-lg transition-shadow">
+          <div className="max-w-3xl mx-auto grid md:grid-cols-2 gap-6">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
               <CardHeader>
                 <CardTitle>{t.conversation.topics.dailyLife.title}</CardTitle>
               </CardHeader>
@@ -183,7 +236,7 @@ export function AulaDeConversacaoPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
               <CardHeader>
                 <CardTitle>{t.conversation.topics.professional.title}</CardTitle>
               </CardHeader>
@@ -209,7 +262,7 @@ export function AulaDeConversacaoPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
               <CardHeader>
                 <CardTitle>{t.conversation.topics.cultural.title}</CardTitle>
               </CardHeader>
@@ -235,7 +288,7 @@ export function AulaDeConversacaoPage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
               <CardHeader>
                 <CardTitle>{t.conversation.topics.interests.title}</CardTitle>
               </CardHeader>

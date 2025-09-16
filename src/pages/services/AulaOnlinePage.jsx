@@ -113,7 +113,7 @@ export function AulaOnlinePage() {
                   <LazyImage
                     src="/VideoCall.webp"
                     alt="Aulas de Inglês Online por Videoconferência"
-                    className="w-full h-auto rounded-lg shadow-lg"
+                    className="w-full h-auto rounded-lg shadow-lg hover:scale-105 transition-transform duration-300"
                   />
                 </div>
               </div>
@@ -128,12 +128,12 @@ export function AulaOnlinePage() {
           <h2 className="text-3xl font-bold text-center mb-12">{t.online.benefits.title}</h2>
           
           <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
-            <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer h-full flex flex-col">
               <div className="aspect-video w-full overflow-hidden rounded-lg">
                 <LazyImage
                   src="/Flexible.webp"
                   alt="Flexibilidade Total"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <CardHeader className="text-center">
@@ -146,12 +146,12 @@ export function AulaOnlinePage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer h-full flex flex-col">
               <div className="aspect-video w-full overflow-hidden rounded-lg">
                 <LazyImage
                   src="/Platform.webp"
                   alt="Plataforma Segura"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <CardHeader className="text-center">
@@ -164,12 +164,12 @@ export function AulaOnlinePage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer h-full flex flex-col">
               <div className="aspect-video w-full overflow-hidden rounded-lg">
                 <LazyImage
                   src="/Audio.webp"
                   alt="Áudio de Qualidade"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <CardHeader className="text-center">
@@ -182,12 +182,12 @@ export function AulaOnlinePage() {
               </CardContent>
             </Card>
 
-            <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer h-full flex flex-col">
               <div className="aspect-video w-full overflow-hidden rounded-lg">
                 <LazyImage
                   src="/Attention.webp"
                   alt="Atenção Individual"
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                 />
               </div>
               <CardHeader className="text-center">
@@ -248,7 +248,7 @@ export function AulaOnlinePage() {
           <div className="mx-auto" style={{ maxWidth: '500px' }}>
             <h2 className="text-3xl font-bold text-center mb-8">{t.online.requirements.title}</h2>
             
-            <Card className="hover:shadow-lg transition-shadow">
+            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Wifi className="w-5 h-5" />

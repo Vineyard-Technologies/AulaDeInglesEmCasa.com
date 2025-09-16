@@ -65,7 +65,7 @@ Como professor experiente, posso afirmar que as aulas online, quando bem estrutu
       en: {
         title: "5 Advantages of Online English Classes You Need to Know",
         excerpt: "Discover why online classes are revolutionizing English learning and how you can make the most of this modality.",
-        content: `Online English classes have gained increasing popularity, especially in recent years. As a native American teacher in Campo Grande, MS, I have seen firsthand how this modality can transform my students' learning. Here are the 5 main advantages that make online classes an exceptional choice.
+        content: `Online English classes have gained increasing popularity, especially in recent years. As an American teacher in Campo Grande, MS, I have seen firsthand how this modality can transform my students' learning. Here are the 5 main advantages that make online classes an exceptional choice.
 
 **1. Unmatched Schedule Flexibility**
 
@@ -393,7 +393,7 @@ Lembre-se: cada pessoa tem seu próprio ritmo. Com paciência, prática e a meto
       en: {
         title: "How to Overcome Shyness When Speaking English: Tips from a Native Teacher",
         excerpt: "Proven strategies to overcome the fear of speaking English and gain confidence in your communication skills.",
-        content: `Shyness when speaking English is one of the biggest barriers my students face. As a native American teacher, I work daily with Brazilians who know much more English than they imagine, but are afraid to express themselves. Here are my most effective strategies to overcome this barrier.
+        content: `Shyness when speaking English is one of the biggest barriers my students face. As an American teacher, I work daily with Brazilians who know much more English than they imagine, but are afraid to express themselves. Here are my most effective strategies to overcome this barrier.
 
 **Understand That Errors Are Natural**
 

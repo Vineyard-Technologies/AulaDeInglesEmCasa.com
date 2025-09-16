@@ -39,13 +39,13 @@ export const RelatedBlogPosts = ({ category, limit = 3, variant = "white" }) => 
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             {relatedPosts.map((post) => (
-              <Card key={post.id} className="hover:shadow-lg transition-shadow overflow-hidden">
+              <Card key={post.id} className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
                 {post.image && (
                   <div className="aspect-video w-full overflow-hidden">
                     <img 
                       src={post.image} 
                       alt={post.title}
-                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
+                      className="w-full h-full object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
                     />
                   </div>
                 )}

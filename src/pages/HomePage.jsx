@@ -149,31 +149,31 @@ export function HomePage() {
               </LazyLoad>
               
               <LazyLoad delay={300} animationClass="fade-in-right">
-                <Card className="p-6 bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20">
+                <Card className="p-6 bg-gradient-to-br from-primary/5 to-secondary/5 border-primary/20 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
                 <CardContent className="space-y-4">
                   <div className="flex items-start gap-3">
-                    <Clock className="w-5 h-5 text-secondary mt-0.5" />
+                    <Clock className="w-5 h-5 text-primary mt-0.5" />
                     <div>
                       <span className="font-medium text-lg block">{t.home.welcome.card.flexibility.title}</span>
                       <span className="text-lg text-muted-foreground">{t.home.welcome.card.flexibility.description}</span>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Users className="w-5 h-5 text-secondary mt-0.5" />
+                    <Users className="w-5 h-5 text-primary mt-0.5" />
                     <div>
                       <span className="font-medium text-lg block">{t.home.welcome.card.attention.title}</span>
                       <span className="text-lg text-muted-foreground">{t.home.welcome.card.attention.description}</span>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <Award className="w-5 h-5 text-secondary mt-0.5" />
+                    <Award className="w-5 h-5 text-primary mt-0.5" />
                     <div>
                       <span className="font-medium text-lg block">{t.home.welcome.card.progress.title}</span>
                       <span className="text-lg text-muted-foreground">{t.home.welcome.card.progress.description}</span>
                     </div>
                   </div>
                   <div className="flex items-start gap-3">
-                    <CheckCircle className="w-5 h-5 text-secondary mt-0.5" />
+                    <CheckCircle className="w-5 h-5 text-primary mt-0.5" />
                     <div>
                       <span className="font-medium text-lg block">{t.home.welcome.card.comfort.title}</span>
                       <span className="text-lg text-muted-foreground">{t.home.welcome.card.comfort.description}</span>
@@ -199,12 +199,12 @@ export function HomePage() {
             
             <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
               <LazyLoad delay={200} animationClass="fade-in-scale">
-              <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer h-full flex flex-col">
                 <div className="aspect-video w-full overflow-hidden rounded-lg">
                   <LazyImage 
                     src={aulaOnlineImage} 
                     alt="Aula Online" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <CardHeader className="flex-shrink-0">
@@ -238,12 +238,12 @@ export function HomePage() {
               </LazyLoad>
 
               <LazyLoad delay={300} animationClass="fade-in-scale">
-              <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer h-full flex flex-col">
                 <div className="aspect-video w-full overflow-hidden rounded-lg">
                   <LazyImage 
                     src={aulaIndividualImage} 
                     alt="Aula Individual" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <CardHeader className="flex-shrink-0">
@@ -277,12 +277,12 @@ export function HomePage() {
               </LazyLoad>
 
               <LazyLoad delay={400} animationClass="fade-in-scale">
-              <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer h-full flex flex-col">
                 <div className="aspect-video w-full overflow-hidden rounded-lg">
                   <LazyImage 
                     src={aulaEmGrupoImage} 
                     alt="Aula em Grupo" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <CardHeader className="flex-shrink-0">
@@ -316,12 +316,12 @@ export function HomePage() {
               </LazyLoad>
 
               <LazyLoad delay={500} animationClass="fade-in-scale">
-              <Card className="hover:shadow-lg transition-shadow h-full flex flex-col">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer h-full flex flex-col">
                 <div className="aspect-video w-full overflow-hidden rounded-lg">
                   <LazyImage 
                     src={aulaConversacaoImage} 
                     alt="Aula de Conversação" 
-                    className="w-full h-full object-cover"
+                    className="w-full h-full object-cover hover:scale-105 transition-transform duration-300"
                   />
                 </div>
                 <CardHeader className="flex-shrink-0">

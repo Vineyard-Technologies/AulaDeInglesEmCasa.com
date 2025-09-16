@@ -72,7 +72,7 @@ export function AboutPage() {
                 <div>
                   <h2 className="text-3xl font-bold mb-6 text-center md:text-left">{t.about.qualifications.title}</h2>
                 <div className="space-y-4">
-                  <Card>
+                  <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
                     <CardHeader>
                       <CardTitle className="flex items-center gap-2 text-lg">
                         <Award className="w-5 h-5 text-primary" />
@@ -98,7 +98,7 @@ export function AboutPage() {
                     </CardContent>
                   </Card>
 
-                  <Card>
+                  <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
                     <CardHeader>
                       <CardTitle className="flex items-center gap-2 text-lg">
                         <GraduationCap className="w-5 h-5 text-primary" />
@@ -122,21 +122,27 @@ export function AboutPage() {
             <LazyLoad delay={300}>
               <div className="mt-12">
                 <div className="grid grid-cols-1 md:grid-cols-3 gap-6">
-                  <LazyImage 
-                    src={aboutPhoto1} 
-                    alt="Andrew Rogers ensinando inglês em ambiente profissional" 
-                    className="w-full h-48 rounded-lg object-cover"
-                  />
-                  <LazyImage 
-                    src={aboutPhoto2} 
-                    alt="Andrew Rogers com família em Campo Grande, MS" 
-                    className="w-full h-48 rounded-lg object-cover"
-                  />
-                  <LazyImage 
-                    src={aboutPhoto3} 
-                    alt="Andrew Rogers em atividades comunitárias e voluntariado" 
-                    className="w-full h-48 rounded-lg object-cover"
-                  />
+                  <div className="overflow-hidden rounded-lg hover:shadow-lg transition-shadow duration-300">
+                    <LazyImage 
+                      src={aboutPhoto1} 
+                      alt="Andrew Rogers ensinando inglês em ambiente profissional" 
+                      className="w-full h-48 rounded-lg object-cover hover:scale-110 transition-transform duration-500 cursor-pointer"
+                    />
+                  </div>
+                  <div className="overflow-hidden rounded-lg hover:shadow-lg transition-shadow duration-300">
+                    <LazyImage 
+                      src={aboutPhoto2} 
+                      alt="Andrew Rogers com família em Campo Grande, MS" 
+                      className="w-full h-48 rounded-lg object-cover hover:scale-110 transition-transform duration-500 cursor-pointer"
+                    />
+                  </div>
+                  <div className="overflow-hidden rounded-lg hover:shadow-lg transition-shadow duration-300">
+                    <LazyImage 
+                      src={aboutPhoto3} 
+                      alt="Andrew Rogers em atividades comunitárias e voluntariado" 
+                      className="w-full h-48 rounded-lg object-cover hover:scale-110 transition-transform duration-500 cursor-pointer"
+                    />
+                  </div>
                 </div>
               </div>
             </LazyLoad>

@@ -78,7 +78,7 @@ export function ContactPage() {
               <div className="max-w-2xl mx-auto">
                 <div className="grid md:grid-cols-2 gap-8">
                   {/* WhatsApp */}
-                  <Card className="text-center p-6">
+                  <Card className="text-center p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
                     <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
                       <WhatsAppIcon className="w-8 h-8 text-green-500" />
                     </div>
@@ -101,7 +101,7 @@ export function ContactPage() {
                   </Card>
 
                   {/* Email */}
-                  <Card className="text-center p-6">
+                  <Card className="text-center p-6 hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
                   <div className="w-16 h-16 bg-primary/10 rounded-full flex items-center justify-center mx-auto mb-4">
                     <Mail className="w-8 h-8 text-primary" />
                   </div>
@@ -136,7 +136,7 @@ export function ContactPage() {
                     <img 
                       src={homepageLogo} 
                       alt="Aula de Inglês em Casa - Andrew Rogers" 
-                      className="max-w-full max-h-full object-contain"
+                      className="max-w-full max-h-full object-contain hover:scale-105 transition-transform duration-300"
                     />
                   </div>
                   
