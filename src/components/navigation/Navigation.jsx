@@ -60,20 +60,36 @@ export function Navigation() {
             <div className="hidden md:flex items-center">
               <button
                 onClick={handleLanguageToggle}
-                className="flex items-center gap-2 p-2 rounded-lg hover:bg-muted transition-colors"
+                className="relative flex items-center bg-muted rounded-full p-1 w-20 h-10 transition-all duration-300 hover:bg-muted/80"
                 title={isPortuguese ? "Switch to English" : "Mudar para Português"}
               >
-                {isPortuguese ? (
-                  <>
-                    <USFlag className="w-6 h-4" />
-                    <span className="text-sm text-muted-foreground">EN</span>
-                  </>
-                ) : (
-                  <>
-                    <BrazilFlag className="w-6 h-4" />
-                    <span className="text-sm text-muted-foreground">PT</span>
-                  </>
-                )}
+                {/* Background track */}
+                <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-100 to-green-100"></div>
+                
+                {/* Sliding indicator */}
+                <div className={`absolute w-8 h-8 bg-white rounded-full shadow-lg transition-transform duration-300 z-10 flex items-center justify-center ${
+                  isPortuguese ? 'transform translate-x-0' : 'transform translate-x-10'
+                }`}>
+                  {isPortuguese ? (
+                    <BrazilFlag className="w-5 h-3" />
+                  ) : (
+                    <USFlag className="w-5 h-3" />
+                  )}
+                </div>
+                
+                {/* Flag indicators on track */}
+                <div className="relative z-0 flex items-center justify-between w-full px-1">
+                  <div className={`flex items-center justify-center w-8 h-8 rounded-full transition-opacity duration-300 ${
+                    isPortuguese ? 'opacity-100' : 'opacity-40'
+                  }`}>
+                    <BrazilFlag className="w-4 h-2.5" />
+                  </div>
+                  <div className={`flex items-center justify-center w-8 h-8 rounded-full transition-opacity duration-300 ${
+                    !isPortuguese ? 'opacity-100' : 'opacity-40'
+                  }`}>
+                    <USFlag className="w-4 h-2.5" />
+                  </div>
+                </div>
               </button>
             </div>
 
@@ -218,28 +234,28 @@ export function Navigation() {
                     className="block py-1 text-sm hover:text-primary transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
-                    Aula de Inglês Online
+                    {t.nav.servicesDropdown.online}
                   </Link>
                   <Link
                     to="/servicos/aula-de-ingles-individual"
                     className="block py-1 text-sm hover:text-primary transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
-                    Aula de Inglês Individual
+                    {t.nav.servicesDropdown.individual}
                   </Link>
                   <Link
                     to="/servicos/aula-de-ingles-em-grupo"
                     className="block py-1 text-sm hover:text-primary transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
-                    Aula de Inglês em Grupo
+                    {t.nav.servicesDropdown.group}
                   </Link>
                   <Link
                     to="/servicos/aula-de-conversacao-de-ingles"
                     className="block py-1 text-sm hover:text-primary transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
-                    Aula de Conversação de Inglês
+                    {t.nav.servicesDropdown.conversation}
                   </Link>
                 </div>
               </div>
@@ -249,7 +265,7 @@ export function Navigation() {
                 className={`px-2 py-1 rounded hover:bg-muted transition-colors ${isActive('/sobre') ? 'text-primary font-medium' : 'text-muted-foreground'}`}
                 onClick={() => setIsOpen(false)}
               >
-                Sobre
+                {t.nav.about}
               </Link>
               
               <Link 
@@ -257,7 +273,7 @@ export function Navigation() {
                 className={`px-2 py-1 rounded hover:bg-muted transition-colors ${isActive('/blog') || location.pathname.startsWith('/blog') ? 'text-primary font-medium' : 'text-muted-foreground'}`}
                 onClick={() => setIsOpen(false)}
               >
-                Blog
+                {t.nav.blog}
               </Link>
               
               <Link 
@@ -265,8 +281,35 @@ export function Navigation() {
                 className={`px-2 py-1 rounded hover:bg-muted transition-colors ${isActive('/contato') ? 'text-primary font-medium' : 'text-muted-foreground'}`}
                 onClick={() => setIsOpen(false)}
               >
-                Contato
+                {t.nav.contact}
               </Link>
+              
+              {/* Mobile Language Toggle */}
+              <div className="px-2 py-1 mt-4">
+                <div className="text-sm font-medium text-muted-foreground mb-2">{t.nav.language}</div>
+                <div 
+                  onClick={toggleLanguage}
+                  className="relative inline-flex items-center w-20 h-10 bg-gradient-to-r from-blue-100 to-green-100 rounded-full cursor-pointer transition-all duration-300 ease-in-out"
+                >
+                  <div 
+                    className={`absolute w-8 h-8 bg-white rounded-full shadow-lg transition-transform duration-300 ease-in-out ${
+                      currentLanguage === 'pt' ? 'translate-x-1' : 'translate-x-11'
+                    }`}
+                  />
+                  <div className="flex items-center justify-between w-full px-2 relative z-10">
+                    <BrazilFlag 
+                      className={`w-5 h-5 transition-opacity duration-300 ${
+                        currentLanguage === 'pt' ? 'opacity-100' : 'opacity-40'
+                      }`} 
+                    />
+                    <USFlag 
+                      className={`w-5 h-5 transition-opacity duration-300 ${
+                        currentLanguage === 'en' ? 'opacity-100' : 'opacity-40'
+                      }`} 
+                    />
+                  </div>
+                </div>
+              </div>
               
               <a
                 href="https://wa.me/5567996161199"

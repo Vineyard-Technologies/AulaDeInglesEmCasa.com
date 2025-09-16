@@ -10,7 +10,8 @@ export const translations = {
       conversation: "Aula de Conversação",
       about: "Sobre",
       blog: "Blog",
-      contact: "Contato"
+      contact: "Contato",
+      language: "Idioma"
     },
 
     // Common Actions
@@ -20,6 +21,7 @@ export const translations = {
       sendEmail: "Enviar Email",
       learnMore: "Saiba Mais",
       readMore: "Leia Mais",
+      loadMore: "Carregar Mais",
       schedule: "Agendar Aula",
       contact: "Entre em Contato"
     },
@@ -273,6 +275,16 @@ export const translations = {
       location: {
         title: "Aula de Inglês Online para Campo Grande, MS"
       },
+      requirements: {
+        title: "Requisitos Técnicos",
+        cardTitle: "O que você precisa",
+        list: {
+          internet: "Conexão estável com a internet (mínimo 5 Mbps)",
+          device: "Computador, tablet ou celular com câmera",
+          audio: "Fones de ouvido ou ambiente silencioso",
+          materials: "Caderno e caneta para anotações"
+        }
+      },
       finalCta: {
         title: "Conecte-se ao Seu Futuro",
         subtitle: "Aulas online oferecem máxima flexibilidade sem comprometer a qualidade"
@@ -335,6 +347,61 @@ export const translations = {
         step4: {
           title: "Acompanhamento",
           description: "Monitoramento individual dentro do contexto grupal"
+        }
+      },
+      levels: {
+        beginner: {
+          title: "Iniciante",
+          level: "A1 - A2",
+          skills: {
+            skill1: "Alfabeto e pronúncia básica",
+            skill2: "Frases essenciais do dia a dia",
+            skill3: "Gramática fundamental"
+          }
+        },
+        intermediate: {
+          title: "Intermediário",
+          level: "B1 - B2",
+          skills: {
+            skill1: "Conversação mais fluida",
+            skill2: "Gramática avançada",
+            skill3: "Vocabulário profissional"
+          }
+        },
+        advanced: {
+          title: "Avançado",
+          level: "C1 - C2",
+          skills: {
+            skill1: "Fluência e naturalidade",
+            skill2: "Nuances culturais",
+            skill3: "Preparação para certificações"
+          }
+        }
+      },
+      perfectFor: {
+        socialInteraction: {
+          title: "Gosta de Interação Social",
+          description: "Aprende melhor quando pode praticar com outras pessoas"
+        },
+        costBenefit: {
+          title: "Busca Melhor Custo-Benefício",
+          description: "Quer qualidade premium com investimento menor"
+        },
+        motivation: {
+          title: "Precisa de Motivação",
+          description: "Se motiva com o progresso e apoio dos colegas"
+        },
+        conversation: {
+          title: "Quer Praticar Conversação",
+          description: "Deseja múltiplas oportunidades de falar em inglês"
+        },
+        schedule: {
+          title: "Tem Horários Regulares",
+          description: "Pode se comprometer com horários fixos semanais"
+        },
+        learning: {
+          title: "Aprende com Exemplos",
+          description: "Gosta de observar e aprender com outros alunos"
         }
       },
       idealFor: {
@@ -400,6 +467,62 @@ export const translations = {
           description: "Converse sobre assuntos do seu interesse e necessidade"
         }
       },
+      topics: {
+        dailyLife: {
+          title: "Situações do Dia a Dia",
+          items: {
+            presentations: "Apresentações pessoais e profissionais",
+            shopping: "Compras e restaurantes", 
+            travel: "Viagens e aeroportos",
+            medical: "Médico e emergências"
+          }
+        },
+        professional: {
+          title: "Contexto Profissional",
+          items: {
+            meetings: "Reuniões e apresentações",
+            interviews: "Entrevistas de emprego",
+            negotiations: "Negociações e vendas",
+            networking: "Networking e eventos"
+          }
+        },
+        cultural: {
+          title: "Temas Culturais",
+          items: {
+            differences: "Diferenças culturais EUA vs Brasil",
+            expressions: "Expressões idiomáticas americanas",
+            slang: "Gírias e linguagem informal",
+            etiquette: "Etiqueta social americana"
+          }
+        },
+        interests: {
+          title: "Tópicos de Interesse",
+          items: {
+            hobbies: "Hobbies e entretenimento",
+            technology: "Tecnologia e inovação",
+            news: "Atualidades e notícias",
+            personal: "Seus temas preferidos"
+          }
+        }
+      },
+      method: {
+        title: "Nossa Metodologia",
+        studentSpeaks: {
+          percentage: "70%",
+          title: "Você Fala",
+          description: "A maior parte da aula é dedicada à sua prática oral, com correções naturais e sutis"
+        },
+        teacherGuides: {
+          percentage: "20%", 
+          title: "Professor Guia",
+          description: "Orientação, correções e introdução de novo vocabulário quando necessário"
+        },
+        minimalTheory: {
+          percentage: "10%",
+          title: "Teoria Mínima", 
+          description: "Apenas a gramática essencial para melhorar sua comunicação imediata"
+        }
+      },
       methodology: {
         title: "Nossa Metodologia de Conversação",
         step1: {
@@ -417,6 +540,32 @@ export const translations = {
         step4: {
           title: "Feedback",
           description: "Revisão de pontos de melhoria e novos vocabulários"
+        }
+      },
+      perfectFor: {
+        hasGrammar: {
+          title: "Já Tem Base Gramatical",
+          description: "Conhece o básico mas trava na hora de falar"
+        },
+        wantsFluency: {
+          title: "Quer Fluência Rápida",
+          description: "Precisa falar inglês com confiança em pouco tempo"
+        },
+        seekNaturalness: {
+          title: "Busca Naturalidade", 
+          description: "Quer soar mais natural e menos \"robótico\""
+        },
+        hasGoals: {
+          title: "Tem Objetivos Específicos",
+          description: "Trabalho, viagem ou intercâmbio no exterior"
+        },
+        overcomeShy: {
+          title: "Quer Perder a Timidez",
+          description: "Precisa de confiança para falar com estrangeiros"
+        },
+        learnsPracticing: {
+          title: "Aprende Praticando",
+          description: "Prefere aprender falando do que estudando teoria"
         }
       },
       idealFor: {
@@ -462,6 +611,13 @@ export const translations = {
         group: "Aula em Grupo", 
         online: "Aula Online",
         conversation: "Conversação"
+      },
+      relatedPosts: {
+        title: "Artigos Relacionados",
+        subtitle: "Leia mais sobre {category} e melhore suas habilidades no inglês",
+        readArticle: "Ler artigo",
+        viewAllArticles: "Ver todos os artigos",
+        by: "por"
       }
     },
 
@@ -510,6 +666,232 @@ export const translations = {
       }
     },
 
+    // Privacy Policy
+    privacy: {
+      title: "Política de Privacidade",
+      lastUpdated: "Última atualização:",
+      lastUpdatedDate: "13 de setembro de 2025",
+      meta: {
+        title: "Política de Privacidade | Aula de Inglês em Casa",
+        description: "Política de privacidade da aula de inglês com Andrew Rogers em Campo Grande, MS. Saiba como protegemos seus dados pessoais."
+      },
+      sections: {
+        informationCollected: {
+          title: "1. Informações que Coletamos",
+          intro: "Coletamos informações que você nos fornece diretamente, incluindo:",
+          items: [
+            "Nome completo",
+            "Endereço de email",
+            "Número de telefone/WhatsApp",
+            "Informações sobre seu nível de inglês",
+            "Preferências de horário para a aula"
+          ]
+        },
+        howWeUse: {
+          title: "2. Como Usamos suas Informações",
+          intro: "Utilizamos suas informações para:",
+          items: [
+            "Agendar e conduzir sua aula de inglês",
+            "Entrar em contato sobre horários e materiais",
+            "Personalizar o conteúdo da aula conforme seu nível",
+            "Enviar lembretes sobre a aula agendada",
+            "Processar pagamentos (quando aplicável)"
+          ]
+        },
+        informationSharing: {
+          title: "3. Compartilhamento de Informações",
+          intro: "Não vendemos, alugamos ou compartilhamos suas informações pessoais com terceiros, exceto:",
+          items: [
+            "Quando exigido por lei",
+            "Para processar pagamentos através de plataformas seguras",
+            "Com seu consentimento explícito"
+          ]
+        },
+        dataSecurity: {
+          title: "4. Segurança dos Dados",
+          content: "Implementamos medidas de segurança apropriadas para proteger suas informações contra acesso não autorizado, alteração, divulgação ou destruição."
+        },
+        yourRights: {
+          title: "5. Seus Direitos",
+          intro: "Você tem o direito de:",
+          items: [
+            "Acessar suas informações pessoais",
+            "Corrigir informações incorretas",
+            "Solicitar a exclusão de suas informações",
+            "Retirar seu consentimento a qualquer momento"
+          ]
+        },
+        cookies: {
+          title: "6. Cookies e Tecnologias Similares",
+          content: "Utilizamos cookies para melhorar sua experiência em nosso site e para análises através do Google Analytics. Você pode desabilitar cookies nas configurações do seu navegador."
+        },
+        contact: {
+          title: "7. Contato",
+          intro: "Se você tiver dúvidas sobre esta Política de Privacidade, entre em contato conosco:",
+          email: "Email:",
+          whatsapp: "WhatsApp:"
+        },
+        changes: {
+          title: "8. Alterações nesta Política",
+          content: "Podemos atualizar esta Política de Privacidade ocasionalmente. Notificaremos sobre mudanças significativas através de nosso site ou por email."
+        }
+      }
+    },
+
+    // Terms of Service
+    terms: {
+      title: "Termos de Serviço",
+      lastUpdated: "Última atualização:",
+      lastUpdatedDate: "13 de setembro de 2025",
+      meta: {
+        title: "Termos de Serviço | Aula de Inglês em Casa",
+        description: "Termos de serviço da aula de inglês com Andrew Rogers em Campo Grande, MS. Conheça as condições para a aula particular."
+      },
+      sections: {
+        acceptance: {
+          title: "1. Aceitação dos Termos",
+          content: "Ao contratar os serviços de aula de inglês com Andrew Rogers, você concorda com estes Termos de Serviço. Se você não concordar com qualquer parte destes termos, não utilize nossos serviços."
+        },
+        serviceDescription: {
+          title: "2. Descrição dos Serviços",
+          intro: "Oferecemos serviços de ensino de inglês, incluindo:",
+          items: [
+            "Aulas particulares individuais",
+            "Aulas em grupo (pequenos grupos)",
+            "Aulas online via plataformas digitais",
+            "Aulas de conversação",
+            "Material didático personalizado"
+          ]
+        },
+        scheduling: {
+          title: "3. Agendamento e Cancelamento",
+          booking: {
+            title: "3.1 Agendamento",
+            items: [
+              "As aulas devem ser agendadas com pelo menos 24 horas de antecedência",
+              "Horários estão sujeitos à disponibilidade do professor",
+              "Confirmação será enviada por WhatsApp ou email"
+            ]
+          },
+          cancellation: {
+            title: "3.2 Cancelamento",
+            items: [
+              "Cancelamentos devem ser feitos com pelo menos 4 horas de antecedência",
+              "Cancelamentos com menos de 4 horas podem resultar em cobrança integral",
+              "Em caso de emergência, entre em contato imediatamente"
+            ]
+          }
+        },
+        payment: {
+          title: "4. Pagamento e Preços",
+          items: [
+            "Os preços são definidos conforme o tipo de aula e duração",
+            "Pagamento pode ser feito via PIX, transferência bancária ou dinheiro",
+            "Pacotes de aulas devem ser pagos antecipadamente",
+            "Não há reembolso para aulas não comparecidas sem cancelamento prévio",
+            "Preços podem ser alterados com 30 dias de antecedência"
+          ]
+        },
+        studentResponsibilities: {
+          title: "5. Responsabilidades do Aluno",
+          items: [
+            "Comparecer pontualmente às aulas agendadas",
+            "Ter os materiais necessários (caderno, caneta, acesso à internet para aulas online)",
+            "Manter um ambiente adequado para o aprendizado",
+            "Comunicar dificuldades ou necessidades especiais",
+            "Respeitar o professor e outros alunos (em aulas em grupo)"
+          ]
+        },
+        teacherResponsibilities: {
+          title: "6. Responsabilidades do Professor",
+          items: [
+            "Fornecer ensino de qualidade e personalizado",
+            "Ser pontual e preparado para as aulas",
+            "Adaptar o conteúdo conforme o nível e necessidades do aluno",
+            "Manter a confidencialidade das informações do aluno",
+            "Comunicar qualquer mudança de horário com antecedência"
+          ]
+        },
+        onlineClasses: {
+          title: "7. Aulas Online",
+          intro: "Para aulas online:",
+          items: [
+            "É responsabilidade do aluno ter conexão estável com a internet",
+            "Problemas técnicos do aluno não constituem motivo para reembolso",
+            "Recomendamos testar a conexão antes da aula",
+            "Plataforma padrão: Google Meet ou Zoom"
+          ]
+        },
+        intellectualProperty: {
+          title: "8. Propriedade Intelectual",
+          content: "Todo material didático fornecido pelo professor permanece de sua propriedade e não pode ser reproduzido ou distribuído sem autorização."
+        },
+        limitationOfLiability: {
+          title: "9. Limitação de Responsabilidade",
+          intro: "O professor não se responsabiliza por:",
+          items: [
+            "Resultados específicos em exames ou testes",
+            "Problemas técnicos durante aulas online",
+            "Interrupções causadas por fatores externos"
+          ]
+        },
+        termination: {
+          title: "10. Rescisão",
+          content: "Qualquer uma das partes pode encerrar os serviços com 7 dias de antecedência. Aulas pagas antecipadamente serão reembolsadas proporcionalmente."
+        },
+        contact: {
+          title: "11. Contato",
+          intro: "Para questões sobre estes Termos de Serviço:",
+          email: "Email:",
+          whatsapp: "WhatsApp:"
+        },
+        changes: {
+          title: "12. Alterações nos Termos",
+          content: "Estes termos podem ser alterados a qualquer momento. Mudanças significativas serão comunicadas com pelo menos 30 dias de antecedência."
+        }
+      }
+    },
+
+    // Sitemap
+    sitemap: {
+      title: "Mapa do Site",
+      description: "Navegue facilmente por todas as páginas do nosso site. Encontre rapidamente as informações que você precisa sobre nossa aula de inglês.",
+      sections: {
+        mainPages: "Páginas Principais",
+        services: "Nossos Serviços", 
+        legal: "Informações Legais",
+        otherInfo: "Outras Informações"
+      },
+      pages: {
+        home: "Início",
+        about: "Sobre", 
+        blog: "Blog",
+        contact: "Contato"
+      },
+      services: {
+        online: "Aula de Inglês Online",
+        individual: "Aula de Inglês Particular",
+        group: "Aula em Grupo",
+        conversation: "Aula de Conversação de Inglês"
+      },
+      legal: {
+        privacy: "Política de Privacidade",
+        terms: "Termos de Serviço"
+      },
+      actions: {
+        visitPage: "Visitar página →"
+      },
+      info: {
+        location: "Localização:",
+        locationValue: "Campo Grande, MS, Brasil",
+        specialty: "Especialidade:",
+        specialtyValue: "Aula de inglês com professor americano nativo",
+        classTypes: "Tipos de aula:",
+        classTypesValue: "Individual, em grupo, online e presencial",
+        contact: "Contato:"
+      }
+    },
+
     // Footer
     footer: {
       description: "Aula de inglês personalizada com professor americano nativo em Campo Grande, MS.",
@@ -535,7 +917,8 @@ export const translations = {
       conversation: "Conversation Classes",
       about: "About",
       blog: "Blog", 
-      contact: "Contact"
+      contact: "Contact",
+      language: "Language"
     },
 
     // Common Actions
@@ -545,9 +928,12 @@ export const translations = {
       sendEmail: "Send Email",
       learnMore: "Learn More",
       readMore: "Read More",
+      loadMore: "Load More",
       schedule: "Schedule Class",
       contact: "Get in Touch"
-    },    // Homepage
+    },
+
+    // Homepage
     home: {
       hero: {
         title: "English Classes at Home",
@@ -796,6 +1182,16 @@ export const translations = {
       location: {
         title: "Online English Classes for Campo Grande, MS"
       },
+      requirements: {
+        title: "Technical Requirements",
+        cardTitle: "What you need",
+        list: {
+          internet: "Stable internet connection (minimum 5 Mbps)",
+          device: "Computer, tablet or phone with camera",
+          audio: "Headphones or quiet environment",
+          materials: "Notebook and pen for notes"
+        }
+      },
       finalCta: {
         title: "Connect to Your Future",
         subtitle: "Online classes offer maximum flexibility without compromising quality"
@@ -873,6 +1269,61 @@ export const translations = {
           need1: "Want premium quality at an affordable price",
           need2: "Prefer to share costs without losing effectiveness",
           need3: "Value shared learning experience"
+        }
+      },
+      levels: {
+        beginner: {
+          title: "Beginner",
+          level: "A1 - A2",
+          skills: {
+            skill1: "Alphabet and basic pronunciation",
+            skill2: "Essential daily phrases",
+            skill3: "Fundamental grammar"
+          }
+        },
+        intermediate: {
+          title: "Intermediate",
+          level: "B1 - B2",
+          skills: {
+            skill1: "More fluent conversation",
+            skill2: "Advanced grammar",
+            skill3: "Professional vocabulary"
+          }
+        },
+        advanced: {
+          title: "Advanced",
+          level: "C1 - C2",
+          skills: {
+            skill1: "Fluency and naturalness",
+            skill2: "Cultural nuances",
+            skill3: "Certification preparation"
+          }
+        }
+      },
+      perfectFor: {
+        socialInteraction: {
+          title: "Enjoy Social Interaction",
+          description: "Learn better when practicing with other people"
+        },
+        costBenefit: {
+          title: "Seek Better Cost-Benefit",
+          description: "Want premium quality with lower investment"
+        },
+        motivation: {
+          title: "Need Motivation",
+          description: "Get motivated by colleagues' progress and support"
+        },
+        conversation: {
+          title: "Want to Practice Conversation",
+          description: "Desire multiple opportunities to speak English"
+        },
+        schedule: {
+          title: "Have Regular Schedules",
+          description: "Can commit to fixed weekly schedules"
+        },
+        learning: {
+          title: "Learn from Examples",
+          description: "Like to observe and learn from other students"
         }
       },
       location: {
@@ -957,6 +1408,88 @@ export const translations = {
           need3: "Want to participate in conversations naturally"
         }
       },
+      topics: {
+        dailyLife: {
+          title: "Daily Life Situations",
+          items: {
+            presentations: "Personal and professional presentations",
+            shopping: "Shopping and restaurants",
+            travel: "Travel and airports", 
+            medical: "Medical and emergencies"
+          }
+        },
+        professional: {
+          title: "Professional Context",
+          items: {
+            meetings: "Meetings and presentations",
+            interviews: "Job interviews",
+            negotiations: "Negotiations and sales",
+            networking: "Networking and events"
+          }
+        },
+        cultural: {
+          title: "Cultural Topics",
+          items: {
+            differences: "Cultural differences USA vs Brazil",
+            expressions: "American idiomatic expressions",
+            slang: "Slang and informal language",
+            etiquette: "American social etiquette"
+          }
+        },
+        interests: {
+          title: "Topics of Interest",
+          items: {
+            hobbies: "Hobbies and entertainment",
+            technology: "Technology and innovation",
+            news: "Current events and news",
+            personal: "Your preferred topics"
+          }
+        }
+      },
+      method: {
+        title: "Our Methodology",
+        studentSpeaks: {
+          percentage: "70%",
+          title: "You Speak",
+          description: "Most of the class is dedicated to your oral practice, with natural and subtle corrections"
+        },
+        teacherGuides: {
+          percentage: "20%",
+          title: "Teacher Guides", 
+          description: "Guidance, corrections, and introduction of new vocabulary when necessary"
+        },
+        minimalTheory: {
+          percentage: "10%",
+          title: "Minimal Theory",
+          description: "Only essential grammar to improve your immediate communication"
+        }
+      },
+      perfectFor: {
+        hasGrammar: {
+          title: "Already Have Grammar Foundation",
+          description: "Know the basics but freeze when it's time to speak"
+        },
+        wantsFluency: {
+          title: "Want Quick Fluency",
+          description: "Need to speak English confidently in a short time"
+        },
+        seekNaturalness: {
+          title: "Seek Naturalness",
+          description: "Want to sound more natural and less \"robotic\""
+        },
+        hasGoals: {
+          title: "Have Specific Goals",
+          description: "Work, travel, or exchange abroad"
+        },
+        overcomeShy: {
+          title: "Want to Overcome Shyness",
+          description: "Need confidence to speak with foreigners"
+        },
+        learnsPracticing: {
+          title: "Learn by Practicing",
+          description: "Prefer to learn by speaking rather than studying theory"
+        }
+      },
       location: {
         title: "English Conversation Classes in Campo Grande, MS"
       },
@@ -985,6 +1518,13 @@ export const translations = {
         group: "Group Classes",
         online: "Online Classes",
         conversation: "Conversation"
+      },
+      relatedPosts: {
+        title: "Related Articles",
+        subtitle: "Read more about {category} and improve your English skills",
+        readArticle: "Read article",
+        viewAllArticles: "View all articles",
+        by: "by"
       }
     },
 
@@ -1030,6 +1570,232 @@ export const translations = {
       },
       cta: {
         title: "English Classes at Home in Campo Grande, MS"
+      }
+    },
+
+    // Privacy Policy
+    privacy: {
+      title: "Privacy Policy",
+      lastUpdated: "Last updated:",
+      lastUpdatedDate: "September 13, 2025",
+      meta: {
+        title: "Privacy Policy | English Classes at Home",
+        description: "Privacy policy for English classes with Andrew Rogers in Campo Grande, MS. Learn how we protect your personal data."
+      },
+      sections: {
+        informationCollected: {
+          title: "1. Information We Collect",
+          intro: "We collect information you provide to us directly, including:",
+          items: [
+            "Full name",
+            "Email address",
+            "Phone/WhatsApp number",
+            "Information about your English level",
+            "Class schedule preferences"
+          ]
+        },
+        howWeUse: {
+          title: "2. How We Use Your Information",
+          intro: "We use your information to:",
+          items: [
+            "Schedule and conduct your English class",
+            "Contact you about schedules and materials",
+            "Personalize class content according to your level",
+            "Send reminders about scheduled classes",
+            "Process payments (when applicable)"
+          ]
+        },
+        informationSharing: {
+          title: "3. Information Sharing",
+          intro: "We do not sell, rent, or share your personal information with third parties, except:",
+          items: [
+            "When required by law",
+            "To process payments through secure platforms",
+            "With your explicit consent"
+          ]
+        },
+        dataSecurity: {
+          title: "4. Data Security",
+          content: "We implement appropriate security measures to protect your information against unauthorized access, alteration, disclosure, or destruction."
+        },
+        yourRights: {
+          title: "5. Your Rights",
+          intro: "You have the right to:",
+          items: [
+            "Access your personal information",
+            "Correct incorrect information",
+            "Request deletion of your information",
+            "Withdraw your consent at any time"
+          ]
+        },
+        cookies: {
+          title: "6. Cookies and Similar Technologies",
+          content: "We use cookies to improve your experience on our website and for analytics through Google Analytics. You can disable cookies in your browser settings."
+        },
+        contact: {
+          title: "7. Contact",
+          intro: "If you have questions about this Privacy Policy, contact us:",
+          email: "Email:",
+          whatsapp: "WhatsApp:"
+        },
+        changes: {
+          title: "8. Changes to This Policy",
+          content: "We may update this Privacy Policy occasionally. We will notify about significant changes through our website or by email."
+        }
+      }
+    },
+
+    // Terms of Service
+    terms: {
+      title: "Terms of Service",
+      lastUpdated: "Last updated:",
+      lastUpdatedDate: "September 13, 2025",
+      meta: {
+        title: "Terms of Service | English Classes at Home",
+        description: "Terms of service for English classes with Andrew Rogers in Campo Grande, MS. Learn the conditions for private classes."
+      },
+      sections: {
+        acceptance: {
+          title: "1. Acceptance of Terms",
+          content: "By hiring Andrew Rogers' English teaching services, you agree to these Terms of Service. If you do not agree with any part of these terms, do not use our services."
+        },
+        serviceDescription: {
+          title: "2. Service Description",
+          intro: "We offer English teaching services, including:",
+          items: [
+            "Individual private classes",
+            "Group classes (small groups)",
+            "Online classes via digital platforms",
+            "Conversation classes",
+            "Personalized teaching materials"
+          ]
+        },
+        scheduling: {
+          title: "3. Scheduling and Cancellation",
+          booking: {
+            title: "3.1 Scheduling",
+            items: [
+              "Classes must be scheduled at least 24 hours in advance",
+              "Times are subject to teacher availability",
+              "Confirmation will be sent via WhatsApp or email"
+            ]
+          },
+          cancellation: {
+            title: "3.2 Cancellation",
+            items: [
+              "Cancellations must be made at least 4 hours in advance",
+              "Cancellations with less than 4 hours notice may result in full charge",
+              "In case of emergency, contact immediately"
+            ]
+          }
+        },
+        payment: {
+          title: "4. Payment and Pricing",
+          items: [
+            "Prices are set according to class type and duration",
+            "Payment can be made via PIX, bank transfer, or cash",
+            "Class packages must be paid in advance",
+            "No refunds for missed classes without prior cancellation",
+            "Prices may be changed with 30 days advance notice"
+          ]
+        },
+        studentResponsibilities: {
+          title: "5. Student Responsibilities",
+          items: [
+            "Attend scheduled classes punctually",
+            "Have necessary materials (notebook, pen, internet access for online classes)",
+            "Maintain an appropriate learning environment",
+            "Communicate difficulties or special needs",
+            "Respect the teacher and other students (in group classes)"
+          ]
+        },
+        teacherResponsibilities: {
+          title: "6. Teacher Responsibilities",
+          items: [
+            "Provide quality and personalized teaching",
+            "Be punctual and prepared for classes",
+            "Adapt content according to student level and needs",
+            "Maintain confidentiality of student information",
+            "Communicate any schedule changes in advance"
+          ]
+        },
+        onlineClasses: {
+          title: "7. Online Classes",
+          intro: "For online classes:",
+          items: [
+            "It is the student's responsibility to have stable internet connection",
+            "Student technical problems do not constitute grounds for refund",
+            "We recommend testing the connection before class",
+            "Default platform: Google Meet or Zoom"
+          ]
+        },
+        intellectualProperty: {
+          title: "8. Intellectual Property",
+          content: "All teaching materials provided by the teacher remain their property and cannot be reproduced or distributed without authorization."
+        },
+        limitationOfLiability: {
+          title: "9. Limitation of Liability",
+          intro: "The teacher is not responsible for:",
+          items: [
+            "Specific results in exams or tests",
+            "Technical problems during online classes",
+            "Interruptions caused by external factors"
+          ]
+        },
+        termination: {
+          title: "10. Termination",
+          content: "Either party may terminate services with 7 days advance notice. Classes paid in advance will be refunded proportionally."
+        },
+        contact: {
+          title: "11. Contact",
+          intro: "For questions about these Terms of Service:",
+          email: "Email:",
+          whatsapp: "WhatsApp:"
+        },
+        changes: {
+          title: "12. Changes to Terms",
+          content: "These terms may be changed at any time. Significant changes will be communicated with at least 30 days advance notice."
+        }
+      }
+    },
+
+    // Sitemap
+    sitemap: {
+      title: "Sitemap",
+      description: "Easily navigate through all pages of our site. Quickly find the information you need about our English classes.",
+      sections: {
+        mainPages: "Main Pages",
+        services: "Our Services",
+        legal: "Legal Information", 
+        otherInfo: "Other Information"
+      },
+      pages: {
+        home: "Home",
+        about: "About",
+        blog: "Blog", 
+        contact: "Contact"
+      },
+      services: {
+        online: "Online English Classes",
+        individual: "Individual English Classes",
+        group: "Group Classes", 
+        conversation: "English Conversation Classes"
+      },
+      legal: {
+        privacy: "Privacy Policy",
+        terms: "Terms of Service"
+      },
+      actions: {
+        visitPage: "Visit page →"
+      },
+      info: {
+        location: "Location:",
+        locationValue: "Campo Grande, MS, Brazil",
+        specialty: "Specialty:",
+        specialtyValue: "English classes with native American teacher",
+        classTypes: "Class types:",
+        classTypesValue: "Individual, group, online and in-person",
+        contact: "Contact:"
       }
     },
 

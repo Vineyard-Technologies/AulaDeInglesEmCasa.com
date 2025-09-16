@@ -1,6 +1,7 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Button } from "@/components/ui/button"
 import { updateMetaTags, addStructuredData } from "@/utils/seo"
 import { getAllBlogPosts } from "@/data/blogPostsBilingual"
 import { useTranslations } from "@/data/translations"
@@ -21,10 +22,18 @@ export function BlogPage() {
   const t = useTranslations()
   const { language } = useLanguage()
   const allPosts = getAllBlogPosts(language)
+  const [visiblePostsCount, setVisiblePostsCount] = useState(6)
   
   useEffect(() => {
     updateMetaTags(blogMetaData)
   }, [])
+
+  const displayedPosts = allPosts.slice(0, visiblePostsCount)
+  const hasMorePosts = visiblePostsCount < allPosts.length
+
+  const loadMorePosts = () => {
+    setVisiblePostsCount(prev => prev + 3)
+  }
 
 
 
@@ -67,7 +76,7 @@ export function BlogPage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {allPosts.map((post) => (
+            {displayedPosts.map((post) => (
               <Card key={post.id} className="hover:shadow-lg transition-shadow overflow-hidden">
                 {post.image && (
                   <div className="aspect-video w-full overflow-hidden">
@@ -114,6 +123,21 @@ export function BlogPage() {
               </Card>
             ))}
           </div>
+          
+          {/* Load More Button */}
+          {hasMorePosts && (
+            <div className="text-center mt-12">
+              <Button
+                onClick={loadMorePosts}
+                variant="outline"
+                size="lg"
+                className="px-8 py-3"
+              >
+                {t.actions.loadMore}
+                <ArrowRight className="w-4 h-4 ml-2" />
+              </Button>
+            </div>
+          )}
           
           {allPosts.length === 0 && (
             <div className="text-center py-12">

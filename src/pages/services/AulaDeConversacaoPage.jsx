@@ -159,25 +159,25 @@ export function AulaDeConversacaoPage() {
           <div className="max-w-4xl mx-auto grid md:grid-cols-2 gap-8">
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <CardTitle>Situações do Dia a Dia</CardTitle>
+                <CardTitle>{t.conversation.topics.dailyLife.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Apresentações pessoais e profissionais</span>
+                    <span>{t.conversation.topics.dailyLife.items.presentations}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Compras e restaurantes</span>
+                    <span>{t.conversation.topics.dailyLife.items.shopping}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Viagens e aeroportos</span>
+                    <span>{t.conversation.topics.dailyLife.items.travel}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Médico e emergências</span>
+                    <span>{t.conversation.topics.dailyLife.items.medical}</span>
                   </li>
                 </ul>
               </CardContent>
@@ -185,25 +185,25 @@ export function AulaDeConversacaoPage() {
 
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <CardTitle>Contexto Profissional</CardTitle>
+                <CardTitle>{t.conversation.topics.professional.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Reuniões e apresentações</span>
+                    <span>{t.conversation.topics.professional.items.meetings}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Entrevistas de emprego</span>
+                    <span>{t.conversation.topics.professional.items.interviews}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Negociações e vendas</span>
+                    <span>{t.conversation.topics.professional.items.negotiations}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Networking e eventos</span>
+                    <span>{t.conversation.topics.professional.items.networking}</span>
                   </li>
                 </ul>
               </CardContent>
@@ -211,25 +211,25 @@ export function AulaDeConversacaoPage() {
 
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <CardTitle>Temas Culturais</CardTitle>
+                <CardTitle>{t.conversation.topics.cultural.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Diferenças culturais EUA vs Brasil</span>
+                    <span>{t.conversation.topics.cultural.items.differences}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Expressões idiomáticas americanas</span>
+                    <span>{t.conversation.topics.cultural.items.expressions}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Gírias e linguagem informal</span>
+                    <span>{t.conversation.topics.cultural.items.slang}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Etiqueta social americana</span>
+                    <span>{t.conversation.topics.cultural.items.etiquette}</span>
                   </li>
                 </ul>
               </CardContent>
@@ -237,25 +237,25 @@ export function AulaDeConversacaoPage() {
 
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <CardTitle>Tópicos de Interesse</CardTitle>
+                <CardTitle>{t.conversation.topics.interests.title}</CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Hobbies e entretenimento</span>
+                    <span>{t.conversation.topics.interests.items.hobbies}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Tecnologia e inovação</span>
+                    <span>{t.conversation.topics.interests.items.technology}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Atualidades e notícias</span>
+                    <span>{t.conversation.topics.interests.items.news}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Seus temas preferidos</span>
+                    <span>{t.conversation.topics.interests.items.personal}</span>
                   </li>
                 </ul>
               </CardContent>
@@ -267,36 +267,36 @@ export function AulaDeConversacaoPage() {
       {/* Method Section */}
       <section className="py-16">
         <div className="container mx-auto px-4">
-          <h2 className="text-3xl font-bold text-center mb-12">Nossa Metodologia</h2>
+          <h2 className="text-3xl font-bold text-center mb-12">{t.conversation.method.title}</h2>
           
           <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
             <div className="text-center">
               <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-                70%
+                {t.conversation.method.studentSpeaks.percentage}
               </div>
-              <h3 className="text-xl font-semibold mb-3">Você Fala</h3>
+              <h3 className="text-xl font-semibold mb-3">{t.conversation.method.studentSpeaks.title}</h3>
               <p className="text-muted-foreground">
-                A maior parte da aula é dedicada à sua prática oral, com correções naturais e sutis
+                {t.conversation.method.studentSpeaks.description}
               </p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-                20%
+                {t.conversation.method.teacherGuides.percentage}
               </div>
-              <h3 className="text-xl font-semibold mb-3">Professor Guia</h3>
+              <h3 className="text-xl font-semibold mb-3">{t.conversation.method.teacherGuides.title}</h3>
               <p className="text-muted-foreground">
-                Orientação, correções e introdução de novo vocabulário quando necessário
+                {t.conversation.method.teacherGuides.description}
               </p>
             </div>
 
             <div className="text-center">
               <div className="w-16 h-16 bg-primary text-primary-foreground rounded-full flex items-center justify-center mx-auto mb-4 text-xl font-bold">
-                10%
+                {t.conversation.method.minimalTheory.percentage}
               </div>
-              <h3 className="text-xl font-semibold mb-3">Teoria Mínima</h3>
+              <h3 className="text-xl font-semibold mb-3">{t.conversation.method.minimalTheory.title}</h3>
               <p className="text-muted-foreground">
-                Apenas a gramática essencial para melhorar sua comunicação imediata
+                {t.conversation.method.minimalTheory.description}
               </p>
             </div>
           </div>
@@ -313,24 +313,24 @@ export function AulaDeConversacaoPage() {
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-6 h-6 text-primary mt-1" />
                 <div>
-                  <h3 className="font-semibold mb-1">Já Tem Base Gramatical</h3>
-                  <p className="text-muted-foreground">Conhece o básico mas trava na hora de falar</p>
+                  <h3 className="font-semibold mb-1">{t.conversation.perfectFor.hasGrammar.title}</h3>
+                  <p className="text-muted-foreground">{t.conversation.perfectFor.hasGrammar.description}</p>
                 </div>
               </div>
               
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-6 h-6 text-primary mt-1" />
                 <div>
-                  <h3 className="font-semibold mb-1">Quer Fluência Rápida</h3>
-                  <p className="text-muted-foreground">Precisa falar inglês com confiança em pouco tempo</p>
+                  <h3 className="font-semibold mb-1">{t.conversation.perfectFor.wantsFluency.title}</h3>
+                  <p className="text-muted-foreground">{t.conversation.perfectFor.wantsFluency.description}</p>
                 </div>
               </div>
               
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-6 h-6 text-primary mt-1" />
                 <div>
-                  <h3 className="font-semibold mb-1">Busca Naturalidade</h3>
-                  <p className="text-muted-foreground">Quer soar mais natural e menos "robótico"</p>
+                  <h3 className="font-semibold mb-1">{t.conversation.perfectFor.seekNaturalness.title}</h3>
+                  <p className="text-muted-foreground">{t.conversation.perfectFor.seekNaturalness.description}</p>
                 </div>
               </div>
             </div>
@@ -339,24 +339,24 @@ export function AulaDeConversacaoPage() {
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-6 h-6 text-primary mt-1" />
                 <div>
-                  <h3 className="font-semibold mb-1">Tem Objetivos Específicos</h3>
-                  <p className="text-muted-foreground">Trabalho, viagem ou intercâmbio no exterior</p>
+                  <h3 className="font-semibold mb-1">{t.conversation.perfectFor.hasGoals.title}</h3>
+                  <p className="text-muted-foreground">{t.conversation.perfectFor.hasGoals.description}</p>
                 </div>
               </div>
               
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-6 h-6 text-primary mt-1" />
                 <div>
-                  <h3 className="font-semibold mb-1">Quer Perder a Timidez</h3>
-                  <p className="text-muted-foreground">Precisa de confiança para falar com estrangeiros</p>
+                  <h3 className="font-semibold mb-1">{t.conversation.perfectFor.overcomeShy.title}</h3>
+                  <p className="text-muted-foreground">{t.conversation.perfectFor.overcomeShy.description}</p>
                 </div>
               </div>
               
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-6 h-6 text-primary mt-1" />
                 <div>
-                  <h3 className="font-semibold mb-1">Aprende Praticando</h3>
-                  <p className="text-muted-foreground">Prefere aprender falando do que estudando teoria</p>
+                  <h3 className="font-semibold mb-1">{t.conversation.perfectFor.learnsPracticing.title}</h3>
+                  <p className="text-muted-foreground">{t.conversation.perfectFor.learnsPracticing.description}</p>
                 </div>
               </div>
             </div>

@@ -2,6 +2,7 @@ import { Link } from "react-router-dom"
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card"
 import { getBlogPostsByCategory } from "@/data/blogPostsBilingual"
 import { useLanguage } from "@/contexts/LanguageContext"
+import { useTranslations } from "@/data/translations"
 import { 
   Clock, 
   ArrowRight,
@@ -10,6 +11,7 @@ import {
 
 export const RelatedBlogPosts = ({ category, limit = 3, variant = "white" }) => {
   const { language } = useLanguage()
+  const t = useTranslations()
   const relatedPosts = getBlogPostsByCategory(category, language).slice(0, limit)
   
   if (relatedPosts.length === 0) {
@@ -28,9 +30,9 @@ export const RelatedBlogPosts = ({ category, limit = 3, variant = "white" }) => 
                 <BookOpen className="w-6 h-6 text-primary-foreground" />
               </div>
             </div>
-            <h2 className="text-3xl font-bold mb-4">Artigos Relacionados</h2>
+            <h2 className="text-3xl font-bold mb-4">{t.blog.relatedPosts.title}</h2>
             <p className="text-muted-foreground">
-              Leia mais sobre {category.toLowerCase()} e melhore suas habilidades no inglês
+              {t.blog.relatedPosts.subtitle.replace('{category}', category.toLowerCase())}
             </p>
           </div>
           
@@ -50,7 +52,7 @@ export const RelatedBlogPosts = ({ category, limit = 3, variant = "white" }) => 
                   <div className="flex items-center justify-end mb-2">
                     <div className="flex items-center gap-1 text-muted-foreground text-sm">
                       <Clock className="w-4 h-4" />
-                      {post.readTime}
+                      {post.readTime} {t.blog.readTime}
                     </div>
                   </div>
                   
@@ -63,7 +65,7 @@ export const RelatedBlogPosts = ({ category, limit = 3, variant = "white" }) => 
                     </Link>
                   </CardTitle>
                   
-                  <p className="text-sm text-muted-foreground mt-1">por <Link to="/sobre" className="hover:text-primary transition-colors">Andrew Rogers</Link></p>
+                  <p className="text-sm text-muted-foreground mt-1">{t.blog.relatedPosts.by} <Link to="/sobre" className="hover:text-primary transition-colors">Andrew Rogers</Link></p>
                 </CardHeader>
                 
                 <CardContent>
@@ -75,7 +77,7 @@ export const RelatedBlogPosts = ({ category, limit = 3, variant = "white" }) => 
                     to={`/blog/${post.slug}`}
                     className="inline-flex items-center gap-1 text-primary hover:text-primary/80 font-medium text-sm transition-colors"
                   >
-                    Ler artigo
+                    {t.blog.relatedPosts.readArticle}
                     <ArrowRight className="w-4 h-4" />
                   </Link>
                 </CardContent>
@@ -88,7 +90,7 @@ export const RelatedBlogPosts = ({ category, limit = 3, variant = "white" }) => 
               to="/blog"
               className="inline-flex items-center gap-2 text-primary hover:text-primary/80 font-medium transition-colors"
             >
-              Ver todos os artigos
+              {t.blog.relatedPosts.viewAllArticles}
               <ArrowRight className="w-4 h-4" />
             </Link>
           </div>

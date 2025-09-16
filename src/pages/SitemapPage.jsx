@@ -4,6 +4,7 @@ import { updateMetaTags, addStructuredData } from "@/utils/seo"
 import { Home, User, MessageCircle, Shield, FileText, Map, Video, Users, Mic, BookOpen } from "lucide-react"
 import { getAllBlogPosts } from "@/data/blogPostsBilingual"
 import { useLanguage } from "@/contexts/LanguageContext"
+import { useTranslations } from "@/data/translations"
 
 const sitemapMetaData = {
   title: "Mapa do Site | Aula de Inglês em Casa",
@@ -13,6 +14,7 @@ const sitemapMetaData = {
 
 export function SitemapPage() {
   const { language } = useLanguage()
+  const t = useTranslations()
   
   useEffect(() => {
     updateMetaTags(sitemapMetaData)
@@ -20,102 +22,77 @@ export function SitemapPage() {
 
   const pages = [
     {
-      title: "Início",
+      title: t.sitemap.pages.home,
       path: "/",
-      description: "Página inicial com informações sobre a aula de inglês e serviços oferecidos",
       icon: Home
     },
     {
-      title: "Sobre",
+      title: t.sitemap.pages.about,
       path: "/sobre",
-      description: "Conheça Andrew Rogers, professor americano nativo com mais de 10 anos de experiência",
       icon: User
     },
     {
-      title: "Contato",
+      title: t.sitemap.pages.blog,
+      path: "/blog",
+      icon: BookOpen
+    },
+    {
+      title: t.sitemap.pages.contact,
       path: "/contato",
-      description: "Entre em contato para agendar sua aula de inglês ou tirar dúvidas",
       icon: MessageCircle
     }
   ]
 
-  const blogPosts = getAllBlogPosts(language)
-  
-  const blogPages = [
-    {
-      title: "Blog",
-      path: "/blog",
-      description: "Artigos e dicas sobre aprendizado de inglês",
-      icon: BookOpen
-    },
-    ...blogPosts.map(post => ({
-      title: post.title,
-      path: `/blog/${post.slug}`,
-      description: post.excerpt,
-      icon: BookOpen
-    }))
-  ]
+
 
   const servicePages = [
     {
-      title: "Aula de Inglês Online",
+      title: t.sitemap.services.online,
       path: "/servicos/aula-de-ingles-online",
-      description: "Aula de inglês online com flexibilidade total de horários",
       icon: Video
     },
     {
-      title: "Aula de Inglês Particular",
+      title: t.sitemap.services.individual,
       path: "/servicos/aula-de-ingles-individual",
-      description: "Atenção 100% personalizada com professor americano nativo",
       icon: User
     },
     {
-      title: "Aula de Inglês em Grupo",
+      title: t.sitemap.services.group,
       path: "/servicos/aula-de-ingles-em-grupo",
-      description: "Aprenda inglês em pequenos grupos com ótimo custo-benefício",
       icon: Users
     },
     {
-      title: "Aula de Conversação de Inglês",
+      title: t.sitemap.services.conversation,
       path: "/servicos/aula-de-conversacao-de-ingles",
-      description: "Desenvolva fluência e confiança falando inglês naturalmente",
       icon: Mic
     }
   ]
 
   const legalPages = [
     {
-      title: "Política de Privacidade",
+      title: t.sitemap.legal.privacy,
       path: "/privacidade",
-      description: "Saiba como protegemos e utilizamos suas informações pessoais",
       icon: Shield
     },
     {
-      title: "Termos de Serviço",
+      title: t.sitemap.legal.terms,
       path: "/termos",
-      description: "Condições e termos para a aula de inglês e serviços educacionais",
       icon: FileText
-    },
-    {
-      title: "Mapa do Site",
-      path: "/mapa-do-site",
-      description: "Navegue facilmente por todas as páginas do nosso site",
-      icon: Map
     }
   ]
 
   return (
     <div className="min-h-screen bg-background py-20">
       <div className="container mx-auto px-4 max-w-4xl">
-        <h1 className="text-4xl font-bold text-primary mb-4">Mapa do Site</h1>
+        <h1 className="text-4xl font-bold text-primary mb-4">{t.sitemap.title}</h1>
         <p className="text-muted-foreground text-lg mb-12">
-          Navegue facilmente por todas as páginas do nosso site. Encontre rapidamente as informações que você precisa sobre nossa aula de inglês.
+          {t.sitemap.description}
         </p>
         
         {/* Main Pages */}
         <div className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Páginas Principais</h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
+          <h2 className="text-2xl font-semibold mb-6">{t.sitemap.sections.mainPages}</h2>
+          <div className="grid gap-6 md:grid-cols-2">
             {pages.map((page, index) => {
               const IconComponent = page.icon
               return (
@@ -133,13 +110,10 @@ export function SitemapPage() {
                       <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2">
                         {page.title}
                       </h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {page.description}
-                      </p>
                       
-                      <div className="mt-3 text-sm text-primary group-hover:underline">
-                        Visitar página →
-                      </div>
+                      <button className="mt-3 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium">
+                        {t.sitemap.actions.visitPage}
+                      </button>
                     </div>
                   </div>
                 </Link>
@@ -150,7 +124,7 @@ export function SitemapPage() {
 
         {/* Service Pages */}
         <div className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Nossos Serviços</h2>
+          <h2 className="text-2xl font-semibold mb-6">{t.sitemap.sections.services}</h2>
           <div className="grid gap-6 md:grid-cols-2">
             {servicePages.map((page, index) => {
               const IconComponent = page.icon
@@ -169,49 +143,10 @@ export function SitemapPage() {
                       <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2">
                         {page.title}
                       </h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {page.description}
-                      </p>
                       
-                      <div className="mt-3 text-sm text-primary group-hover:underline">
-                        Visitar página →
-                      </div>
-                    </div>
-                  </div>
-                </Link>
-              )
-            })}
-          </div>
-        </div>
-
-        {/* Blog Pages */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Blog e Artigos</h2>
-          <div className="grid gap-6 md:grid-cols-2 lg:grid-cols-3">
-            {blogPages.map((page, index) => {
-              const IconComponent = page.icon
-              return (
-                <Link
-                  key={index}
-                  to={page.path}
-                  className="group block p-6 bg-card rounded-lg border hover:border-primary/50 transition-all duration-200 hover:shadow-lg"
-                >
-                  <div className="flex items-start gap-4">
-                    <div className="flex-shrink-0 p-3 bg-primary/10 rounded-lg group-hover:bg-primary/20 transition-colors">
-                      <IconComponent className="w-6 h-6 text-primary" />
-                    </div>
-                    
-                    <div className="flex-grow">
-                      <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2">
-                        {page.title}
-                      </h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {page.description}
-                      </p>
-                      
-                      <div className="mt-3 text-sm text-primary group-hover:underline">
-                        Visitar página →
-                      </div>
+                      <button className="mt-3 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium">
+                        {t.sitemap.actions.visitPage}
+                      </button>
                     </div>
                   </div>
                 </Link>
@@ -222,8 +157,8 @@ export function SitemapPage() {
 
         {/* Legal Pages */}
         <div className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">Informações Legais</h2>
-          <div className="grid gap-6 md:grid-cols-3">
+          <h2 className="text-2xl font-semibold mb-6">{t.sitemap.sections.legal}</h2>
+          <div className="grid gap-6 md:grid-cols-2">
             {legalPages.map((page, index) => {
               const IconComponent = page.icon
               return (
@@ -241,13 +176,10 @@ export function SitemapPage() {
                       <h3 className="text-lg font-semibold text-foreground group-hover:text-primary transition-colors mb-2">
                         {page.title}
                       </h3>
-                      <p className="text-muted-foreground text-sm leading-relaxed">
-                        {page.description}
-                      </p>
                       
-                      <div className="mt-3 text-sm text-primary group-hover:underline">
-                        Visitar página →
-                      </div>
+                      <button className="mt-3 px-4 py-2 bg-primary text-primary-foreground rounded-lg hover:bg-primary/90 transition-colors text-sm font-medium">
+                        {t.sitemap.actions.visitPage}
+                      </button>
                     </div>
                   </div>
                 </Link>
@@ -257,12 +189,12 @@ export function SitemapPage() {
         </div>
         
         <div className="mt-12 p-6 bg-muted/50 rounded-lg">
-          <h3 className="text-lg font-semibold mb-3 text-foreground">Outras Informações</h3>
+          <h3 className="text-lg font-semibold mb-3 text-foreground">{t.sitemap.sections.otherInfo}</h3>
           <div className="space-y-2 text-sm text-muted-foreground">
-            <p>• <strong>Localização:</strong> Campo Grande, MS, Brasil</p>
-            <p>• <strong>Especialidade:</strong> Aula de inglês com professor americano nativo</p>
-            <p>• <strong>Tipos de aula:</strong> Individual, em grupo, online e presencial</p>
-            <p>• <strong>Contato:</strong> <a href="https://wa.me/5567996161199" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">(67) 99616-1199</a></p>
+            <p>• <strong>{t.sitemap.info.location}</strong> {t.sitemap.info.locationValue}</p>
+            <p>• <strong>{t.sitemap.info.specialty}</strong> {t.sitemap.info.specialtyValue}</p>
+            <p>• <strong>{t.sitemap.info.classTypes}</strong> {t.sitemap.info.classTypesValue}</p>
+            <p>• <strong>{t.sitemap.info.contact}</strong> <a href="https://wa.me/5567996161199" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">(67) 99616-1199</a></p>
           </div>
         </div>
       </div>

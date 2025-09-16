@@ -246,32 +246,32 @@ export function AulaOnlinePage() {
       <section className="py-16">
         <div className="container mx-auto px-4">
           <div className="mx-auto" style={{ maxWidth: '500px' }}>
-            <h2 className="text-3xl font-bold text-center mb-8">Requisitos Técnicos</h2>
+            <h2 className="text-3xl font-bold text-center mb-8">{t.online.requirements.title}</h2>
             
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
                 <CardTitle className="flex items-center gap-2">
                   <Wifi className="w-5 h-5" />
-                  O que você precisa
+                  {t.online.requirements.cardTitle}
                 </CardTitle>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-3">
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Conexão estável com a internet (mínimo 5 Mbps)</span>
+                    <span>{t.online.requirements.list.internet}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Computador, tablet ou celular com câmera</span>
+                    <span>{t.online.requirements.list.device}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Fones de ouvido ou ambiente silencioso</span>
+                    <span>{t.online.requirements.list.audio}</span>
                   </li>
                   <li className="flex items-start gap-3">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Caderno e caneta para anotações</span>
+                    <span>{t.online.requirements.list.materials}</span>
                   </li>
                 </ul>
               </CardContent>

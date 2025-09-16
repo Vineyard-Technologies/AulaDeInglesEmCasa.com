@@ -159,22 +159,22 @@ export function AulaEmGrupoPage() {
           <div className="max-w-4xl mx-auto grid md:grid-cols-3 gap-8">
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <CardTitle className="text-center">Iniciante</CardTitle>
-                <CardDescription className="text-center">A1 - A2</CardDescription>
+                <CardTitle className="text-center">{t.group.levels.beginner.title}</CardTitle>
+                <CardDescription className="text-center">{t.group.levels.beginner.level}</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Alfabeto e pronúncia básica</span>
+                    <span>{t.group.levels.beginner.skills.skill1}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Frases essenciais do dia a dia</span>
+                    <span>{t.group.levels.beginner.skills.skill2}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Gramática fundamental</span>
+                    <span>{t.group.levels.beginner.skills.skill3}</span>
                   </li>
                 </ul>
               </CardContent>
@@ -182,22 +182,22 @@ export function AulaEmGrupoPage() {
 
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <CardTitle className="text-center">Intermediário</CardTitle>
-                <CardDescription className="text-center">B1 - B2</CardDescription>
+                <CardTitle className="text-center">{t.group.levels.intermediate.title}</CardTitle>
+                <CardDescription className="text-center">{t.group.levels.intermediate.level}</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Conversação mais fluida</span>
+                    <span>{t.group.levels.intermediate.skills.skill1}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Gramática avançada</span>
+                    <span>{t.group.levels.intermediate.skills.skill2}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Vocabulário profissional</span>
+                    <span>{t.group.levels.intermediate.skills.skill3}</span>
                   </li>
                 </ul>
               </CardContent>
@@ -205,22 +205,22 @@ export function AulaEmGrupoPage() {
 
             <Card className="hover:shadow-lg transition-shadow">
               <CardHeader>
-                <CardTitle className="text-center">Avançado</CardTitle>
-                <CardDescription className="text-center">C1 - C2</CardDescription>
+                <CardTitle className="text-center">{t.group.levels.advanced.title}</CardTitle>
+                <CardDescription className="text-center">{t.group.levels.advanced.level}</CardDescription>
               </CardHeader>
               <CardContent>
                 <ul className="space-y-2">
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Fluência e naturalidade</span>
+                    <span>{t.group.levels.advanced.skills.skill1}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Nuances culturais</span>
+                    <span>{t.group.levels.advanced.skills.skill2}</span>
                   </li>
                   <li className="flex items-start gap-2">
                     <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>Preparação para certificações</span>
+                    <span>{t.group.levels.advanced.skills.skill3}</span>
                   </li>
                 </ul>
               </CardContent>
@@ -239,24 +239,24 @@ export function AulaEmGrupoPage() {
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-6 h-6 text-primary mt-1" />
                 <div>
-                  <h3 className="font-semibold mb-1">Gosta de Interação Social</h3>
-                  <p className="text-muted-foreground">Aprende melhor quando pode praticar com outras pessoas</p>
+                  <h3 className="font-semibold mb-1">{t.group.perfectFor.socialInteraction.title}</h3>
+                  <p className="text-muted-foreground">{t.group.perfectFor.socialInteraction.description}</p>
                 </div>
               </div>
               
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-6 h-6 text-primary mt-1" />
                 <div>
-                  <h3 className="font-semibold mb-1">Busca Melhor Custo-Benefício</h3>
-                  <p className="text-muted-foreground">Quer qualidade premium com investimento menor</p>
+                  <h3 className="font-semibold mb-1">{t.group.perfectFor.costBenefit.title}</h3>
+                  <p className="text-muted-foreground">{t.group.perfectFor.costBenefit.description}</p>
                 </div>
               </div>
               
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-6 h-6 text-primary mt-1" />
                 <div>
-                  <h3 className="font-semibold mb-1">Precisa de Motivação</h3>
-                  <p className="text-muted-foreground">Se motiva com o progresso e apoio dos colegas</p>
+                  <h3 className="font-semibold mb-1">{t.group.perfectFor.motivation.title}</h3>
+                  <p className="text-muted-foreground">{t.group.perfectFor.motivation.description}</p>
                 </div>
               </div>
             </div>
@@ -265,24 +265,24 @@ export function AulaEmGrupoPage() {
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-6 h-6 text-primary mt-1" />
                 <div>
-                  <h3 className="font-semibold mb-1">Quer Praticar Conversação</h3>
-                  <p className="text-muted-foreground">Deseja múltiplas oportunidades de falar em inglês</p>
+                  <h3 className="font-semibold mb-1">{t.group.perfectFor.conversation.title}</h3>
+                  <p className="text-muted-foreground">{t.group.perfectFor.conversation.description}</p>
                 </div>
               </div>
               
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-6 h-6 text-primary mt-1" />
                 <div>
-                  <h3 className="font-semibold mb-1">Tem Horários Regulares</h3>
-                  <p className="text-muted-foreground">Pode se comprometer com horários fixos semanais</p>
+                  <h3 className="font-semibold mb-1">{t.group.perfectFor.schedule.title}</h3>
+                  <p className="text-muted-foreground">{t.group.perfectFor.schedule.description}</p>
                 </div>
               </div>
               
               <div className="flex items-start gap-3">
                 <CheckCircle className="w-6 h-6 text-primary mt-1" />
                 <div>
-                  <h3 className="font-semibold mb-1">Aprende com Exemplos</h3>
-                  <p className="text-muted-foreground">Gosta de observar e aprender com outros alunos</p>
+                  <h3 className="font-semibold mb-1">{t.group.perfectFor.learning.title}</h3>
+                  <p className="text-muted-foreground">{t.group.perfectFor.learning.description}</p>
                 </div>
               </div>
             </div>
