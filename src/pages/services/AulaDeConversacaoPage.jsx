@@ -290,57 +290,61 @@ export function AulaDeConversacaoPage() {
               </Card>
             </LazyLoad>
 
-            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
-              <CardHeader>
-                <CardTitle>{t.conversation.topics.cultural.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>{t.conversation.topics.cultural.items.differences}</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>{t.conversation.topics.cultural.items.expressions}</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>{t.conversation.topics.cultural.items.slang}</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>{t.conversation.topics.cultural.items.etiquette}</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+            <LazyLoad delay={400} animationClass="fade-in-left">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                <CardHeader>
+                  <CardTitle>{t.conversation.topics.cultural.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span>{t.conversation.topics.cultural.items.differences}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span>{t.conversation.topics.cultural.items.expressions}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span>{t.conversation.topics.cultural.items.slang}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span>{t.conversation.topics.cultural.items.etiquette}</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </LazyLoad>
 
-            <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
-              <CardHeader>
-                <CardTitle>{t.conversation.topics.interests.title}</CardTitle>
-              </CardHeader>
-              <CardContent>
-                <ul className="space-y-2">
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>{t.conversation.topics.interests.items.hobbies}</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>{t.conversation.topics.interests.items.technology}</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>{t.conversation.topics.interests.items.news}</span>
-                  </li>
-                  <li className="flex items-start gap-2">
-                    <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
-                    <span>{t.conversation.topics.interests.items.personal}</span>
-                  </li>
-                </ul>
-              </CardContent>
-            </Card>
+            <LazyLoad delay={500} animationClass="fade-in-right">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer">
+                <CardHeader>
+                  <CardTitle>{t.conversation.topics.interests.title}</CardTitle>
+                </CardHeader>
+                <CardContent>
+                  <ul className="space-y-2">
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span>{t.conversation.topics.interests.items.hobbies}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span>{t.conversation.topics.interests.items.technology}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span>{t.conversation.topics.interests.items.news}</span>
+                    </li>
+                    <li className="flex items-start gap-2">
+                      <CheckCircle className="w-5 h-5 text-green-600 mt-0.5" />
+                      <span>{t.conversation.topics.interests.items.personal}</span>
+                    </li>
+                  </ul>
+                </CardContent>
+              </Card>
+            </LazyLoad>
           </div>
         </div>
       </section>

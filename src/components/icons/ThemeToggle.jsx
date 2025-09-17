@@ -4,7 +4,7 @@ export function ThemeToggle({ theme, onToggle, className = "" }) {
   return (
     <button
       onClick={onToggle}
-      className={`relative flex items-center bg-muted rounded-full p-1 w-20 h-10 transition-all duration-300 hover:bg-muted/80 ${className}`}
+      className={`relative flex items-center bg-muted rounded-full p-1 w-20 h-10 transition-all duration-300 hover:bg-muted/60 hover:shadow-lg hover:scale-105 active:scale-95 ${className}`}
       aria-label={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
       title={theme === 'light' ? 'Switch to dark theme' : 'Switch to light theme'}
     >
@@ -12,7 +12,7 @@ export function ThemeToggle({ theme, onToggle, className = "" }) {
       <div className="absolute inset-0 rounded-full bg-gradient-to-r from-orange-100 to-slate-200"></div>
       
       {/* Sliding indicator */}
-      <div className={`absolute w-8 h-8 bg-white rounded-full shadow-lg transition-transform duration-300 z-10 flex items-center justify-center ${
+      <div className={`absolute w-8 h-8 bg-white rounded-full shadow-lg transition-all duration-300 z-10 flex items-center justify-center hover:shadow-xl hover:bg-gray-50 ${
         theme === 'light' ? 'transform translate-x-0' : 'transform translate-x-10'
       }`}>
         {theme === 'light' ? (

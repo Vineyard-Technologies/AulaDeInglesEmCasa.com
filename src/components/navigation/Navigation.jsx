@@ -68,14 +68,14 @@ export function Navigation() {
             <div className="hidden md:flex items-center">
               <button
                 onClick={handleLanguageToggle}
-                className="relative flex items-center bg-muted rounded-full p-1 w-20 h-10 transition-all duration-300 hover:bg-muted/80"
+                className="relative flex items-center bg-muted rounded-full p-1 w-20 h-10 transition-all duration-300 hover:bg-muted/60 hover:shadow-lg hover:scale-105 active:scale-95"
                 title={isPortuguese ? "Switch to English" : "Mudar para Português"}
               >
                 {/* Background track */}
                 <div className="absolute inset-0 rounded-full bg-gradient-to-r from-blue-100 to-green-100"></div>
                 
                 {/* Sliding indicator */}
-                <div className={`absolute w-8 h-8 bg-white rounded-full shadow-lg transition-transform duration-300 z-10 flex items-center justify-center ${
+                <div className={`absolute w-8 h-8 bg-white rounded-full shadow-lg transition-all duration-300 z-10 flex items-center justify-center hover:shadow-xl hover:bg-gray-50 ${
                   isPortuguese ? 'transform translate-x-0' : 'transform translate-x-10'
                 }`}>
                   {isPortuguese ? (
@@ -303,10 +303,10 @@ export function Navigation() {
                 <div className="text-sm font-medium text-muted-foreground mb-2">{t.nav.language}</div>
                 <div 
                   onClick={handleLanguageToggle}
-                  className="relative inline-flex items-center w-20 h-10 bg-gradient-to-r from-blue-100 to-green-100 rounded-full cursor-pointer transition-all duration-300 ease-in-out"
+                  className="relative inline-flex items-center w-20 h-10 bg-gradient-to-r from-blue-100 to-green-100 rounded-full cursor-pointer transition-all duration-300 ease-in-out hover:shadow-lg hover:scale-105 active:scale-95"
                 >
                   <div 
-                    className={`absolute w-8 h-8 bg-white rounded-full shadow-lg transition-transform duration-300 ease-in-out ${
+                    className={`absolute w-8 h-8 bg-white rounded-full shadow-lg transition-all duration-300 ease-in-out hover:shadow-xl hover:bg-gray-50 ${
                       language === 'pt' ? 'translate-x-1' : 'translate-x-11'
                     }`}
                   />

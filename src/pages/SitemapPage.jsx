@@ -5,6 +5,7 @@ import { Home, User, MessageCircle, Shield, FileText, Map, Video, Users, Mic, Bo
 import { getAllBlogPosts } from "@/data/blogPostsBilingual"
 import { useLanguage } from "@/contexts/LanguageContext"
 import { useTranslations } from "@/data/translations"
+import { LazyLoad } from "@/components"
 
 const sitemapMetaData = {
   title: "Mapa do Site | Aula de Inglês em Casa",
@@ -84,19 +85,22 @@ export function SitemapPage() {
   return (
     <div className="min-h-screen bg-background py-20">
       <div className="container mx-auto px-4 max-w-4xl">
-        <h1 className="text-4xl font-bold text-primary mb-4">{t.sitemap.title}</h1>
-        <p className="text-muted-foreground text-lg mb-12">
-          {t.sitemap.description}
-        </p>
+        <LazyLoad delay={100} animationClass="fade-in">
+          <h1 className="text-4xl font-bold text-primary mb-4">{t.sitemap.title}</h1>
+          <p className="text-muted-foreground text-lg mb-12">
+            {t.sitemap.description}
+          </p>
+        </LazyLoad>
         
         {/* Main Pages */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">{t.sitemap.sections.mainPages}</h2>
-          <div className="grid gap-6 md:grid-cols-2">
-            {pages.map((page, index) => {
-              const IconComponent = page.icon
-              return (
-                <Link
+        <LazyLoad delay={200} animationClass="fade-in-left">
+          <div className="mb-12">
+            <h2 className="text-2xl font-semibold mb-6">{t.sitemap.sections.mainPages}</h2>
+            <div className="grid gap-6 md:grid-cols-2">
+              {pages.map((page, index) => {
+                const IconComponent = page.icon
+                return (
+                  <Link
                   key={index}
                   to={page.path}
                   className="group block p-6 bg-card rounded-lg border hover:border-primary/50 transition-all duration-200 hover:shadow-lg"
@@ -119,14 +123,16 @@ export function SitemapPage() {
                 </Link>
               )
             })}
+            </div>
           </div>
-        </div>
+        </LazyLoad>
 
         {/* Service Pages */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">{t.sitemap.sections.services}</h2>
-          <div className="grid gap-6 md:grid-cols-2">
-            {servicePages.map((page, index) => {
+        <LazyLoad delay={300} animationClass="fade-in-right">
+          <div className="mb-12">
+            <h2 className="text-2xl font-semibold mb-6">{t.sitemap.sections.services}</h2>
+            <div className="grid gap-6 md:grid-cols-2">
+              {servicePages.map((page, index) => {
               const IconComponent = page.icon
               return (
                 <Link
@@ -152,14 +158,16 @@ export function SitemapPage() {
                 </Link>
               )
             })}
+            </div>
           </div>
-        </div>
+        </LazyLoad>
 
         {/* Legal Pages */}
-        <div className="mb-12">
-          <h2 className="text-2xl font-semibold mb-6">{t.sitemap.sections.legal}</h2>
-          <div className="grid gap-6 md:grid-cols-2">
-            {legalPages.map((page, index) => {
+        <LazyLoad delay={400} animationClass="fade-in-left">
+          <div className="mb-12">
+            <h2 className="text-2xl font-semibold mb-6">{t.sitemap.sections.legal}</h2>
+            <div className="grid gap-6 md:grid-cols-2">
+              {legalPages.map((page, index) => {
               const IconComponent = page.icon
               return (
                 <Link
@@ -185,18 +193,21 @@ export function SitemapPage() {
                 </Link>
               )
             })}
+            </div>
           </div>
-        </div>
+        </LazyLoad>
         
-        <div className="mt-12 p-6 bg-muted/50 rounded-lg">
+        <LazyLoad delay={500} animationClass="fade-in-scale">
+          <div className="mt-12 p-6 bg-muted/50 rounded-lg">
           <h3 className="text-lg font-semibold mb-3 text-foreground">{t.sitemap.sections.otherInfo}</h3>
-          <div className="space-y-2 text-sm text-muted-foreground">
-            <p>• <strong>{t.sitemap.info.location}</strong> {t.sitemap.info.locationValue}</p>
-            <p>• <strong>{t.sitemap.info.specialty}</strong> {t.sitemap.info.specialtyValue}</p>
-            <p>• <strong>{t.sitemap.info.classTypes}</strong> {t.sitemap.info.classTypesValue}</p>
-            <p>• <strong>{t.sitemap.info.contact}</strong> <a href="https://wa.me/5567996161199" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">(67) 99616-1199</a></p>
+            <div className="space-y-2 text-sm text-muted-foreground">
+              <p>• <strong>{t.sitemap.info.location}</strong> {t.sitemap.info.locationValue}</p>
+              <p>• <strong>{t.sitemap.info.specialty}</strong> {t.sitemap.info.specialtyValue}</p>
+              <p>• <strong>{t.sitemap.info.classTypes}</strong> {t.sitemap.info.classTypesValue}</p>
+              <p>• <strong>{t.sitemap.info.contact}</strong> <a href="https://wa.me/5567996161199" target="_blank" rel="noopener noreferrer" className="text-primary hover:underline">(67) 99616-1199</a></p>
+            </div>
           </div>
-        </div>
+        </LazyLoad>
       </div>
     </div>
   )
