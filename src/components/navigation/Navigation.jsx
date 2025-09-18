@@ -242,28 +242,28 @@ export function Navigation() {
                     className="block py-1 text-sm hover:text-primary transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
-                    {t.nav.servicesDropdown.online}
+                    {t.nav.online}
                   </Link>
                   <Link
                     to="/servicos/aula-de-ingles-individual"
                     className="block py-1 text-sm hover:text-primary transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
-                    {t.nav.servicesDropdown.individual}
+                    {t.nav.individual}
                   </Link>
                   <Link
                     to="/servicos/aula-de-ingles-em-grupo"
                     className="block py-1 text-sm hover:text-primary transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
-                    {t.nav.servicesDropdown.group}
+                    {t.nav.group}
                   </Link>
                   <Link
                     to="/servicos/aula-de-conversacao-de-ingles"
                     className="block py-1 text-sm hover:text-primary transition-colors"
                     onClick={() => setIsOpen(false)}
                   >
-                    {t.nav.servicesDropdown.conversation}
+                    {t.nav.conversation}
                   </Link>
                 </div>
               </div>

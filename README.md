@@ -1,9 +1,9 @@
-# 🇺🇸 Aula de Inglês em Casa 🇧🇷
+![Aula de Inglês em Casa Logo](ADIECGitHub.webp)
 
 > **Professional English Teaching Services Website**  
 > Campo Grande, Mato Grosso do Sul, Brazil
 
-A modern, bilingual website for Andrew Rogers' English teaching services, featuring comprehensive internationalization, responsive design, and professional SEO optimization.
+A modern, bilingual website for *Aula de Inglês em Casa*, featuring comprehensive internationalization, responsive design, and professional SEO optimization.
 
 ## 🌟 Features
 
@@ -219,12 +219,6 @@ function MyComponent() {
 - **Bundle Splitting**: Automatic code splitting with Vite
 - **Caching**: Efficient browser caching strategies
 
-### **Accessibility**
-- **Semantic HTML**: Proper heading structure and landmarks
-- **ARIA Labels**: Screen reader support
-- **Keyboard Navigation**: Full keyboard accessibility
-- **Color Contrast**: WCAG 2.1 AA compliance
-
 ## 📊 SEO Features
 
 ### **Meta Management**
@@ -284,16 +278,11 @@ npm run build        # Creates optimized production build
 - Test language switching functionality
 - Verify responsive design in both languages
 
-## 📄 License
-
-This project is proprietary software for Andrew Rogers' English teaching business.
-
 ## 📞 Contact
 
-**Andrew Rogers**  
-📧 Email: [contact@auladeinglesemcasa.com]  
-📱 WhatsApp: [+55 67 99616-1199]  
-🌐 Website: [https://auladeinglesemcasa.com]  
+📧 Email: [Contato@AulaDeInglesEmCasa.com]  
+📱 WhatsApp: [+55 67 99616-1199](https://wa.me/5567996161199)  
+🌐 Website: [https://AulaDeInglesEmCasa.com]  
 📍 Location: Campo Grande, Mato Grosso do Sul, Brazil
 
 ---
@@ -307,5 +296,3 @@ This project is proprietary software for Andrew Rogers' English teaching busines
 - ✅ **Accessible**: WCAG 2.1 AA compliant
 - ✅ **Modern Stack**: Latest React and TypeScript
 - ✅ **Professional Design**: Clean, conversion-focused UI
-
-**Built with ❤️ for English education in Brazil**
