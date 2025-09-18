@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
+import { useForm, ValidationError } from '@formspree/react'
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Input } from "@/components/ui/input"
@@ -35,70 +36,14 @@ export function AulaIndividualPage() {
   const t = useTranslations()
   const { language } = useLanguage()
   
-  // Form state
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  })
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+  // Formspree form state
+  const [state, handleSubmit] = useForm("mnnbkevq")
 
   useEffect(() => {
     updateMetaTags(aulaIndividualMetaData)
   }, [])
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    
-    // Check if at least one contact method is provided
-    if (!formData.email && !formData.phone) {
-      alert(language === 'pt' 
-        ? 'Por favor, forneça pelo menos um email ou telefone para contato.' 
-        : 'Please provide at least an email or phone number for contact.')
-      return
-    }
-    
-    setIsLoading(true)
-    
-    try {
-      const form = e.target
-      const formData = new FormData(form)
-      
-      const response = await fetch('https://formspree.io/f/mnnbkevq', {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      })
-      
-      if (response.ok) {
-        setIsSubmitted(true)
-        // Reset form after 5 seconds
-        setTimeout(() => {
-          setIsSubmitted(false)
-          setFormData({ name: '', email: '', phone: '', message: '' })
-        }, 5000)
-      } else {
-        console.error('Form submission error')
-        alert(language === 'pt' ? 'Erro ao enviar mensagem. Tente novamente ou use WhatsApp.' : 'Error sending message. Please try again or use WhatsApp.')
-      }
-    } catch (error) {
-      console.error('Form submission error:', error)
-      alert(language === 'pt' ? 'Erro ao enviar mensagem. Tente novamente ou use WhatsApp.' : 'Error sending message. Please try again or use WhatsApp.')
-    } finally {
-      setIsLoading(false)
-    }
-  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -211,7 +156,19 @@ export function AulaIndividualPage() {
                   </CardTitle>
                 </CardHeader>
                 <CardContent className="pt-0">
-                  {!isSubmitted ? (
+                  {state.succeeded ? (
+                    <div className="text-center py-8">
+                      <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <CheckCircle className="w-8 h-8 text-green-500" />
+                      </div>
+                      <h3 className="text-xl font-semibold mb-2 text-green-600">
+                        {t.contact.form.success.title}
+                      </h3>
+                      <p className="text-muted-foreground">
+                        {t.contact.form.success.message}
+                      </p>
+                    </div>
+                  ) : (
                     <form onSubmit={handleSubmit} className="space-y-4">
                       {/* All fields in one row */}
                       <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4">
@@ -221,8 +178,6 @@ export function AulaIndividualPage() {
                             type="text"
                             id="name"
                             name="name"
-                            value={formData.name}
-                            onChange={handleChange}
                             required
                           />
                         </div>
@@ -233,8 +188,11 @@ export function AulaIndividualPage() {
                             type="tel"
                             id="phone"
                             name="phone"
-                            value={formData.phone}
-                            onChange={handleChange}
+                          />
+                          <ValidationError 
+                            prefix="Phone" 
+                            field="phone"
+                            errors={state.errors}
                           />
                         </div>
 
@@ -244,8 +202,11 @@ export function AulaIndividualPage() {
                             type="email"
                             id="email"
                             name="email"
-                            value={formData.email}
-                            onChange={handleChange}
+                          />
+                          <ValidationError 
+                            prefix="Email" 
+                            field="email"
+                            errors={state.errors}
                           />
                         </div>
 
@@ -255,15 +216,18 @@ export function AulaIndividualPage() {
                             type="text"
                             id="message"
                             name="message"
-                            value={formData.message}
-                            onChange={handleChange}
                             required
+                          />
+                          <ValidationError 
+                            prefix="Message" 
+                            field="message"
+                            errors={state.errors}
                           />
                         </div>
 
                         <div className="flex items-end">
-                          <Button type="submit" className="w-full" size="lg" disabled={isLoading}>
-                            {isLoading ? (
+                          <Button type="submit" className="w-full" size="lg" disabled={state.submitting}>
+                            {state.submitting ? (
                               <>
                                 <div className="animate-spin w-4 h-4 mr-2 border-2 border-white border-t-transparent rounded-full"></div>
                                 {language === 'pt' ? 'Enviando...' : 'Sending...'}
@@ -278,18 +242,6 @@ export function AulaIndividualPage() {
                         </div>
                       </div>
                     </form>
-                  ) : (
-                    <div className="text-center py-8">
-                      <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <CheckCircle className="w-8 h-8 text-green-500" />
-                      </div>
-                      <h3 className="text-xl font-semibold mb-2 text-green-600">
-                        {t.contact.form.success.title}
-                      </h3>
-                      <p className="text-muted-foreground">
-                        {t.contact.form.success.message}
-                      </p>
-                    </div>
                   )}
                 </CardContent>
               </Card>
@@ -307,18 +259,18 @@ export function AulaIndividualPage() {
           
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <LazyLoad delay={200} animationClass="fade-in-scale">
-              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden flex flex-col h-full">
                 <img 
                   src="/IndividualImage-1.webp" 
                   alt="Foco Total - Aula Individual" 
                   className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
                 />
-                <CardHeader className="text-center">
+                <CardHeader className="text-center flex-shrink-0">
                   <Target className="w-8 h-8 text-primary mx-auto mb-2" />
-                  <CardTitle className="text-lg">{t.individual.benefits.focus.title}</CardTitle>
+                  <CardTitle className="text-lg h-12 flex items-center justify-center">{t.individual.benefits.focus.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-center">
+                <CardContent className="flex-grow flex items-center">
+                  <p className="text-muted-foreground text-center h-20 flex items-center">
                     {t.individual.benefits.focus.description}
                   </p>
                 </CardContent>
@@ -326,18 +278,18 @@ export function AulaIndividualPage() {
             </LazyLoad>
 
             <LazyLoad delay={300} animationClass="fade-in-scale">
-              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden flex flex-col h-full">
                 <img 
                   src="/IndividualImage-2.webp" 
                   alt="Método Personalizado - Aula Individual" 
                   className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
                 />
-                <CardHeader className="text-center">
+                <CardHeader className="text-center flex-shrink-0">
                   <BookOpen className="w-8 h-8 text-primary mx-auto mb-2" />
-                  <CardTitle className="text-lg">{t.individual.benefits.method.title}</CardTitle>
+                  <CardTitle className="text-lg h-12 flex items-center justify-center">{t.individual.benefits.method.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-center">
+                <CardContent className="flex-grow flex items-center">
+                  <p className="text-muted-foreground text-center h-20 flex items-center">
                     {t.individual.benefits.method.description}
                   </p>
                 </CardContent>
@@ -345,18 +297,18 @@ export function AulaIndividualPage() {
             </LazyLoad>
 
             <LazyLoad delay={400} animationClass="fade-in-scale">
-              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden flex flex-col h-full">
               <img 
                 src="/IndividualImage-3.webp" 
                 alt="Horário Flexível - Aula Individual" 
                 className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
               />
-              <CardHeader className="text-center">
+              <CardHeader className="text-center flex-shrink-0">
                 <Clock className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">{t.individual.benefits.schedule.title}</CardTitle>
+                <CardTitle className="text-lg h-12 flex items-center justify-center">{t.individual.benefits.schedule.title}</CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center">
+              <CardContent className="flex-grow flex items-center">
+                <p className="text-muted-foreground text-center h-20 flex items-center">
                   {t.individual.benefits.schedule.description}
                 </p>
               </CardContent>
@@ -364,18 +316,18 @@ export function AulaIndividualPage() {
             </LazyLoad>
 
             <LazyLoad delay={500} animationClass="fade-in-scale">
-              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden flex flex-col h-full">
                 <img 
                   src="/IndividualImage-4.webp" 
                   alt="Mais Conversação - Aula Individual" 
                   className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
                 />
-              <CardHeader className="text-center">
+              <CardHeader className="text-center flex-shrink-0">
                 <MessageCircle className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">{t.individual.benefits.conversation.title}</CardTitle>
+                <CardTitle className="text-lg h-12 flex items-center justify-center">{t.individual.benefits.conversation.title}</CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center">
+              <CardContent className="flex-grow flex items-center">
+                <p className="text-muted-foreground text-center h-20 flex items-center">
                   {t.individual.benefits.conversation.description}
                 </p>
               </CardContent>
@@ -383,18 +335,18 @@ export function AulaIndividualPage() {
             </LazyLoad>
 
             <LazyLoad delay={600} animationClass="fade-in-scale">
-              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden flex flex-col h-full">
                 <img 
                   src="/IndividualImage-5.webp" 
                   alt="Progresso Rápido - Aula Individual" 
                   className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
                 />
-                <CardHeader className="text-center">
+                <CardHeader className="text-center flex-shrink-0">
                   <Award className="w-8 h-8 text-primary mx-auto mb-2" />
-                  <CardTitle className="text-lg">{t.individual.benefits.progress.title}</CardTitle>
+                  <CardTitle className="text-lg h-12 flex items-center justify-center">{t.individual.benefits.progress.title}</CardTitle>
                 </CardHeader>
-                <CardContent>
-                  <p className="text-muted-foreground text-center">
+                <CardContent className="flex-grow flex items-center">
+                  <p className="text-muted-foreground text-center h-20 flex items-center">
                     {t.individual.benefits.progress.description}
                   </p>
                 </CardContent>
@@ -402,18 +354,18 @@ export function AulaIndividualPage() {
             </LazyLoad>
 
             <LazyLoad delay={700} animationClass="fade-in-scale">
-              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+              <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden flex flex-col h-full">
               <img 
                 src="/IndividualImage-6.webp" 
                 alt="Sem Pressa - Aula Individual" 
                 className="w-full h-40 object-cover hover:scale-105 transition-transform duration-300 rounded-lg"
               />
-              <CardHeader className="text-center">
+              <CardHeader className="text-center flex-shrink-0">
                 <Calendar className="w-8 h-8 text-primary mx-auto mb-2" />
-                <CardTitle className="text-lg">{t.individual.benefits.pace.title}</CardTitle>
+                <CardTitle className="text-lg h-12 flex items-center justify-center">{t.individual.benefits.pace.title}</CardTitle>
               </CardHeader>
-              <CardContent>
-                <p className="text-muted-foreground text-center">
+              <CardContent className="flex-grow flex items-center">
+                <p className="text-muted-foreground text-center h-20 flex items-center">
                   {t.individual.benefits.pace.description}
                 </p>
               </CardContent>
@@ -623,15 +575,19 @@ export function AulaIndividualPage() {
               </a>
             </Button>
             
-            <a href="mailto:Contato@auladeinglesemcasa.com">
-              <Button 
-                size="lg" 
-                className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary-foreground/20"
+            <Button 
+              size="lg" 
+              className="bg-primary hover:bg-primary/90 text-primary-foreground border-primary-foreground/20"
+              asChild
+            >
+              <a 
+                href="mailto:Contato@auladeinglesemcasa.com"
+                className="inline-flex items-center gap-2"
               >
                 <Mail className="w-5 h-5" />
                 {t.actions.sendEmail}
-              </Button>
-            </a>
+              </a>
+            </Button>
           </div>
         </div>
       </section>

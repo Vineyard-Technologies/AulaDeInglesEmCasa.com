@@ -21,7 +21,7 @@ export const translations = {
       email: "Enviar Email",
       sendEmail: "Enviar Email",
       learnMore: "Saiba Mais",
-      readMore: "Leia Mais",
+      readMore: "Ler Artigo",
       loadMore: "Carregar Mais",
       schedule: "Agendar Aula",
       contact: "Entre em Contato"
@@ -959,7 +959,7 @@ export const translations = {
       email: "Send Email",
       sendEmail: "Send Email",
       learnMore: "Learn More",
-      readMore: "Read More",
+      readMore: "Read Article",
       loadMore: "Load More",
       schedule: "Schedule Class",
       contact: "Get in Touch"

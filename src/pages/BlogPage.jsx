@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react"
-import { Link } from "react-router-dom"
+import { Link, useNavigate } from "react-router-dom"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { LazyLoad, LazyImage } from "@/components"
@@ -22,6 +22,7 @@ const blogMetaData = {
 export function BlogPage() {
   const t = useTranslations()
   const { language } = useLanguage()
+  const navigate = useNavigate()
   const allPosts = getAllBlogPosts(language)
   const [visiblePostsCount, setVisiblePostsCount] = useState(6)
   
@@ -85,7 +86,7 @@ export function BlogPage() {
                 delay={200 + (index * 100)} 
                 animationClass="fade-in-scale"
               >
-                <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden">
+                <Card className="hover:shadow-lg hover:-translate-y-1 transition-all duration-300 cursor-pointer overflow-hidden flex flex-col h-full">
                   {post.image && (
                     <div className="aspect-video w-full overflow-hidden">
                       <LazyImage
@@ -95,7 +96,7 @@ export function BlogPage() {
                       />
                     </div>
                   )}
-                  <CardHeader>
+                  <CardHeader className="flex-shrink-0">
                     <div className="flex items-center justify-end mb-2">
                       <div className="flex items-center gap-1 text-muted-foreground text-sm">
                         <Clock className="w-4 h-4" />
@@ -103,10 +104,10 @@ export function BlogPage() {
                       </div>
                     </div>
                     
-                    <CardTitle className="text-lg leading-tight">
+                    <CardTitle className="text-lg leading-tight h-14 overflow-hidden">
                       <Link 
                         to={`/blog/${post.slug}`}
-                        className="hover:text-primary transition-colors"
+                        className="hover:text-primary transition-colors line-clamp-2"
                       >
                         {post.title}
                       </Link>
@@ -115,18 +116,20 @@ export function BlogPage() {
                     <p className="text-sm text-muted-foreground mt-1">{t.blog.author.replace('Andrew Rogers', '')} <Link to="/sobre" className="hover:text-primary transition-colors">Andrew Rogers</Link></p>
                   </CardHeader>
                   
-                  <CardContent>
-                    <CardDescription className="text-sm mb-4">
+                  <CardContent className="flex-grow flex flex-col justify-between">
+                    <CardDescription className="text-sm mb-4 h-20 overflow-hidden line-clamp-4">
                       {post.excerpt}
                     </CardDescription>
                     
-                    <Link 
-                      to={`/blog/${post.slug}`}
-                      className="inline-flex items-center gap-1 text-primary hover:text-primary/80 font-medium text-sm transition-colors"
+                    <Button 
+                      variant="outline"
+                      size="sm"
+                      onClick={() => navigate(`/blog/${post.slug}`)}
+                      className="inline-flex items-center gap-1 mt-auto"
                     >
                       {t.actions.readMore}
                       <ArrowRight className="w-4 h-4" />
-                    </Link>
+                    </Button>
                   </CardContent>
                 </Card>
               </LazyLoad>

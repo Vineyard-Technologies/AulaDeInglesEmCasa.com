@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useForm, ValidationError } from '@formspree/react'
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
 import { Button } from "@/components/ui/button"
 import { Input } from "@/components/ui/input"
@@ -25,14 +26,9 @@ import {
 export function ContactPage() {
   const t = useTranslations()
   const { language } = useLanguage()
-  const [formData, setFormData] = useState({
-    name: '',
-    email: '',
-    phone: '',
-    message: ''
-  })
-  const [isSubmitted, setIsSubmitted] = useState(false)
-  const [isLoading, setIsLoading] = useState(false)
+  
+  // Formspree form state
+  const [state, handleSubmit] = useForm("mnnbkevq")
 
   const whatsappNumber = "5567996161199"
 
@@ -44,56 +40,7 @@ export function ContactPage() {
     addStructuredData(createEducationServiceSchema());
   }, [])
 
-  const handleSubmit = async (e) => {
-    e.preventDefault()
-    
-    // Check if at least one contact method is provided
-    if (!formData.email && !formData.phone) {
-      alert(language === 'pt' 
-        ? 'Por favor, forneça pelo menos um email ou telefone para contato.' 
-        : 'Please provide at least an email or phone number for contact.')
-      return
-    }
-    
-    setIsLoading(true)
-    
-    try {
-      const form = e.target
-      const formData = new FormData(form)
-      
-      const response = await fetch('https://formspree.io/f/mnnbkevq', {
-        method: 'POST',
-        body: formData,
-        headers: {
-          'Accept': 'application/json'
-        }
-      })
-      
-      if (response.ok) {
-        setIsSubmitted(true)
-        // Reset form after 5 seconds
-        setTimeout(() => {
-          setIsSubmitted(false)
-          setFormData({ name: '', email: '', phone: '', message: '' })
-        }, 5000)
-      } else {
-        console.error('Form submission error')
-        alert(language === 'pt' ? 'Erro ao enviar mensagem. Tente novamente ou use WhatsApp.' : 'Error sending message. Please try again or use WhatsApp.')
-      }
-    } catch (error) {
-      console.error('Form submission error:', error)
-      alert(language === 'pt' ? 'Erro ao enviar mensagem. Tente novamente ou use WhatsApp.' : 'Error sending message. Please try again or use WhatsApp.')
-    } finally {
-      setIsLoading(false)
-    }
-  }
 
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    })
-  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -170,10 +117,20 @@ export function ContactPage() {
                   <CardDescription>{t.contact.form.description}</CardDescription>
                 </CardHeader>
                 <CardContent>
-                  {!isSubmitted ? (
+                  {state.succeeded ? (
+                    <div className="text-center py-8">
+                      <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <CheckCircle className="w-8 h-8 text-green-500" />
+                      </div>
+                      <h3 className="text-xl font-semibold mb-2 text-green-600">
+                        {t.contact.form.success.title}
+                      </h3>
+                      <p className="text-muted-foreground">
+                        {t.contact.form.success.message}
+                      </p>
+                    </div>
+                  ) : (
                     <form
-                      action="https://formspree.io/f/mnnbkevq"
-                      method="POST"
                       onSubmit={handleSubmit}
                       className="space-y-6"
                     >
@@ -183,10 +140,13 @@ export function ContactPage() {
                           type="text"
                           id="name"
                           name="name"
-                          value={formData.name}
-                          onChange={handleChange}
                           placeholder={t.contact.form.placeholders.name}
                           required
+                        />
+                        <ValidationError 
+                          prefix="Name" 
+                          field="name"
+                          errors={state.errors}
                         />
                       </div>
 
@@ -196,9 +156,12 @@ export function ContactPage() {
                           type="email"
                           id="email"
                           name="email"
-                          value={formData.email}
-                          onChange={handleChange}
                           placeholder={t.contact.form.placeholders.email}
+                        />
+                        <ValidationError 
+                          prefix="Email" 
+                          field="email"
+                          errors={state.errors}
                         />
                       </div>
 
@@ -208,9 +171,12 @@ export function ContactPage() {
                           type="tel"
                           id="phone"
                           name="phone"
-                          value={formData.phone}
-                          onChange={handleChange}
                           placeholder={t.contact.form.placeholders.phone}
+                        />
+                        <ValidationError 
+                          prefix="Phone" 
+                          field="phone"
+                          errors={state.errors}
                         />
                       </div>
 
@@ -219,16 +185,19 @@ export function ContactPage() {
                         <Textarea
                           id="message"
                           name="message"
-                          value={formData.message}
-                          onChange={handleChange}
                           placeholder={t.contact.form.placeholders.message}
                           rows={5}
                           required
                         />
+                        <ValidationError 
+                          prefix="Message" 
+                          field="message"
+                          errors={state.errors}
+                        />
                       </div>
 
-                      <Button type="submit" className="w-full" size="lg" disabled={isLoading}>
-                        {isLoading ? (
+                      <Button type="submit" className="w-full" size="lg" disabled={state.submitting}>
+                        {state.submitting ? (
                           <>
                             <div className="animate-spin w-4 h-4 mr-2 border-2 border-white border-t-transparent rounded-full"></div>
                             {language === 'pt' ? 'Enviando...' : 'Sending...'}
@@ -241,18 +210,6 @@ export function ContactPage() {
                         )}
                       </Button>
                     </form>
-                  ) : (
-                    <div className="text-center py-8">
-                      <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
-                        <CheckCircle className="w-8 h-8 text-green-500" />
-                      </div>
-                      <h3 className="text-xl font-semibold mb-2 text-green-600">
-                        {t.contact.form.success.title}
-                      </h3>
-                      <p className="text-muted-foreground">
-                        {t.contact.form.success.message}
-                      </p>
-                    </div>
                   )}
                 </CardContent>
               </Card>
