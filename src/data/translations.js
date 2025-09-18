@@ -671,6 +671,27 @@ export const translations = {
         title: "Email", 
         button: "Enviar Email"
       },
+      form: {
+        title: "Entre em contato!",
+        description: "Envie uma mensagem e responderemos em breve!",
+        fields: {
+          name: "Nome",
+          email: "Email",
+          phone: "Telefone",
+          message: "Mensagem"
+        },
+        placeholders: {
+          name: "Seu nome completo",
+          email: "seu@email.com",
+          phone: "(67) 99999-9999",
+          message: "Olá! Gostaria de saber mais sobre as aulas de inglês..."
+        },
+        submit: "Enviar Mensagem",
+        success: {
+          title: "Mensagem Enviada!",
+          message: "Obrigado pelo contato! Responderei em breve pelo WhatsApp ou email."
+        }
+      },
       cta: {
         title: "Aula de Inglês em Casa em Campo Grande, MS"
       }
@@ -1587,6 +1608,27 @@ export const translations = {
       email: {
         title: "Email",
         button: "Send Email"
+      },
+      form: {
+        title: "Get in touch!",
+        description: "Send us a message and we'll get back to you soon!",
+        fields: {
+          name: "Name",
+          email: "Email",
+          phone: "Phone",
+          message: "Message"
+        },
+        placeholders: {
+          name: "Your full name",
+          email: "your@email.com",
+          phone: "(67) 99999-9999",
+          message: "Hello! I'd like to know more about English classes..."
+        },
+        submit: "Send Message",
+        success: {
+          title: "Message Sent!",
+          message: "Thank you for contacting us! I'll get back to you soon via WhatsApp or email."
+        }
       },
       cta: {
         title: "English Classes at Home in Campo Grande, MS"

@@ -1,12 +1,16 @@
-import { useEffect } from "react"
+import { useEffect, useState } from "react"
 import { Link } from "react-router-dom"
 import { Button } from "@/components/ui/button"
 import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card"
+import { Input } from "@/components/ui/input"
+import { Textarea } from "@/components/ui/textarea"
+import { Label } from "@/components/ui/label"
 import { WhatsAppIcon } from "@/components/icons/WhatsAppIcon"
 import { LazyLoad, GoogleMap, RelatedBlogPosts, LazyImage } from "@/components"
 import { updateMetaTags, addStructuredData } from "@/utils/seo"
 import { BLOG_CATEGORIES } from "@/data/blogPostsBilingual"
 import { useTranslations } from "@/data/translations"
+import { useLanguage } from "@/contexts/LanguageContext"
 import { 
   MessageCircle, 
   Mic, 
@@ -16,7 +20,8 @@ import {
   Users,
   Award,
   BookOpen,
-  Mail
+  Mail,
+  Send
 } from "lucide-react"
 
 const aulaDeConversacaoMetaData = {
@@ -28,10 +33,72 @@ const aulaDeConversacaoMetaData = {
 export function AulaDeConversacaoPage() {
   const whatsappNumber = "5567996161199"
   const t = useTranslations()
+  const { language } = useLanguage()
   
+  // Form state
+  const [formData, setFormData] = useState({
+    name: '',
+    email: '',
+    phone: '',
+    message: ''
+  })
+  const [isSubmitted, setIsSubmitted] = useState(false)
+  const [isLoading, setIsLoading] = useState(false)
+
   useEffect(() => {
     updateMetaTags(aulaDeConversacaoMetaData)
   }, [])
+
+  const handleChange = (e) => {
+    setFormData({
+      ...formData,
+      [e.target.name]: e.target.value
+    })
+  }
+
+  const handleSubmit = async (e) => {
+    e.preventDefault()
+    
+    // Check if at least one contact method is provided
+    if (!formData.email && !formData.phone) {
+      alert(language === 'pt' 
+        ? 'Por favor, forneça pelo menos um email ou telefone para contato.' 
+        : 'Please provide at least an email or phone number for contact.')
+      return
+    }
+    
+    setIsLoading(true)
+    
+    try {
+      const form = e.target
+      const formData = new FormData(form)
+      
+      const response = await fetch('https://formspree.io/f/mnnbkevq', {
+        method: 'POST',
+        body: formData,
+        headers: {
+          'Accept': 'application/json'
+        }
+      })
+      
+      if (response.ok) {
+        setIsSubmitted(true)
+        // Reset form after 5 seconds
+        setTimeout(() => {
+          setIsSubmitted(false)
+          setFormData({ name: '', email: '', phone: '', message: '' })
+        }, 5000)
+      } else {
+        console.error('Form submission error')
+        alert(language === 'pt' ? 'Erro ao enviar mensagem. Tente novamente ou use WhatsApp.' : 'Error sending message. Please try again or use WhatsApp.')
+      }
+    } catch (error) {
+      console.error('Form submission error:', error)
+      alert(language === 'pt' ? 'Erro ao enviar mensagem. Tente novamente ou use WhatsApp.' : 'Error sending message. Please try again or use WhatsApp.')
+    } finally {
+      setIsLoading(false)
+    }
+  }
 
   return (
     <div className="min-h-screen bg-background">
@@ -135,6 +202,100 @@ export function AulaDeConversacaoPage() {
                 </div>
               </LazyLoad>
             </div>
+
+            {/* Contact Form - Full Width */}
+            <LazyLoad delay={400} animationClass="fade-in">
+              <Card className="hover:shadow-lg transition-all duration-300 mt-12">
+                <CardHeader className="pb-0">
+                  <CardTitle className="flex items-center gap-2">
+                    <Mail className="w-5 h-5" />
+                    {t.contact.form.title}
+                  </CardTitle>
+                </CardHeader>
+                <CardContent className="pt-0">
+                  {!isSubmitted ? (
+                    <form onSubmit={handleSubmit} className="space-y-4">
+                      {/* All fields in one row */}
+                      <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-5 gap-4">
+                        <div className="space-y-2">
+                          <Label htmlFor="name">{t.contact.form.fields.name}</Label>
+                          <Input
+                            type="text"
+                            id="name"
+                            name="name"
+                            value={formData.name}
+                            onChange={handleChange}
+                            required
+                          />
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="phone">{t.contact.form.fields.phone}</Label>
+                          <Input
+                            type="tel"
+                            id="phone"
+                            name="phone"
+                            value={formData.phone}
+                            onChange={handleChange}
+                          />
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="email">{t.contact.form.fields.email}</Label>
+                          <Input
+                            type="email"
+                            id="email"
+                            name="email"
+                            value={formData.email}
+                            onChange={handleChange}
+                          />
+                        </div>
+
+                        <div className="space-y-2">
+                          <Label htmlFor="message">{t.contact.form.fields.message}</Label>
+                          <Input
+                            type="text"
+                            id="message"
+                            name="message"
+                            value={formData.message}
+                            onChange={handleChange}
+                            required
+                          />
+                        </div>
+
+                        <div className="flex items-end">
+                          <Button type="submit" className="w-full" size="lg" disabled={isLoading}>
+                            {isLoading ? (
+                              <>
+                                <div className="animate-spin w-4 h-4 mr-2 border-2 border-white border-t-transparent rounded-full"></div>
+                                {language === 'pt' ? 'Enviando...' : 'Sending...'}
+                              </>
+                            ) : (
+                              <>
+                                <Send className="w-4 h-4 mr-2" />
+                                {t.contact.form.submit}
+                              </>
+                            )}
+                          </Button>
+                        </div>
+                      </div>
+                    </form>
+                  ) : (
+                    <div className="text-center py-8">
+                      <div className="w-16 h-16 bg-green-500/10 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <CheckCircle className="w-8 h-8 text-green-500" />
+                      </div>
+                      <h3 className="text-xl font-semibold mb-2 text-green-600">
+                        {t.contact.form.success.title}
+                      </h3>
+                      <p className="text-muted-foreground">
+                        {t.contact.form.success.message}
+                      </p>
+                    </div>
+                  )}
+                </CardContent>
+              </Card>
+            </LazyLoad>
           </div>
         </div>
       </section>
