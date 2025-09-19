@@ -1,8 +1,8 @@
 cff-version: 1.2.0
 message: "If you use this software, please cite it as below."
 authors:
-  - name: "Vineyard Technologies"
-title: "VineyardTechnologies.com"
+  - name: "Aula De Ingles Em Casa"
+title: "Aula De Ingles Em Casa"
 version: 1.0.0
 date-released: 2025-08-22
-repository-code: "https://github.com/Vineyard-Technologies/VineyardTechnologies.com"
+repository-code: "https://github.com/AulaDeInglesEmCasa/AulaDeInglesEmCasa.com"
